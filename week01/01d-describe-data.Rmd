@@ -473,3 +473,17 @@ summarize(ncbirths, mean_weight = mean(weight),
           sd_weight = sd(weight), 
           var_weight = var(weight))
 ```
+
+---
+
+## Missing Data (NA)
+
+```{r error=TRUE}
+summarize(ncbirths, mean(visits))
+```
+
+--
+
+```{r error=TRUE}
+summarize(ncbirths, mean(visits, na.rm = TRUE))
+```
