@@ -1,6 +1,6 @@
 <br>
 
-<img src="wee01/img/cosmos-uci-dshs.png" alt="Logo that reads Data Science in Health Sciences, University of California Irvine, COSMOS It has a computer and a medical box icon" width="150" align = "right"/>
+<img src="week01/img/cosmos-uci-dshs.png" alt="Logo that reads Data Science in Health Sciences, University of California Irvine, COSMOS It has a computer and a medical box icon" width="150" align = "right"/>
 
 
 ## Data Science in Health Sciences
