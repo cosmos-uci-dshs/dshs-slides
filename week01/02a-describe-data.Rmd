@@ -47,6 +47,28 @@ class: middle
 
 class: middle
 
+## Review Questions
+
+
+
+1. What R functions have we seen so far? 
+
+--
+
+2. How many panes have we used so far in RStudio? What does each pane do?
+
+--
+
+3. Street addresses of hospital patients is a factor. Correct or incorrect?
+
+--
+
+4. County of residence of hospital patients in California is a factor. Correct or incorrect?
+
+---
+
+class: middle
+
 ## Outline
 
 
@@ -57,7 +79,7 @@ class: middle
 <hr>
 
 - We will only summarize a single variable at a time but later we will talk about relationship between two variables.
-- Today we will summarize data with numbers and tomorrow we will summarize it with visuals.
+- First we will summarize data with numbers and later we will summarize it with visuals.
 
 ---
 
@@ -225,7 +247,7 @@ Q1 and Q3 can be considered 25th and 75th percentiles respectively.
 
 class: middle
 
-## Question 1
+## In Breakout Rooms: Question 1
 
 Consider the mean, median, Q1, and Q3 of everyone's height in this cluster. 
 You don't need to know the exact values.
@@ -236,14 +258,14 @@ How would the mean, median, Q1, and Q3 change if at all?
 
 class: middle
 
-## Question 2
+## In Breakout Rooms: Question 2
 
 Actually LeBron James does not join but Peter Dinklage is joining. 
 How would the mean, median, Q1, and Q3 of heights change if at all?
 
 ---
 
-## Question 3
+## In Breakout Rooms: Question 3
 
 Consider Dr. Dogucu teaching three classes. 
 All of these classes have 5 students. 
@@ -322,6 +344,8 @@ $\Sigma_{i = 1}^{n} (x_i - \bar x )^2 =$
 
 $4.9284 + 0.5184 + 0.5184 + 0.2704 + 0.0484 +$ 
 $0.0784 + 0.0784 + 0.0784+ 1.6384 + 5.1984 = 13.356 \text{ hr}^2$
+
+Note that $n$ represents sample size here thus $n = 10$.
 
 ---
 
