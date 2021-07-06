@@ -429,5 +429,11 @@ Check out [the ggplot flipbook](https://evamaerey.github.io/ggplot_flipbook/ggpl
 
 
 
+---
 
+class: middle
+
+- [BBC](https://bbc.github.io/rcookbook/)   
+- [fivethirtyeight](https://blog.revolutionanalytics.com/2016/07/data-journalism-with-r-at-538.html?utm_content=bufferc03e0&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer)  
+- [NY Times](https://livefreeordichotomize.com/2021/04/07/nytimes-map-how-to/)
 

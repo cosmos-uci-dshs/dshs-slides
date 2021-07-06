@@ -1,0 +1,187 @@
+---
+title: "Interpreting Data Visualizations"
+author: "Dr. Mine Dogucu"
+output: 
+  xaringan::moon_reader:
+    css: ["slide-style.css"]
+    lib_dir: libs
+    seal: false
+    nature:
+      ratio: 16:9
+      highlightStyle: "pygments"
+      highlightLines: true
+      highlightLanguage: "r"
+
+---
+
+class: title-slide
+
+```{r echo = FALSE, message=FALSE}
+library(openintro)
+library(tidyverse)
+theme_set(theme_gray(base_size = 18))
+```
+
+<br>
+<br>
+.right-panel[ 
+<br>
+
+# `r rmarkdown::metadata$title`
+
+## `r rmarkdown::metadata$author`
+
+]
+
+---
+
+class: middle
+
+## Reminder
+
+- Close all apps on your computer other than zoom.  
+- Open slides for this session from the cluster website (https://uci-dshs.netlify.app/). 
+
+
+---
+
+class: middle
+
+[Limbo Lines: Dead Here, Alive There](https://pudding.cool/2018/02/death/)
+
+[Anxiety: It Gets Worse, Then It Gets Better](https://www.instagram.com/p/B4U81DJlqTG/)
+
+[The Wealth & Health of Nations](https://observablehq.com/@mbostock/the-wealth-health-of-nations)
+
+---
+
+class: middle
+
+Data Visualizations
+
+- are graphical representations of data
+
+--
+
+- use different colors, shapes, and the coordinate system to summarize data
+
+--
+
+- tell a story
+
+--
+
+- are useful for exploring data
+
+
+
+
+
+
+
+---
+
+class:inverse middle
+
+.font75[Visuals with a Single Categorical Variable]
+
+---
+
+## Barplots
+
+---
+
+class:inverse middle
+
+.font75[Visuals with a Single Numeric Variable]
+
+---
+
+## Boxplots
+
+---
+
+## Histograms
+
+
+---
+
+class: middle
+
+[Exploring Histograms Interactively](http://tinlizzie.org/histograms/)
+
+---
+
+class: middle center
+
+[There is no "best" number of bins](https://en.wikipedia.org/wiki/Histogram#Number_of_bins_and_width)
+
+---
+
+class: inverse middle center
+
+.font75[Visuals with Two Categorical Variables]
+
+---
+
+## Standardized Bar Plot
+
+```{r echo=FALSE, fig.align='center', fig.height=4}
+ggplot(data = babies,
+       aes(x = smoke, 
+           fill = parity)) + 
+  geom_bar(position = "fill") +
+  ylab("Proportion") +
+  xlab("Mother's Smoker Status")
+```
+
+---
+
+## Dodged Bar Plot
+
+```{r echo=FALSE, fig.align='center', fig.height=4}
+ggplot(data = babies,
+       aes(x = smoke, 
+           fill = parity)) + 
+  geom_bar(position = "dodge")
+```
+
+
+
+---
+
+class: middle inverse
+
+.font75[Visuals with a single numerical and single categorical variable.]
+
+---
+
+class: inverse middle
+
+.font75[Visuals with Two Numerical Variables]
+
+---
+
+
+## Barplots
+
+Simple
+Dodged
+
+---
+
+## Boxplots
+
+
+---
+
+## Histogram
+Binwidth
+
+Right skewed,
+left-skewed
+Do ordering of mean median
+
+---
+
+## Scatterplots

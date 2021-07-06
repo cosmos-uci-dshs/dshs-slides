@@ -433,11 +433,7 @@ ggplot(data = babies,
 
 ]
 
----
 
-class: middle center
-
-[There is no "best" number of bins](https://en.wikipedia.org/wiki/Histogram#Number_of_bins_and_width)
 
 
 ---
