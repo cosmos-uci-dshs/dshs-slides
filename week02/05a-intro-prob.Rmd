@@ -27,13 +27,13 @@ library(fabricerin)
 
 # `r rmarkdown::metadata$title`
 
-## `r rmarkdown::metadata$author`
+### `r rmarkdown::metadata$author`
 
 ]
 
 ---
 
-## Introduction
+### Introduction
  - We have used plots and summary statistics to learn about the distribution of variables and to investigate their relationships. 
  
  - We now want to generalize our findings to the population. 
@@ -48,7 +48,7 @@ library(fabricerin)
  
 ---
  
-## Some Commonly Used Genetic Terms
+### Some Commonly Used Genetic Terms
  
 - Gene
 
@@ -66,22 +66,22 @@ library(fabricerin)
 
 ---
 
-## Random phenomena and their sample space
+### Random phenomena and their sample space
 
 - A phenomenon is called random if its outcome (value) cannot be determined with certainty before it occurs. 
 
 - For example, coin tossing and genotypes  are random phenomena.
 
 - The collection of all possible outcomes $S$ is called the sample space. 
-
-  - Coin tossing: S=\{H, T\} 
-  - Die rolling: S=\{1, 2, 3, 4, 5, 6\} 
-  - Bi-allelic gene: S=\{A, a\} 
-  - Genotype: S=\{AA, Aa, aa\}
-
+$$\begin{array}{l@{\quad}l}
+\text{Coin tossing:}  & S=\{H, T\}, \\
+\text{Die rolling:} &  S=\{1, 2, 3, 4, 5, 6\}, \\
+\text{Bi-allelic gene:} & S=\{A,a\},\\
+\text{Genotype:} & S=\{\mathit{AA}, \mathit{Aa}, \mathit{aa}\}.
+\end{array}$$
 ---
 
-## Probability
+### Probability
 
 - To each possible outcome in the sample space, we assign a probability
 $P$, which represents how certain we are about the occurrence of the corresponding outcome. 
@@ -90,8 +90,8 @@ $P$, which represents how certain we are about the occurrence of the correspondi
 
 - The total probability of all outcomes in the sample space is always 1.
 
-  - Coin tossing: P(H)+ P(T)=1
-  - Die rolling:  P(1)+P(2)+P(3)+P(4)+P(5)+P(6) = 1.
+  - Coin tossing: $P(H)+ P(T)=1$
+  - Die rolling:  $P(1)+P(2)+P(3)+P(4)+P(5)+P(6) = 1$.
 
 - Therefore, if the outcomes are equally probable, the probability of
 each outcome is $1/n_{S}$, where $n_{S}$ is the number of possible
@@ -99,7 +99,7 @@ outcomes.
   
 ---
 
-## Random events
+### Random events
 
 - An {event} is a subset of the sample space $S$. 
 
@@ -118,7 +118,7 @@ individual outcomes included in that event.
 
 ---
 
-## Example
+### Example
 
 - As a running example, we consider a bi-allelic gene A with
 two alleles $A$ and $a$. 
@@ -127,21 +127,329 @@ causes a specific disease.
 - Then only people with the genotype
 $\mathit{aa}$ have the disease. 
 
-```{r, echo=FALSE,out.width='25%',fig.align='center'}
-knitr::include_graphics('../../img/vennGene1.png')
+```{r, echo=FALSE,out.width='50%',fig.align='center'}
+knitr::include_graphics('img/vennGene1.png')
 ```
 
 ---
 
-## Example
-
+### Example
 - We can define four events as follows:
+$$\begin{array}{l@{\quad}l}
+\text{The homozygous event:} & HM = \{\mathit{AA}, \mathit{aa}\}, \\
+\text{The heterozygous event:} & HT  = \{\mathit{Aa}\},  \\  
+\text{The no-disease event:} & ND   = \{\mathit{AA}, \mathit{Aa}\}, \\
+\text{The disease event:} & D   = \{\mathit{aa}\} .
+\end{array}$$
+- Assume $P(\mathit{AA}) = 0.49$,
+$P(\mathit{Aa}) = 0.42$, and $P(\mathit{aa}) = 0.09$. Then,
+$$
+\begin{eqnarray*}
+P(HM ) & = & 0.49+0.09 = 0.58,  \\
+P(HT ) & = & 0.42, \\
+P(ND) & = & 0.49 + 0.42 = 0.91,\\
+P(D) & = & 0.09.
+\end{eqnarray*}
+$$
+---
 
-$$
-\begin{array}{l@{\quad}l}
-\mbox{The homozygous event:} & HM    = \{\mathit{AA}, \mathit{aa}\}, \\
-\mbox{The heterozygous event:} & HT  = \{\mathit{Aa}\},  \\  
-\mbox{The no-disease event:} & ND   = \{\mathit{AA}, \mathit{Aa}\}, \\
-\mbox{The disease event:} & D   = \{\mathit{aa}\} .
-\end{array}
-$$
+### Complement
+- For any event $E$, we define its \textbf{complement}, $E^c$, as the set
+of all outcomes that are in the sample space $S$ but not in~$E$.
+- For the gene-disease example, the complement of the homozygous event
+$HM  = \{\mathit{AA}, \mathit{aa}\}$ is the heterozygous event
+$\{\mathit{Aa}\}$; we show this as $HM^{c} = HT$. 
+
+- Likewise, the complement of the disease event, $D=\{\mathit{aa}\}$, is the no-disease
+event, $ND = \{\mathit{AA}, \mathit{Aa}\}$; we show this as $D^{c} =
+ND$.
+
+- The probability of the complement event is 1 minus the probability of
+the event:
+$$P\bigl(E^{c}\bigr) = 1- P(E).$$
+
+
+---
+
+### Union
+
+- For two events $E_{1}$ and $E_{2}$ in a sample space $S$, we define
+their {union} $E_{1}\cup E_{2}$ as the set of all outcomes that
+are at least in one of the events. 
+- The union $E_{1}\cup E_{2}$ is an
+event by itself, and it occurs when {either} $E_{1}$ {or}
+$E_{2}$ (or both) occurs. 
+- For example, the
+union of the heterozygous event, $HT$, and the disease event, $D$, is
+$\{\mathit{Aa}\} \cup \{\mathit{aa}\} = \{\mathit{Aa}, \mathit{aa}\}$.
+
+- When possible, we can identify the outcomes in the
+union of the two events and find the probability by adding the
+probabilities of those outcomes.
+
+---
+
+
+### Intersection
+
+- For two events $E_{1}$ and $E_{2}$ in a sample space $S$, we define
+their \textbf{intersection} $E_{1} \cap E_{2}$ as the set of outcomes
+that are in both events. 
+- The intersection $E_{1}\cap E_{2}$ is an event
+by itself, and it occurs when both $E_{1}$ \emph{and} $E_{2}$ occur.
+- The intersection of
+the homozygous event and the no-disease event is $HM  \cap ND
+= \{\mathit{AA}\}$.
+- When possible, we can identify the outcomes in the
+intersection of the two events and find the probability by adding the
+probabilities of those outcomes.
+
+---
+
+### Joint vs. marginal probability
+- We refer to the probability of the intersection of two events, $P(E_{1}
+\cap E_{2})$, as their *joint probability*. 
+- In contrast, we refer to
+probabilities $P(E_{1})$ and $P(E_{2})$ as the *marginal
+probabilities* of events $E_{1}$ and $E_{2}$.
+- For any two events $E_{1}$ and $E_{2}$, we have
+
+$$P(E_{1} \cup E_{2}) = P(E_{1}) + P(E_{2}) - P(E_{1} \cap E_{2}).$$
+- That is, the probability of the union $P(E_1 \cup E_2)$ is the sum of
+their marginal probabilities minus their joint probability. For example, the union of the heterozygous and the no-disease events is
+$$\begin{eqnarray*}
+P(HM  \cup ND)  &=&  P(HM ) + P(ND) - P(HM  \cap ND) \\
+  &= & 0.58 + 0.91 - 0.49 = 1.
+\end{eqnarray*}$$
+
+---
+
+### Disjoint events
+- Two events are called *disjoint* or *mutually exclusive*
+if they never occur together: if we know that one of them has occurred,
+we can conclude that the other event has~not. 
+- Disjoint events have no
+elements (outcomes) in common, and their intersection is the empty set.
+- For the above example, if a person is heterozygous, we know that he does not have the disease so the two events $HT$ and $ND$ are disjoint. 
+
+
+---
+
+### Disjoint events
+
+- For two disjoint events $E_{1}$ and $E_{2}$, the probability of their
+intersection (i.e., their joint probability) is zero: 
+$$P(E_{1} \cap E_{2}) = P(\phi) =  0$$
+- Therefore, the probability of the union of the two disjoint events is simply the sum of their marginal probabilities: 
+$$P(E_{1} \cup E_{2}) = P(E_{1}) + P(E_{2})$$
+- In general, if we have multiple disjoint events, $E_1$, $E_2$, ..., $E_n$, then the probability of their union is the sum of the marginal probabilities:
+$$P(E_1 \cup E_2 \cup ... \cup E_n) = P(E_1) + P(E_2) + ... + P(E_n)$$
+
+---
+
+### Partition
+
+- When two or more events are disjoint and their union is the sample
+space $S$, we say that the events form a *partition* of the
+sample space.
+- Two complementary events $E$ and $E^{c}$ always form a partition of the
+sample space since they are disjoint and their union is the sample
+space.
+
+---
+
+### Conditional probability
+
+- Ver often, we need to discuss possible changes in the
+probability of one event based on our knowledge regarding the
+occurrence of another event.
+- The \textbf{conditional probability}, denoted  $P(E_{1}|E_{2})$, is the
+probability of event $E_1$ given that another event $E_2$ has occurred.
+- The conditional probability of event $E_1$ given event $E_2$ can be
+calculated as follows: (assuming $P(E_{2}) \ne 0$)
+
+$$P(E_{1}|E_{2}) = \frac{P(E_{1} \cap E_{2})}{P(E_{2})}.$$
+
+- This is the joint probability of the two events divided
+by the marginal probability of the event on which we are conditioning.
+
+
+---
+
+### The law of total probability
+
+- By rearranging the equation for conditional probabilities, we have
+$$P(E_{1} \cap E_{2}) = P(E_{1}|E_{2})P(E_{2}).$$
+
+- Now suppose that a set of $K$ events $B_1, B_2, \ldots, B_K$ forms a
+partition of the sample space.
+```{r, echo=FALSE,out.width='50%',fig.align='center'}
+knitr::include_graphics('img/generalPartition.png')
+```
+
+---
+
+### The law of total probability
+
+- Using the above equation, we have
+$$P(A)  =  P(A|B_{1})P(B_{1}) + \cdots + P(A|B_{K})P(B_{K}).$$
+- This is known as the *law of total probability*.
+
+
+
+---
+
+### Independent events
+
+- Two events $E_{1}$ and $E_{2}$ are \textbf{independent} if our
+knowledge of the occurrence of one event does not change the
+probability of occurrence of the other event. 
+
+\begin{eqnarray*}
+P(E_{1}|E_{2}) & = & P(E_{1}), \\
+P(E_{2}|E_{1}) & = & P(E_{2}).
+\end{eqnarray*}
+
+- For example, if a disease is not genetic, knowing a person has a specific genotype (e.g., $AA$) does not  change the probability of having that disease. 
+
+---
+
+### Independent events
+
+- When two events $E_{1}$ and $E_{2}$ are independent, the probability
+that $E_{1}$ and $E_{2}$ occur simultaneously, i.e., their joint
+probability, is the product of their marginal probabilities:
+%e8 ###
+$$P(E_{1} \cap E_{2}) = P(E_{1})\times P(E_{2})$$
+
+- Therefore, the probability of the union of two independent events is as follows:
+$$P(E_{1} \cup E_{2}) = P(E_{1}) + P(E_{2}) - P(E_{1}) \times P(E_{2}).$$
+
+
+---
+
+### Bayes' theorem
+
+- Sometimes, we know the conditional
+probability of $E_{1}$ given $E_{2}$, but we are interested in the
+conditional probability of $E_{2}$ given $E_{1}$. 
+- For example, suppose
+that the probability of having lung cancer is $P(C) = 0.001$ and that
+the probability of being a smoker is $P(SM) = 0.25$. 
+- Further, suppose
+we know that if a person has lung cancer, the probability of being a
+smoker increases to $P(SM |C) = 0.40$.  
+- We are, however, interested in
+the probability of developing lung cancer if a person is a smoker,
+$P(C|SM)$. 
+
+
+---
+
+### Bayes' theorem
+
+- In general, for two events $E_1$ and $E_2$, the following equation
+shows the relationship between $P(E_{2}|E_{1})$ and $P(E_{1}|E_{2})$:
+$$P(E_{2}|E_{1})  =  \frac{P(E_{1}|E_{2})P(E_{2})}{P(E_{1})}.$$
+
+- This formula is known as *Bayes' theorem* or *Bayes' rule*.
+
+---
+
+### Bayes' theorem
+
+- For the above example, 
+$$P(C|SM)  =  \frac{P(SM|C)P(C) }{P(SM)} = \frac{ 0.4 \times 0.001}{0.25} = 0.0016.$$
+
+- Therefore, the probability of lung cancer for smokers increases from
+0.001 to 0.0016. 
+
+
+---
+
+### Diagnostic tests
+
+
+- Diagnostic tests provide an interesting example of Bayes' theorem. 
+- The following figure from Baldi and Utts (2015) summarizes a typical screening process: 
+```{r, echo=FALSE,out.width='55%',fig.align='center'}
+knitr::include_graphics('img/baldiUtts3.png')
+```
+
+---
+
+### Diagnostic tests
+
+- We can summarize different scenarios as follows:
+
+```{r, echo=FALSE,out.width='80%',fig.align='center'}
+knitr::include_graphics('img/SensitivitySpecificity.png')
+```
+
+---
+
+### Diagnostic tests
+
+- Based on this table, we have
+
+$$\begin{eqnarray*}
+\textrm{Sensitivity} & = & P(\textrm{Positive} | \textrm{Disease} )\\
+\textrm{Specificity} & = & P(\textrm{Negative} | \textrm{No Disease})\\
+\textrm{Positive Predictive Value (PPV)} & = & P(\textrm{Disease} | \textrm{Positive})
+\end{eqnarray*}$$
+
+- Using Bayes' theorem, we have:
+$$\begin{eqnarray*}
+\textrm{PPV} & = & \frac{\textrm{prevalence} \times \textrm{sensitivity} }{\textrm{prevalence} \times \textrm{sensitivity}+ \textrm{(1- prevalence)} \times \textrm{(1- specificity)}}
+\end{eqnarray*}$$
+
+
+---
+### Exercise 
+
+
+Consider two events $E_{1}$ and $E_{2}$, where $P(E_{1}) = 0.3$ and $P(E_{2}) = 0.5$. Calculate the following probabilities:
+
+- $P(E_{1} \cup E_{2})$ if the events are disjoint. In this case, are these two events partitioning the sample space?
+- $P(E_{3})$, where $E_{3} = (E_{1} \cup E_2)^c$ and $E_1$ and $E_2$ are disjoint.
+- $P(E_{1} \cap E_{2})$ if the events are independent.
+- $P(E_{1} \cup E_{2})$ if the events are independent.
+- $P(E_{2} | E_{1})$ if  $P(E_{1} | E_{2}) = 0.35$. In this case, are these two events independent?
+
+---
+
+### Exercise 
+
+In a population that is in Hardy-Weinberg equilibrium, $P(a) = 0.1$ and $P(A) = 0.9$. Find the probability of each possible genotype. 
+
+
+---
+
+### Exercise 
+
+Assume that the the probability of having the disease is 0.4, and the disease is not genetic (i.e., it is independent from the genotype of individuals). Also assume that the gene $A$ has two alleles $A$ and $a$ such that $P(A) = 0.3$ and $P(a) = 0.7$. If the population is in Hardy-Weinberg equilibrium, write down the sample space for the combination of the disease status ( $D$ for diseased and $H$ for healthy) and different genotypes along with the probability of each possible combination. 
+
+---
+
+### Exercise 
+
+For the above question, find the probabilities for all possible combinations of genotypes and the disease status assuming that the disease is related to the gene {\bf{A}} such that $P(D| aa) = 0.5$ and $P(D | Aa) = P(D | AA) = 0.3$.
+
+---
+
+### Exercise 
+
+Suppose a pregnant woman is going to give birth to a girl or a boy with equal probabilities. However, if the baby is a boy, the probability that he has black (Bk) hair is 0.7, whereas this probability is 0.4 if the baby is a girl. Alternatively, the baby could have blond (Bd) hair. Using a tree diagram, find the sample space and the corresponding probabilities for all possible combinations of gender and hair color for the baby.
+
+---
+
+### Exercise 
+
+Suppose the probability of being affected by H1N1 flu is 0.02. We found that among people who are affected by H1N1, the probability that a person washes her hands regularly is 0.3. If the probability of washing hands regularly in general (regardless of whether the person has the H1N1 flu or not) is 0.6. What is the probability of getting the H1N1 flu if a person washes her hands regularly?
+
+---
+
+### Exercise 
+
+A person has received the result of his medical test and realized that his diagnosis was positive (affected by the disease). However, the lab report stated that this kind of test has false positive rate of 0.06 (i.e., diagnosing a healthy person, $H$, as affected, $D$ ), and false negative rate of 0.038 (i.e., diagnosing an affected person as healthy). Therefore, while this news was devastating, there is a chance that he was misdiagnosed. After some research, he found out that the probability of this disease in the population is $P(D) = 0.02$. Find the probability that he is actually affected by the disease given the positive lab result. 
+
