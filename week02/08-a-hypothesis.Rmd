@@ -328,3 +328,47 @@ $$\begin{equation*}
 z = \frac{p - \mu_0}{\sqrt{\mu_0(1-\mu_0)/n}},
 \end{equation*}$$
 
+
+---
+
+### Exercises
+
+Suppose the population mean of systolic blood pressure in the US is 115. We hypothesize mean systolic blood pressure is lower than 115 among people who consume a small amount (e.g., around 3.5 ounces) of dark chocolate every day. Assume that systolic blood pressure, $X$, in this population has a $N(\mu, \sigma^{2})$ distribution. To evaluate our hypothesis, we randomly selected 100 people, who include a small amount of dark chocolate in their daily diet, and measured their blood pressure. If the sample mean is $\bar{x} = 111$ and the sample variance is $s = 32$, can we reject the null hypothesis at 0.1 confidence level?
+
+---
+
+### Exercises
+
+Use the Pima.tr data set to evaluate the hypothesis that the population mean of diastolic blood pressure for Pima Indian women is not 70. 
+
+---
+
+### Exercises
+
+Consider the problem of estimating the proportion of people who regularly smoke. We use $X$ to denote smoking status, and $\mu$ to denote the population proportion of people who smoke. We hypothesize that the population proportion is less than 0.2. Write down the null and alternative hypotheses. Suppose we interview 150 people and find that 27 of them smoke regularly. Evaluate the null hypothesis. 
+
+---
+
+### Exercises
+
+We believe that the population mean of normal body temperature is less that the widely accepted value of $98.6\,^{\circ}\mathrm{F}$. Write down the null hypothesis and evaluate it using the ``BodyTemperature.txt'' data.
+
+---
+
+### Exercises
+
+Download the ``BodyTemperature.txt'' data set from the course website. For the heart rate variable, we want to evaluate the following hypotheses. We set the significance level (cutoff) to 0.01.
+
+- Evaluate the hypothesis that the population mean is less than 75. (Write down the null and alternative hypotheses. Discuss your findings.)
+
+- Evaluate the hypothesis that the population mean is different from 75. (Write down the null and alternative hypotheses. Discuss your findings.)
+
+
+
+---
+
+### Exercises
+
+- We hypothesize that more than 5% of pregnant women have history of hypertension. Write down the null and alternative hypotheses. Use the {birthwt} data set (available from the MASS package) to evaluate this hypothesis (with discussion). We set the significance level (cutoff) to 0.05. (In {birthwt} data set, the variable {ht} shows the hypertension history: {ht=1} when women have history of hypertension, {ht=0} otherwise.)
+
+
