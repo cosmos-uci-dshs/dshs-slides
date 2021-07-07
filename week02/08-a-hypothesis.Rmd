@@ -36,11 +36,12 @@ library(fabricerin)
 
 ### Hypothesis
 
-- In general, many scientific investigations start by expressing a
-{hypothesis}. 
+- In general, many scientific investigations start by expressing a *hypothesis*. 
+
 - For example, Mackowiak et al (1992) hypothesized that the average normal (i.e., for healthy people) body
 temperature is less than the widely accepted value of
 $98.6F$. 
+
 - If we denote the population mean of normal
 body temperature as $\mu$, then we can express this hypothesis as $\mu
 < 98.6$.
@@ -50,7 +51,9 @@ body temperature as $\mu$, then we can express this hypothesis as $\mu
 ### Null and alternative hypotheses
 
 - The null hypothesis usually reflects the *status quo* or *nothing of interest*. 
-- In contrast, we refer to our hypothesis (i.e., the hypothesis we are investigating through a scientific study) as the *alternative hypothesis* and denote it as~$H_{A}$.
+
+- In contrast, we refer to our hypothesis (i.e., the hypothesis we are investigating through a scientific study) as the *alternative hypothesis* and denote it as $H_{A}$.
+
 - For hypothesis testing, we focus on the null hypothesis since it tends to be simpler. 
 
 
@@ -59,7 +62,9 @@ body temperature as $\mu$, then we can express this hypothesis as $\mu
 ### Null and alternative hypotheses
 
 - Consider the body temperature example, where we want to examine the null hypothesis $H_{0}: \mu = 98.6$ against the alternative hypothesis $H_A: \mu < 98.6$. 
+
 - To start, suppose that $\sigma^{2} = 1$ is known.
+
 - Further, suppose that we have randomly selected a sample of 25 healthy people from the population and measured their body temperature.
 
 
@@ -151,8 +156,9 @@ p_{\mathrm{obs}} = P(\bar{X}  \le \bar{x} | H_{0}),
 
 ### z-score
 
-In practice, it is more common to use the standardized version of the
+- In practice, it is more common to use the standardized version of the
 sample mean as our test statistic. 
+
 - We know that if a random variable is
 normally distributed (as it is the case for $\bar{X}$), subtracting the
 mean and dividing by standard deviation creates a new random variable
@@ -177,7 +183,7 @@ z  & = & \frac{\bar{x} - \mu_{0}}{\sigma/\sqrt{n}},\\
 ### z-test
 
 - We refer to the corresponding hypothesis test of the
-population mean as the $z$-*test*. 
+population mean as the $z$-test. 
 
 - In a $z$-test, instead of comparing
 the observed sample mean $\bar{x}$ to the population mean according to
@@ -215,7 +221,7 @@ more extreme than what has been observed) of the test statistic assuming that th
 
 - Then, we would be more reluctant to reject the null hypothesis.
 
-- A common \textbf{mistake} is to regard the $p$-value as the probability of null given the observed test statistic:
+- A common *mistake* is to regard the $p$-value as the probability of null given the observed test statistic:
 $P(H_{0} | \bar{X} = \bar{x})$. 
 
 
@@ -225,9 +231,13 @@ $P(H_{0} | \bar{X} = \bar{x})$.
 
 
 - The alternative hypothesis $H_{A}: \mu < 98.6$ or $H_{A}: \mu > 98.6$ are called *one-sided* alternatives. 
+
 - For these hypotheses, $p_{\mathrm{obs}} = P(Z \le z)$ and $p_{\mathrm{obs}} = P(Z \ge z)$ respectively.
+
 - In contrast, the alternative hypothesis $H_{A}: \mu \ne 98.6$ is *two-sided*. 
+
 - For the above three alternatives, the null hypothesis is the same, $H_{0}: \mu = 98.6$
+
 - In this case, $p_{\mathrm{obs}} = 2 \times P(Z \geq |z|)$.
 
 ---
@@ -296,6 +306,7 @@ we use the $z$-test for hypothesis testing.
 - Note that we do not use
 $t$-test, because for binary random variable, population variance is
 $\sigma^{2}=\mu(1-\mu)$. 
+
 - Therefore, by setting $\mu=\mu_{0}$ according
 to the null hypothesis, we also specify the population variance as
 $\sigma^{2} = \mu_{0}(1-\mu_{0})$.
