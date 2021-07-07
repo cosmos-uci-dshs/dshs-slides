@@ -137,7 +137,7 @@ ggplot(babies, aes(y = bwt)) +
   geom_boxplot() +
   scale_x_discrete( ) +
   ylab("Count") +
-  xlab("Smoker Status of Mothers") 
+  xlab("") 
 ```
 
 
