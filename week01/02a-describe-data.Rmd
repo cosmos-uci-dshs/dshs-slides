@@ -419,7 +419,7 @@ __Counts__ or __proportions__ are used to summarize categorical variables.
 count(ncbirths, premie)
 ```
 
-There are 342 people who premie and 549 who did not. 
+There are 846 babies who are `full term` and 152 who are `premie`. 
 
 ---
 

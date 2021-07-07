@@ -135,8 +135,8 @@ class:inverse middle
 ```{r echo=FALSE, fig.align='center', fig.height=5}
 ggplot(babies, aes(y = bwt)) +
   geom_boxplot() +
-  scale_x_discrete( ) +
-  ylab("Count") +
+  scale_x_discrete() +
+  ylab("Birth Weight") +
   xlab("") 
 ```
 
@@ -171,7 +171,7 @@ ggplot(babies, aes(x = bwt)) +
 
 .pull-right[
 
-Bin width = 5 ounces
+Bin width = 20 ounces
 
 
 ```{r echo=FALSE, fig.align='center', fig.height=5, warning=FALSE}
