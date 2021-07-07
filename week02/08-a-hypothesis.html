@@ -4,6 +4,7 @@
     <title>Hypothesis Testing</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Babak Shahbaba" />
+    <script src="libs/header-attrs-2.9/header-attrs.js"></script>
     <link rel="stylesheet" href="slide-style.css" type="text/css" />
   </head>
   <body>
@@ -30,11 +31,12 @@ class: title-slide
 
 ### Hypothesis
 
-- In general, many scientific investigations start by expressing a
-{hypothesis}. 
+- In general, many scientific investigations start by expressing a *hypothesis*. 
+
 - For example, Mackowiak et al (1992) hypothesized that the average normal (i.e., for healthy people) body
 temperature is less than the widely accepted value of
 `\(98.6F\)`. 
+
 - If we denote the population mean of normal
 body temperature as `\(\mu\)`, then we can express this hypothesis as $\mu
 &lt; 98.6$.
@@ -44,7 +46,9 @@ body temperature as `\(\mu\)`, then we can express this hypothesis as $\mu
 ### Null and alternative hypotheses
 
 - The null hypothesis usually reflects the *status quo* or *nothing of interest*. 
-- In contrast, we refer to our hypothesis (i.e., the hypothesis we are investigating through a scientific study) as the *alternative hypothesis* and denote it as~$H_{A}$.
+
+- In contrast, we refer to our hypothesis (i.e., the hypothesis we are investigating through a scientific study) as the *alternative hypothesis* and denote it as `\(H_{A}\)`.
+
 - For hypothesis testing, we focus on the null hypothesis since it tends to be simpler. 
 
 
@@ -53,7 +57,9 @@ body temperature as `\(\mu\)`, then we can express this hypothesis as $\mu
 ### Null and alternative hypotheses
 
 - Consider the body temperature example, where we want to examine the null hypothesis `\(H_{0}: \mu = 98.6\)` against the alternative hypothesis `\(H_A: \mu &lt; 98.6\)`. 
+
 - To start, suppose that `\(\sigma^{2} = 1\)` is known.
+
 - Further, suppose that we have randomly selected a sample of 25 healthy people from the population and measured their body temperature.
 
 
@@ -119,7 +125,7 @@ is `\(\bar{x} = 98.4\)`.
 versus the alternative `\(H_{A}: \mu &lt; 98.6\)`, we use the lower tail
 probability of this value from the null distribution. 
 
-&lt;img src="img/pValLower.png" width="25%" height="60%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/pValLower.png" width="30%" height="60%" style="display: block; margin: auto;" /&gt;
 
 
 
@@ -143,8 +149,9 @@ p_{\mathrm{obs}} = P(\bar{X}  \le \bar{x} | H_{0}),
 
 ### z-score
 
-In practice, it is more common to use the standardized version of the
+- In practice, it is more common to use the standardized version of the
 sample mean as our test statistic. 
+
 - We know that if a random variable is
 normally distributed (as it is the case for `\(\bar{X}\)`), subtracting the
 mean and dividing by standard deviation creates a new random variable
@@ -168,8 +175,8 @@ z  &amp; = &amp; \frac{\bar{x} - \mu_{0}}{\sigma/\sqrt{n}},\\
 
 ### z-test
 
-We refer to the corresponding hypothesis test of the
-population mean as the `\(z\)`-*test*. 
+- We refer to the corresponding hypothesis test of the
+population mean as the `\(z\)`-test. 
 
 - In a `\(z\)`-test, instead of comparing
 the observed sample mean `\(\bar{x}\)` to the population mean according to
@@ -180,13 +187,180 @@ the null hypothesis, we compare the `\(z\)`-score to 0.
 
 ### z-test
 
-&lt;img src="img/pValLower.png" width="25%" height="60%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/pValLower.png" width="40%" height="60%" style="display: block; margin: auto;" /&gt;
 
 ---
 
 ### z-test
 
-&lt;img src="img/pValLowerZ.png" width="25%" height="60%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/pValLowerZ.png" width="40%" height="60%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+### Interpretation of `\(p\)`-value
+
+
+- The `\(p\)`-value is the conditional probability of extreme values (as or
+more extreme than what has been observed) of the test statistic assuming that the null hypothesis is true. 
+
+- When the `\(p\)`-value is small, say 0.01 for example, it is rare to find values as extreme as what we have observed (or more so). 
+
+- As the `\(p\)`-value increases, it indicates that there is a good chance to find more extreme values (for the test statistic) than what has been observed. 
+
+- Then, we would be more reluctant to reject the null hypothesis.
+
+- A common *mistake* is to regard the `\(p\)`-value as the probability of null given the observed test statistic:
+`\(P(H_{0} | \bar{X} = \bar{x})\)`. 
+
+
+---
+
+### One-sided vs. two-sided hypothesis testing
+
+
+- The alternative hypothesis `\(H_{A}: \mu &lt; 98.6\)` or `\(H_{A}: \mu &gt; 98.6\)` are called *one-sided* alternatives. 
+
+- For these hypotheses, `\(p_{\mathrm{obs}} = P(Z \le z)\)` and `\(p_{\mathrm{obs}} = P(Z \ge z)\)` respectively.
+
+- In contrast, the alternative hypothesis `\(H_{A}: \mu \ne 98.6\)` is *two-sided*. 
+
+- For the above three alternatives, the null hypothesis is the same, `\(H_{0}: \mu = 98.6\)`
+
+- In this case, `\(p_{\mathrm{obs}} = 2 \times P(Z \geq |z|)\)`.
+
+---
+
+### Hypothesis testing using `\(t\)`-tests
+
+
+- So far, we have assumed that the population variance
+`\(\sigma^{2}\)` is known. 
+
+- In reality,
+`\(\sigma^{2}\)` is almost always unknown, and we need to estimate it from
+the data. 
+
+- As before, we estimate `\(\sigma^{2}\)` using the sample variance
+`\(S^{2}\)`. 
+
+- Similar to our approach
+for finding confidence intervals, we account for this additional source
+of uncertainty by using the `\(t\)`-distribution with `\(n-1\)` degrees of
+freedom instead of the standard normal distribution. 
+
+- The hypothesis
+testing procedure is then called the `\(t\)`-test.
+
+
+---
+
+### Hypothesis testing using `\(t\)`-tests
+
+
+- Using the observed values of `\(\bar{X}\)` and `\(S\)`, the observed value of
+the test statistic is obtained as follows: `\(t  =  \frac{\bar{x} - \mu_{0}}{s/\sqrt{n}}\)`.
+
+- We refer to `\(t\)` as the `\(t\)`-*score*. Then,
+`$$\begin{array}{l@{\quad}l}
+\mbox{if}\ H_{A}: \mu &lt; \mu _0, &amp;  p_{\mathrm{obs}} = P(T \leq t), \\
+\mbox{if}\ H_{A}: \mu &gt; \mu _0, &amp; p_{\mathrm{obs}} = P(T \geq t ), \\
+\mbox{if}\ H_{A}: \mu \ne \mu _0, &amp; p_{\mathrm{obs}} = 2 \times P\bigl(T \geq | t | \bigr),
+\end{array}$$`
+
+- Here, `\(T\)` has a `\(t\)`-distribution with `\(n-1\)` degrees of freedom, and `\(t\)`
+is our observed `\(t\)`-score. 
+
+
+---
+
+### Hypothesis testing for population proportion
+
+
+- For a binary random variable `\(X\)` with possible values 0 and 1, we are
+typically interested in evaluating hypotheses regarding the population
+proportion of the outcome of interest, denoted as `\(X=1\)`. 
+ 
+- As discussed before, the population proportion is the same as the population mean for such binary variables.
+
+- So we follow the same procedure as described above. 
+- More specifically,
+we use the `\(z\)`-test for hypothesis testing. 
+
+
+---
+
+### Hypothesis testing for population proportion
+
+- Note that we do not use
+`\(t\)`-test, because for binary random variable, population variance is
+`\(\sigma^{2}=\mu(1-\mu)\)`. 
+
+- Therefore, by setting `\(\mu=\mu_{0}\)` according
+to the null hypothesis, we also specify the population variance as
+`\(\sigma^{2} = \mu_{0}(1-\mu_{0})\)`.
+
+---
+
+### Hypothesis testing for population proportion
+
+- If we assume that the null hypothesis is true, we have
+`$$\begin{equation*}
+\bar{X}| H_{0}  \sim  N\bigl(\mu_{0},  \mu_{0}(1-\mu_{0})/n\bigr).
+\end{equation*}$$`
+- This means that
+`$$\begin{equation*}
+Z  =  \frac{\bar{X} - \mu_{0}}{\sqrt{ \mu_{0}(1-\mu_{0})/n}} \sim N(0, 1).
+\end{equation*}$$`
+- As a result, we obtain the `\(z\)`-score as follows, where `\(p\)` is the sample proportion (mean)
+`$$\begin{equation*}
+z = \frac{p - \mu_0}{\sqrt{\mu_0(1-\mu_0)/n}},
+\end{equation*}$$`
+
+
+---
+
+### Exercises
+
+Suppose the population mean of systolic blood pressure in the US is 115. We hypothesize mean systolic blood pressure is lower than 115 among people who consume a small amount (e.g., around 3.5 ounces) of dark chocolate every day. Assume that systolic blood pressure, `\(X\)`, in this population has a `\(N(\mu, \sigma^{2})\)` distribution. To evaluate our hypothesis, we randomly selected 100 people, who include a small amount of dark chocolate in their daily diet, and measured their blood pressure. If the sample mean is `\(\bar{x} = 111\)` and the sample variance is `\(s = 32\)`, can we reject the null hypothesis at 0.1 confidence level?
+
+---
+
+### Exercises
+
+Use the Pima.tr data set to evaluate the hypothesis that the population mean of diastolic blood pressure for Pima Indian women is not 70. 
+
+---
+
+### Exercises
+
+Consider the problem of estimating the proportion of people who regularly smoke. We use `\(X\)` to denote smoking status, and `\(\mu\)` to denote the population proportion of people who smoke. We hypothesize that the population proportion is less than 0.2. Write down the null and alternative hypotheses. Suppose we interview 150 people and find that 27 of them smoke regularly. Evaluate the null hypothesis. 
+
+---
+
+### Exercises
+
+We believe that the population mean of normal body temperature is less that the widely accepted value of `\(98.6\,^{\circ}\mathrm{F}\)`. Write down the null hypothesis and evaluate it using the ``BodyTemperature.txt'' data.
+
+---
+
+### Exercises
+
+Download the ``BodyTemperature.txt'' data set from the course website. For the heart rate variable, we want to evaluate the following hypotheses. We set the significance level (cutoff) to 0.01.
+
+- Evaluate the hypothesis that the population mean is less than 75. (Write down the null and alternative hypotheses. Discuss your findings.)
+
+- Evaluate the hypothesis that the population mean is different from 75. (Write down the null and alternative hypotheses. Discuss your findings.)
+
+
+
+---
+
+### Exercises
+
+- We hypothesize that more than 5% of pregnant women have history of hypertension. Write down the null and alternative hypotheses. Use the {birthwt} data set (available from the MASS package) to evaluate this hypothesis (with discussion). We set the significance level (cutoff) to 0.05. (In {birthwt} data set, the variable {ht} shows the hypertension history: {ht=1} when women have history of hypertension, {ht=0} otherwise.)
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
