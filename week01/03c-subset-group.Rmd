@@ -327,7 +327,8 @@ ggplot(arthritis,
        aes(x = age_gp, y = cdai)) +
   geom_boxplot() +
   theme_bw() +
-  theme(text = element_text(size=20))
+  theme(text = element_text(size=20)) +
+  labs(x = "Age Group", y = "CDAI")
 ```
 
 ]

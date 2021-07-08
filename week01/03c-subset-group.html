@@ -39,20 +39,20 @@ glimpse(arthritis)
 ```
 ## Rows: 530
 ## Columns: 14
-## $ id            &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13…
-## $ age           &lt;dbl&gt; 85, 86, 83, 83, 85, 79, 90, 90, 87, 82, 7…
-## $ age_gp        &lt;fct&gt; elderly, elderly, elderly, elderly, elder…
-## $ sex           &lt;fct&gt; female, female, female, female, female, m…
-## $ yrs_from_dx   &lt;dbl&gt; 27, 27, 10, 9, NA, NA, 51, 11, 36, 4, 31,…
-## $ cdai          &lt;dbl&gt; NA, 23.0, 14.5, NA, NA, NA, NA, 40.0, 6.0…
-## $ cdai_yn       &lt;fct&gt; no, yes, yes, no, no, no, no, yes, yes, n…
-## $ das_28        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-## $ das28_yn      &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2,…
-## $ steroids_gt_5 &lt;dbl&gt; 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0,…
-## $ dmar_ds       &lt;dbl&gt; 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1,…
-## $ biologics     &lt;dbl&gt; 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1,…
-## $ s_dmards      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…
-## $ osteop_screen &lt;dbl&gt; 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1,…
+## $ id            &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1…
+## $ age           &lt;dbl&gt; 85, 86, 83, 83, 85, 79, 90, 90, 87, 82, 77, 86, 84, 76, …
+## $ age_gp        &lt;fct&gt; elderly, elderly, elderly, elderly, elderly, elderly, el…
+## $ sex           &lt;fct&gt; female, female, female, female, female, male, female, fe…
+## $ yrs_from_dx   &lt;dbl&gt; 27, 27, 10, 9, NA, NA, 51, 11, 36, 4, 31, NA, 9, 10, 3, …
+## $ cdai          &lt;dbl&gt; NA, 23.0, 14.5, NA, NA, NA, NA, 40.0, 6.0, NA, 0.0, NA, …
+## $ cdai_yn       &lt;fct&gt; no, yes, yes, no, no, no, no, yes, yes, no, yes, no, no,…
+## $ das_28        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 2.44…
+## $ das28_yn      &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1,…
+## $ steroids_gt_5 &lt;dbl&gt; 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0,…
+## $ dmar_ds       &lt;dbl&gt; 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1,…
+## $ biologics     &lt;dbl&gt; 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,…
+## $ s_dmards      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…
+## $ osteop_screen &lt;dbl&gt; 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
 ```
 
 ---
@@ -63,10 +63,9 @@ colnames(arthritis)
 ```
 
 ```
-##  [1] "id"            "age"           "age_gp"       
-##  [4] "sex"           "yrs_from_dx"   "cdai"         
-##  [7] "cdai_yn"       "das_28"        "das28_yn"     
-## [10] "steroids_gt_5" "dmar_ds"       "biologics"    
+##  [1] "id"            "age"           "age_gp"        "sex"          
+##  [5] "yrs_from_dx"   "cdai"          "cdai_yn"       "das_28"       
+##  [9] "das28_yn"      "steroids_gt_5" "dmar_ds"       "biologics"    
 ## [13] "s_dmards"      "osteop_screen"
 ```
 
@@ -157,21 +156,20 @@ select(arthritis, -id, -sex)
 
 ```
 ## # A tibble: 530 x 12
-##      age age_gp  yrs_from_dx  cdai cdai_yn das_28 das28_yn
-##    &lt;dbl&gt; &lt;fct&gt;         &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;    &lt;dbl&gt;
-##  1    85 elderly          27  NA   no          NA        1
-##  2    86 elderly          27  23   yes         NA        1
-##  3    83 elderly          10  14.5 yes         NA        1
-##  4    83 elderly           9  NA   no          NA        1
-##  5    85 elderly          NA  NA   no          NA        1
-##  6    79 elderly          NA  NA   no          NA        1
-##  7    90 elderly          51  NA   no          NA        1
-##  8    90 elderly          11  40   yes         NA        1
-##  9    87 elderly          36   6   yes         NA        1
-## 10    82 elderly           4  NA   no          NA        1
-## # … with 520 more rows, and 5 more variables:
-## #   steroids_gt_5 &lt;dbl&gt;, dmar_ds &lt;dbl&gt;, biologics &lt;dbl&gt;,
-## #   s_dmards &lt;dbl&gt;, osteop_screen &lt;dbl&gt;
+##      age age_gp  yrs_from_dx  cdai cdai_yn das_28 das28_yn steroids_gt_5 dmar_ds
+##    &lt;dbl&gt; &lt;fct&gt;         &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;    &lt;dbl&gt;         &lt;dbl&gt;   &lt;dbl&gt;
+##  1    85 elderly          27  NA   no          NA        1             0       1
+##  2    86 elderly          27  23   yes         NA        1             1       1
+##  3    83 elderly          10  14.5 yes         NA        1             1       1
+##  4    83 elderly           9  NA   no          NA        1             1       1
+##  5    85 elderly          NA  NA   no          NA        1             0       0
+##  6    79 elderly          NA  NA   no          NA        1             0       0
+##  7    90 elderly          51  NA   no          NA        1             0       1
+##  8    90 elderly          11  40   yes         NA        1             1       0
+##  9    87 elderly          36   6   yes         NA        1             0       0
+## 10    82 elderly           4  NA   no          NA        1             0       1
+## # … with 520 more rows, and 3 more variables: biologics &lt;dbl&gt;, s_dmards &lt;dbl&gt;,
+## #   osteop_screen &lt;dbl&gt;
 ```
 
 ---
@@ -262,16 +260,15 @@ slice(arthritis, 3:7)
 
 ```
 ## # A tibble: 5 x 14
-##      id   age age_gp  sex    yrs_from_dx  cdai cdai_yn das_28
-##   &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;   &lt;fct&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;
-## 1     3    83 elderly female          10  14.5 yes         NA
-## 2     4    83 elderly female           9  NA   no          NA
-## 3     5    85 elderly female          NA  NA   no          NA
-## 4     6    79 elderly male            NA  NA   no          NA
-## 5     7    90 elderly female          51  NA   no          NA
-## # … with 6 more variables: das28_yn &lt;dbl&gt;, steroids_gt_5 &lt;dbl&gt;,
-## #   dmar_ds &lt;dbl&gt;, biologics &lt;dbl&gt;, s_dmards &lt;dbl&gt;,
-## #   osteop_screen &lt;dbl&gt;
+##      id   age age_gp  sex    yrs_from_dx  cdai cdai_yn das_28 das28_yn
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;   &lt;fct&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+## 1     3    83 elderly female          10  14.5 yes         NA        1
+## 2     4    83 elderly female           9  NA   no          NA        1
+## 3     5    85 elderly female          NA  NA   no          NA        1
+## 4     6    79 elderly male            NA  NA   no          NA        1
+## 5     7    90 elderly female          51  NA   no          NA        1
+## # … with 5 more variables: steroids_gt_5 &lt;dbl&gt;, dmar_ds &lt;dbl&gt;, biologics &lt;dbl&gt;,
+## #   s_dmards &lt;dbl&gt;, osteop_screen &lt;dbl&gt;
 ```
 
 
@@ -292,18 +289,17 @@ filter(arthritis, age == 90)
 
 ```
 ## # A tibble: 7 x 14
-##      id   age age_gp  sex    yrs_from_dx  cdai cdai_yn das_28
-##   &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;   &lt;fct&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;
-## 1     7    90 elderly female          51    NA no          NA
-## 2     8    90 elderly female          11    40 yes         NA
-## 3    20    90 elderly female          NA    NA no          NA
-## 4    21    90 elderly female          11    NA no          NA
-## 5    54    90 elderly female           3    NA no          NA
-## 6    66    90 elderly female          40    NA no          NA
-## 7    69    90 elderly female          40    14 yes         NA
-## # … with 6 more variables: das28_yn &lt;dbl&gt;, steroids_gt_5 &lt;dbl&gt;,
-## #   dmar_ds &lt;dbl&gt;, biologics &lt;dbl&gt;, s_dmards &lt;dbl&gt;,
-## #   osteop_screen &lt;dbl&gt;
+##      id   age age_gp  sex    yrs_from_dx  cdai cdai_yn das_28 das28_yn
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;   &lt;fct&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+## 1     7    90 elderly female          51    NA no          NA        1
+## 2     8    90 elderly female          11    40 yes         NA        1
+## 3    20    90 elderly female          NA    NA no          NA        1
+## 4    21    90 elderly female          11    NA no          NA        1
+## 5    54    90 elderly female           3    NA no          NA        1
+## 6    66    90 elderly female          40    NA no          NA        1
+## 7    69    90 elderly female          40    14 yes         NA        1
+## # … with 5 more variables: steroids_gt_5 &lt;dbl&gt;, dmar_ds &lt;dbl&gt;, biologics &lt;dbl&gt;,
+## #   s_dmards &lt;dbl&gt;, osteop_screen &lt;dbl&gt;
 ```
 
 ]
@@ -351,12 +347,11 @@ arthritis %&gt;%
 
 ```
 ## # A tibble: 1 x 14
-##      id   age age_gp  sex    yrs_from_dx  cdai cdai_yn das_28
-##   &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;   &lt;fct&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;
-## 1     8    90 elderly female          11    40 yes         NA
-## # … with 6 more variables: das28_yn &lt;dbl&gt;, steroids_gt_5 &lt;dbl&gt;,
-## #   dmar_ds &lt;dbl&gt;, biologics &lt;dbl&gt;, s_dmards &lt;dbl&gt;,
-## #   osteop_screen &lt;dbl&gt;
+##      id   age age_gp  sex    yrs_from_dx  cdai cdai_yn das_28 das28_yn
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;   &lt;fct&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+## 1     8    90 elderly female          11    40 yes         NA        1
+## # … with 5 more variables: steroids_gt_5 &lt;dbl&gt;, dmar_ds &lt;dbl&gt;, biologics &lt;dbl&gt;,
+## #   s_dmards &lt;dbl&gt;, osteop_screen &lt;dbl&gt;
 ```
 
 
@@ -391,21 +386,20 @@ arthritis %&gt;%
 
 ```
 ## # A tibble: 67 x 14
-##       id   age age_gp  sex    yrs_from_dx  cdai cdai_yn das_28
-##    &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;   &lt;fct&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;
-##  1     3    83 elderly female          10  14.5 yes         NA
-##  2    27    77 elderly female           3  20   yes         NA
-##  3    69    90 elderly female          40  14   yes         NA
-##  4   206    58 control female           4  18   yes         NA
-##  5   207    61 control female          35  16   yes         NA
-##  6   208    42 control female           8  20   yes         NA
-##  7   209    54 control female          10  17   yes         NA
-##  8   210    70 control female           5  13   yes         NA
-##  9   211    62 control female           9  11   yes         NA
-## 10   212    63 control female           1  16   yes         NA
-## # … with 57 more rows, and 6 more variables: das28_yn &lt;dbl&gt;,
-## #   steroids_gt_5 &lt;dbl&gt;, dmar_ds &lt;dbl&gt;, biologics &lt;dbl&gt;,
-## #   s_dmards &lt;dbl&gt;, osteop_screen &lt;dbl&gt;
+##       id   age age_gp  sex    yrs_from_dx  cdai cdai_yn das_28 das28_yn
+##    &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;   &lt;fct&gt;        &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+##  1     3    83 elderly female          10  14.5 yes         NA        1
+##  2    27    77 elderly female           3  20   yes         NA        1
+##  3    69    90 elderly female          40  14   yes         NA        1
+##  4   206    58 control female           4  18   yes         NA        1
+##  5   207    61 control female          35  16   yes         NA        1
+##  6   208    42 control female           8  20   yes         NA        1
+##  7   209    54 control female          10  17   yes         NA        1
+##  8   210    70 control female           5  13   yes         NA        1
+##  9   211    62 control female           9  11   yes         NA        1
+## 10   212    63 control female           1  16   yes         NA        1
+## # … with 57 more rows, and 5 more variables: steroids_gt_5 &lt;dbl&gt;,
+## #   dmar_ds &lt;dbl&gt;, biologics &lt;dbl&gt;, s_dmards &lt;dbl&gt;, osteop_screen &lt;dbl&gt;
 ```
 
 ---
@@ -436,20 +430,20 @@ glimpse(arthritis)
 ```
 ## Rows: 530
 ## Columns: 14
-## $ id            &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13…
-## $ age           &lt;dbl&gt; 85, 86, 83, 83, 85, 79, 90, 90, 87, 82, 7…
-## $ age_gp        &lt;fct&gt; elderly, elderly, elderly, elderly, elder…
-## $ sex           &lt;fct&gt; female, female, female, female, female, m…
-## $ yrs_from_dx   &lt;dbl&gt; 27, 27, 10, 9, NA, NA, 51, 11, 36, 4, 31,…
-## $ cdai          &lt;dbl&gt; NA, 23.0, 14.5, NA, NA, NA, NA, 40.0, 6.0…
-## $ cdai_yn       &lt;fct&gt; no, yes, yes, no, no, no, no, yes, yes, n…
-## $ das_28        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
-## $ das28_yn      &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2,…
-## $ steroids_gt_5 &lt;dbl&gt; 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0,…
-## $ dmar_ds       &lt;dbl&gt; 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1,…
-## $ biologics     &lt;dbl&gt; 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1,…
-## $ s_dmards      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…
-## $ osteop_screen &lt;dbl&gt; 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1,…
+## $ id            &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1…
+## $ age           &lt;dbl&gt; 85, 86, 83, 83, 85, 79, 90, 90, 87, 82, 77, 86, 84, 76, …
+## $ age_gp        &lt;fct&gt; elderly, elderly, elderly, elderly, elderly, elderly, el…
+## $ sex           &lt;fct&gt; female, female, female, female, female, male, female, fe…
+## $ yrs_from_dx   &lt;dbl&gt; 27, 27, 10, 9, NA, NA, 51, 11, 36, 4, 31, NA, 9, 10, 3, …
+## $ cdai          &lt;dbl&gt; NA, 23.0, 14.5, NA, NA, NA, NA, 40.0, 6.0, NA, 0.0, NA, …
+## $ cdai_yn       &lt;fct&gt; no, yes, yes, no, no, no, no, yes, yes, no, yes, no, no,…
+## $ das_28        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 2.44…
+## $ das28_yn      &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1,…
+## $ steroids_gt_5 &lt;dbl&gt; 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0,…
+## $ dmar_ds       &lt;dbl&gt; 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1,…
+## $ biologics     &lt;dbl&gt; 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0,…
+## $ s_dmards      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…
+## $ osteop_screen &lt;dbl&gt; 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
 ```
 
 ---
@@ -505,11 +499,11 @@ glimpse(arthritis)
 ```
 ## Rows: 530
 ## Columns: 5
-## $ age         &lt;dbl&gt; 85, 86, 83, 83, 85, 79, 90, 90, 87, 82, 77,…
-## $ age_gp      &lt;fct&gt; elderly, elderly, elderly, elderly, elderly…
-## $ sex         &lt;fct&gt; female, female, female, female, female, mal…
-## $ yrs_from_dx &lt;dbl&gt; 27, 27, 10, 9, NA, NA, 51, 11, 36, 4, 31, N…
-## $ cdai        &lt;dbl&gt; NA, 23.0, 14.5, NA, NA, NA, NA, 40.0, 6.0, …
+## $ age         &lt;dbl&gt; 85, 86, 83, 83, 85, 79, 90, 90, 87, 82, 77, 86, 84, 76, 77…
+## $ age_gp      &lt;fct&gt; elderly, elderly, elderly, elderly, elderly, elderly, elde…
+## $ sex         &lt;fct&gt; female, female, female, female, female, male, female, fema…
+## $ yrs_from_dx &lt;dbl&gt; 27, 27, 10, 9, NA, NA, 51, 11, 36, 4, 31, NA, 9, 10, 3, 10…
+## $ cdai        &lt;dbl&gt; NA, 23.0, 14.5, NA, NA, NA, NA, 40.0, 6.0, NA, 0.0, NA, NA…
 ```
 
 ---
@@ -539,7 +533,8 @@ ggplot(arthritis,
        aes(x = age_gp, y = cdai)) +
   geom_boxplot() +
   theme_bw() +
-  theme(text = element_text(size=20))
+  theme(text = element_text(size=20)) +
+  labs(x = "Age Group", y = "CDAI")
 ```
 
 ]
