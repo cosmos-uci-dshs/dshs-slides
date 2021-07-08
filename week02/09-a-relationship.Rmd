@@ -1,0 +1,349 @@
+---
+title: "Evaluating Relationships"
+author: "Dr. Babak Shahbaba"
+output: 
+  xaringan::moon_reader:
+    css: ["slide-style.css"]
+    lib_dir: libs
+    seal: false
+    nature:
+      ratio: 16:9
+      highlightStyle: "pygments"
+      highlightLines: true
+      highlightLanguage: "r"
+
+---
+
+class: title-slide
+
+```{r echo = FALSE}
+library(fabricerin)
+```
+
+<br>
+<br>
+.right-panel[ 
+<br>
+
+# `r rmarkdown::metadata$title`
+
+### `r rmarkdown::metadata$author`
+
+]
+
+
+---
+
+### Objective
+
+- We now discuss hypothesis testing regarding possible relationships between two variables. 
+- We focus on problems where we are investigating the
+relationship between one binary categorical variable (e.g., gender) and
+one numerical variable (e.g., body temperature).  
+
+- In these situations, the binary variable typically represents
+two different groups  or two different
+experimental conditions. 
+
+- We treat the binary variable (factor) as the explanatory variable
+in our analysis. 
+
+- The numerical variable, on the other hand, is regarded
+as the response (target) variable (e.g., body temperature).
+
+---
+
+### Relationship Between a Numerical Variable and a Binary Variable
+
+
+- In general, we can denote the means of the two groups as $\mu_{1}$ and
+$\mu_{2}$. 
+
+- The null hypothesis indicates that the population means are equal,
+$H_{0}: \mu_{1} = \mu_{2}$. 
+
+- In contrast, the alternative hypothesis is one the following:
+$$\begin{array}[t]{l@{\quad}p{6.7cm}}
+H_{A}: \mu_{1} > \mu_{2} \\
+H_{A}: \mu_{1} < \mu_{2}   \\
+H_{A}: \mu_{1} \ne \mu_{2}  \\
+\end{array}$$
+
+---
+
+### Relationship Between a Numerical Variable and a Binary Variable
+
+
+- We can also express these hypotheses in terms of the
+*difference* in the means: $H_{A}: \mu_{1}  - \mu_{2} > 0$,
+$H_{A}: \mu_{1} - \mu_{2} < 0$, or  $H_{A}: \mu_{1} - \mu_{2} \ne 0$.
+
+- Then the corresponding null hypothesis is that there is no difference
+in the population means, $H_{0}: \mu_{1} - \mu_{2} = 0$.
+
+
+---
+
+### Relationship Between a Numerical Variable and a Binary Variable
+
+
+- Previously, we used the sample mean $\bar{X}$ to perform statistical
+inference regarding the population mean $\mu$. 
+
+- To evaluate our
+hypothesis regarding the difference between two means, $\mu_{1} - \mu_{2}$, it is reasonable to choose the difference between the sample
+means, $\bar{X}_{1} - \bar{X}_{2}$, as our statistic. 
+
+- We use the following notations:
+$$\begin{eqnarray*}
+\mu_{12} & = & \mu_{1} - \mu_{2},\\
+\bar{X}_{12} & = & \bar{X}_{1} - \bar{X}_{2}.
+\end{eqnarray*}$$
+
+---
+
+### Relationship Between a Numerical Variable and a Binary Variable
+
+- By the Central Limit Theorem,
+$$\begin{eqnarray*}
+\bar{X}_{1} & \sim & N\bigl(\mu_{1}, \sigma^{2}_{1}/n_{1}\bigr),\\
+\bar{X}_{2} & \sim & N\bigl(\mu_{2}, \sigma^{2}_{2}/n_{2}\bigr),
+\end{eqnarray*}$$
+where $n_{1}$ and $n_{2}$ are the number of observations
+
+- Therefore, 
+$$\begin{equation*}
+\bar{X}_{12}  \sim N\bigl(\mu_1 - \mu_2,\ \sigma^{2}_{1}/n_{1} + \sigma^{2}_{2}/n_{2}\bigr).
+\end{equation*}$$
+---
+
+### Relationship Between a Numerical Variable and a Binary Variable
+
+- We can rewrite this as
+$$\begin{equation*}
+\bar{X}_{12}  \sim N\bigl(\mu_{12},\ \mathit{SD}_{12}^{2}\bigr).
+\end{equation*}$$
+where
+$$\begin{equation*}
+\mathit{SD}_{12}  =  \sqrt{ \sigma^{2}_{1}/n_{1} + \sigma^{2}_{2}/n_{2} }.
+\end{equation*}$$
+
+
+---
+
+### Relationship Between a Numerical Variable and a Binary Variable
+
+- We want to test our hypothesis that $H_{A}: \mu_{12} \ne 0$ (i.e., the
+difference between the two means is not zero) against the null
+hypothesis that $H_{0}: \mu_{12} = 0$. 
+
+- To use $\bar{X}_{12}$ as a test
+statistic, we need to find its sampling distribution under the null
+hypothesis (i.e., its null distribution).
+
+- If the null hypothesis is true, then $\mu_{12} = 0$. Therefore, the
+null distribution of $\bar{X}_{12}$ is
+$$\begin{equation*}
+\bar{X}_{12}  \sim N\bigl(0, \mathit{SD}_{12}^{2}\bigr).
+\end{equation*}$$
+
+---
+
+### Relationship Between a Numerical Variable and a Binary Variable
+
+- As before, however, it is more common to
+standardize the test statistic by subtracting its mean (under the null)
+and dividing the result by its standard deviation,
+$$\begin{equation*}
+Z  =  \frac {\bar{X}_{12}} {\mathit{SD}_{12}}.
+\end{equation*}$$
+
+---
+
+### Two-sample $z$-test
+
+- To test the null hypothesis $H_{0}: \mu_{12} = 0$, we determine the
+$z$-score,
+\begin{equation*}
+z  =  \frac {\bar{x}_{12} }{\mathit{SD}_{12}}.
+\end{equation*}
+
+- Then, depending on the alternative hypothesis, we can
+calculate the $p$-value, which is the observed significance level, as:
+
+$$\begin{array}{l@{\quad}l}
+\mbox{if}\ H_{A}: \mu_{12} > 0, &  p_{\mathrm{obs}} = P(Z \geq z), \\
+\mbox{if}\ H_{A}: \mu_{12} < 0,  & p_{\mathrm{obs}} = P(Z \leq z), \\
+\mbox{if}\ H_{A}: \mu_{12} \ne 0,  & p_{\mathrm{obs}} = 2\times P\bigl(Z \geq |z|\bigr).
+\end{array}$$
+
+- The above tail probabilities are obtained from the standard normal distribution. 
+
+
+---
+
+### Two-Sample $t$-test
+
+- In practice, $SD_{12}$ is not known since $\sigma_{1}$ and $\sigma_{2}$ are unknown. 
+
+- We can estimate it as follows:
+$$\begin{eqnarray*}
+\mathit{SE}_{12} = \sqrt{s^{2}_{1}/n_{1} + s^{2}_{2}/n_{2} },
+\end{eqnarray*}$$
+where $\mathit{SE}_{12}$ is the \emph{standard error} of $\bar{X}_{12}$.
+
+- Then, instead of the standard normal distribution, we need to use $t$-distributions to find $p$-values.
+- For this, we can use R.
+ 
+---
+
+### Paired $t$-test
+
+- While we hope that the two samples taken from the population are
+comparable except for the characteristic that defines the grouping,
+this is not guaranteed in general. 
+
+- To mitigate the influence of other important factors (e.g., age) that are not the focus
+of our study, we sometimes *pair* (match) each individual in one group with an
+individual in the other group so that the paired individuals are very
+similar to each other except for the variable that defines the
+grouping. 
+
+- For example, we might recruit twins and assign one of them to the treatment group and the other one to the placebo group.
+
+- Sometimes, the subjects in the two groups are the same individuals under two different conditions. 
+
+
+---
+
+### Paired $t$-test
+
+- When the
+individuals in the two groups are paired, we use the *paired*
+$t$-test to take the pairing of the observations between the two
+groups into account.
+
+- Using the difference, $D$, between the paired observations, the
+hypothesis testing problem reduces to a single sample $t$-test problem.
+
+- To test the null hypothesis $H_{0}: \mu = 0$, we calculate the $T$
+statistic,
+$$\begin{equation*}
+T  =  \frac{\bar{D} }{S/\sqrt{n}},
+\end{equation*}$$
+where, $n$ is the number of pairs. 
+
+- The test statistic $T$
+has the $t$-distribution with $n-1$ degrees of freedom.
+
+
+---
+
+### Paired $t$-test
+
+- We calculate
+the corresponding $t$-score as follows:
+$$\begin{equation*}
+t  =  \frac{\bar{d}}{s/\sqrt{n}}.
+\end{equation*}$$
+
+- Then the $p$-value is the probability of having as extreme or more
+extreme values than the observed $t$-score:
+$$\begin{array}{l@{\quad}l}
+\mbox{if}\ H_{A}: \mu > 0 , & p_{\mathrm{obs}} = P(T \geq t ), \\
+\mbox{if}\ H_{A}: \mu < 0 , & p_{\mathrm{obs}} = P(T \leq t ), \\
+\mbox{if}\ H_{A}: \mu \ne 0 , & p_{\mathrm{obs}} = 2 \times P\bigl(T \geq |t| \bigr).
+\end{array}$$
+
+where $T$ has the $t$-distribution with $n-1$ degrees of freedom.
+
+
+
+
+---
+
+### Exercise
+
+We hypothesize that the mean of birthweight is different for babies whose mothers were smoking during pregnancy and the babies whose mother were not smoking during pregnancy. Use the {birthwt} data set  to evaluate this hypothesis (with discussion). We set the significance level (cutoff) to 0.1. (In this data set, {smoke} shows the smoking status of mothers, and {bwt} shows birthweight in grams.)
+
+---
+
+### Exercise
+
+- Use the {Pima.tr} to find the difference between the sample means of diastolic blood pressure for diabetic and non-diabetic Pima Indian women. Is the difference between the means of diastolic blood pressure statistically significant at 0.01 level. 
+
+- Answer the above question for the number of pregnancies ({npreg}) and BMI.
+
+---
+
+### Exercise
+
+Use the data set {cabbages} from the {MASS} package to examine the relationship between the vitamin C content and cultivars. 
+
+---
+
+### Exercise
+
+Charles Darwin (1809-1882), author of The Origin of Species (1859) investigated the effect of cross-fertilization on the size of plants. The Data and Story library  [link](http://lib.stat.cmu.edu/DASL/Stories/student.html) has the results of one of his experiments (given by R.A. Fisher). In this experiment, pairs of plants, one cross- and one self-fertilized, were planted and grown in the same plot. The following table gives the difference in height (eighths inches) for 15 pairs of plants (cross-fertilized minus self-fertilized Zea mays) raised by Charles Darwin. Use this data to evaluate the null hypothesis that the two methods are not different. 
+
+Difference: 49, -67, 8, 16, 6, 23, 28, 41, 14, 29, 56, 24, 75, 60, -48
+
+---
+
+### Exercise
+
+Consider the following contingency table based on the study conducted to investigate whether taking aspirin reduces the risk of heart attack. Use the log odds ratio test to evaluate the null hypothesis that there is no relationship between taking aspiring and the risk of heat attack. 
+
+|         | Heart attack   |   No heart attack 
+|:------- | :------------: | :----------:
+| Placebo | 189            |   10845  
+| Aspirin | 104            |   10933 
+
+
+---
+
+### Exercise
+
+Use the {birthwt} data set to examine the relationship between hypertension history ({ht}) and the risk of having low birthweight baby ({low}).
+
+---
+
+### Exercise
+
+Use the {GBSG} (German Breast Cancer Study Group) data set from the {mfp} package to create a new variable called {rfs} (recurrence free survival) such that {rfs='No'} if the patient had at least one recurrence or died (i.e., {cenc=1}), and {rfs='Yes'} otherwise. Use the data to investigate whether recurrence free survival is related to hormonal therapy. Note that in {GBSG}, the variable {htreat} indicates whether a patient has received hormonal therapy or not.
+
+---
+
+### Exercise
+
+For the Pima Indian women population, find the sample correlation coefficient between BMI and diastolic blood pressure. Is the correlation between these two variables statistically significant at 0.01 level?
+
+---
+
+### Exercise
+
+Use the 'BodyTemperature.txt' to estimate the correlation coefficient between normal body temperature and heart rate. Is the correlation between these two variables statistically significant at 0.01 level? How about the correlation between age and normal body temperature?
+
+
+---
+
+### Exercise
+
+Read the article 'Caloric restriction improves memory in elderly humans'. This paper is available online at [link](http://www.pnas.org/content/106/4/1255.full). What was their estimate of the correlation coefficient between memory score and insulin level? Was the correlation statistically significant at 0.1 level?
+
+---
+
+### Exercise
+
+Read the paper 'A Critical Appraisal of $98.6\,^{\circ}\mathrm{F}$', the Upper Limit of the Normal Body Temperature, and Other Legacies of Carl Reinhold August Wunderlich'' by Mackowiak et. al.. The paper is available online at [link](http://jama.ama-assn.org/cgi/reprint/268/12/1578) What method they used to evaluate the relationship between gender and body temperature? What did they find? What was their conclusion about the relationship between race and body temperature?
+
+---
+
+### Exercise
+
+Read the paper by Kettunen et. al. on the effect of arthroscopy in patients with chronic patellofemoral pain syndrome. This paper is available online at [link](http://www.biomedcentral.com/1741-7015/5/38).
+  + What is the point estimate and 95\% confidence interval for the mean improvement in the Kujala score for each treatment group. 
+  + Was the difference between the two group in terms of mean improvement in the Kujala score statistically significant?
+  + Based on the results published in this paper, create a contingency table, where the row variable is the treatment group, and the column variable is an indicator that is equal to 1 if the patient reports at least moderate improvement at the end of follow-up period, and 0 otherwise. Use the log ratio and $\chi^{2}$ test to investigate whether there is a relationship between the type of treatment and reporting at least moderate improvement. 
+
+
