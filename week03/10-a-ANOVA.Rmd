@@ -167,3 +167,25 @@ root.
 ```{r, echo=FALSE,out.width='30%',out.height='40%',fig.align='center'}
 knitr::include_graphics('img/anovaLogTrans.png')
 ```
+
+---
+
+```{r}
+library(MASS)
+data(Pima.tr)
+
+Pima.tr$weight.status <- rep(NA, 200)
+
+for(i in 1:200){
+if(Pima.tr$bmi[i] < 18.5 ){
+	Pima.tr$weight.status[i]<-'Underweight'
+} else if(Pima.tr$bmi[i] >= 18.5 & Pima.tr$bmi[i] <24.9 ) {
+	Pima.tr$weight.status[i]<-'Normal'
+} else if(Pima.tr$bmi[i] >= 24.9 & Pima.tr$bmi[i] <29.9 ) {
+	Pima.tr$weight.status[i]<-'Overweight'
+} else {
+	Pima.tr$weight.status[i]<-'Obese'
+}
+}
+```
+

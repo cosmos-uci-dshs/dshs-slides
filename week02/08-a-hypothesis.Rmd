@@ -34,6 +34,9 @@ library(fabricerin)
 
 ---
 
+class: middle 
+<!-- Other types of class center and inverse -->
+
 ### Hypothesis
 
 - In general, many scientific investigations start by expressing a *hypothesis*. 
@@ -43,8 +46,7 @@ temperature is less than the widely accepted value of
 $98.6F$. 
 
 - If we denote the population mean of normal
-body temperature as $\mu$, then we can express this hypothesis as $\mu
-< 98.6$.
+body temperature as $\mu$, then we can express this hypothesis as $\mu < 98.6$.
 
 ---
 

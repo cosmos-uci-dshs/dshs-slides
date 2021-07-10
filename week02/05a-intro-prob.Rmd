@@ -33,10 +33,12 @@ library(fabricerin)
 
 ---
 
+class: middle
+
 ### Introduction
  - We have used plots and summary statistics to learn about the distribution of variables and to investigate their relationships. 
  
- - We now want to generalize our findings to the population. 
+ - We now want to **generalize** our findings to the population. 
  
  - However, we almost always remain uncertain about the true distributions and relationships in the population.
  

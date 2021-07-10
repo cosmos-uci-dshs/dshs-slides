@@ -152,6 +152,29 @@ root.
 
 
 &lt;img src="img/anovaLogTrans.png" width="30%" height="40%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+library(MASS)
+data(Pima.tr)
+
+Pima.tr$weight.status &lt;- rep(NA, 200)
+
+for(i in 1:200){
+if(Pima.tr$bmi[i] &lt; 18.5 ){
+	Pima.tr$weight.status[i]&lt;-'Underweight'
+} else if(Pima.tr$bmi[i] &gt;= 18.5 &amp; Pima.tr$bmi[i] &lt;24.9 ) {
+	Pima.tr$weight.status[i]&lt;-'Normal'
+} else if(Pima.tr$bmi[i] &gt;= 24.9 &amp; Pima.tr$bmi[i] &lt;29.9 ) {
+	Pima.tr$weight.status[i]&lt;-'Overweight'
+} else {
+	Pima.tr$weight.status[i]&lt;-'Obese'
+}
+}
+```
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
