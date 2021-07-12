@@ -98,7 +98,7 @@ outcomes.
 
 ### Random events
 
-- An {event} is a subset of the sample space `\(S\)`. 
+- An **event** is a subset of the sample space `\(S\)`. 
 
 - A possible event for die rolling is `\(E = \{1, 3, 5\}\)`. This is the event of rolling an
 odd number. 
@@ -119,8 +119,10 @@ individual outcomes included in that event.
 
 - As a running example, we consider a bi-allelic gene A with
 two alleles `\(A\)` and `\(a\)`. 
+
 - We assume that allele `\(a\)` is recessive and
 causes a specific disease. 
+
 - Then only people with the genotype
 `\(\mathit{aa}\)` have the disease. 
 
@@ -149,15 +151,15 @@ $$
 ---
 
 ### Complement
-- For any event `\(E\)`, we define its \textbf{complement}, `\(E^c\)`, as the set
-of all outcomes that are in the sample space `\(S\)` but not in~$E$.
+- For any event `\(E\)`, we define its **complement**, `\(E^c\)`, as the set
+of all outcomes that are in the sample space `\(S\)` but not in `\(E\)`.
+
 - For the gene-disease example, the complement of the homozygous event
 `\(HM  = \{\mathit{AA}, \mathit{aa}\}\)` is the heterozygous event
 `\(\{\mathit{Aa}\}\)`; we show this as `\(HM^{c} = HT\)`. 
 
 - Likewise, the complement of the disease event, `\(D=\{\mathit{aa}\}\)`, is the no-disease
-event, `\(ND = \{\mathit{AA}, \mathit{Aa}\}\)`; we show this as $D^{c} =
-ND$.
+event, `\(ND = \{\mathit{AA}, \mathit{Aa}\}\)`; we show this as `\(D^{c} = ND\)`.
 
 - The probability of the complement event is 1 minus the probability of
 the event:
@@ -169,11 +171,13 @@ the event:
 ### Union
 
 - For two events `\(E_{1}\)` and `\(E_{2}\)` in a sample space `\(S\)`, we define
-their {union} `\(E_{1}\cup E_{2}\)` as the set of all outcomes that
+their **union** `\(E_{1}\cup E_{2}\)` as the set of all outcomes that
 are at least in one of the events. 
+
 - The union `\(E_{1}\cup E_{2}\)` is an
-event by itself, and it occurs when {either} `\(E_{1}\)` {or}
+event by itself, and it occurs when **either** `\(E_{1}\)` **or**
 `\(E_{2}\)` (or both) occurs. 
+
 - For example, the
 union of the heterozygous event, `\(HT\)`, and the disease event, `\(D\)`, is
 `\(\{\mathit{Aa}\} \cup \{\mathit{aa}\} = \{\mathit{Aa}, \mathit{aa}\}\)`.
@@ -187,14 +191,14 @@ probabilities of those outcomes.
 
 ### Intersection
 
-- For two events `\(E_{1}\)` and `\(E_{2}\)` in a sample space `\(S\)`, we define
-their \textbf{intersection} `\(E_{1} \cap E_{2}\)` as the set of outcomes
-that are in both events. 
+- For two events `\(E_{1}\)` and `\(E_{2}\)` in a sample space `\(S\)`, we define their **intersection** `\(E_{1} \cap E_{2}\)` as the set of outcomes that are in **both** events. 
+
 - The intersection `\(E_{1}\cap E_{2}\)` is an event
-by itself, and it occurs when both `\(E_{1}\)` \emph{and} `\(E_{2}\)` occur.
+by itself, and it occurs when both `\(E_{1}\)` **and** `\(E_{2}\)` occur.
+
 - The intersection of
-the homozygous event and the no-disease event is $HM  \cap ND
-= \{\mathit{AA}\}$.
+the homozygous event and the no-disease event is `\(HM  \cap ND = \{\mathit{AA}\}\)`.
+
 - When possible, we can identify the outcomes in the
 intersection of the two events and find the probability by adding the
 probabilities of those outcomes.
@@ -202,16 +206,20 @@ probabilities of those outcomes.
 ---
 
 ### Joint vs. marginal probability
-- We refer to the probability of the intersection of two events, $P(E_{1}
-\cap E_{2})$, as their *joint probability*. 
-- In contrast, we refer to
-probabilities `\(P(E_{1})\)` and `\(P(E_{2})\)` as the *marginal
-probabilities* of events `\(E_{1}\)` and `\(E_{2}\)`.
+- We refer to the probability of the intersection of two events, `\(P(E_{1} \cap E_{2})\)`, as their **joint probability**. 
+
+- In contrast, we refer to probabilities `\(P(E_{1})\)` and `\(P(E_{2})\)` as the **marginal probabilities** of events `\(E_{1}\)` and `\(E_{2}\)`.
+
 - For any two events `\(E_{1}\)` and `\(E_{2}\)`, we have
 
 `$$P(E_{1} \cup E_{2}) = P(E_{1}) + P(E_{2}) - P(E_{1} \cap E_{2}).$$`
-- That is, the probability of the union `\(P(E_1 \cup E_2)\)` is the sum of
-their marginal probabilities minus their joint probability. For example, the union of the heterozygous and the no-disease events is
+- That is, the probability of the union `\(P(E_1 \cup E_2)\)` is the sum of their marginal probabilities minus their joint probability. 
+
+---
+
+### Joint vs. marginal probability
+
+- For example, the union of the heterozygous and the no-disease events is
 `$$\begin{eqnarray*}
 P(HM  \cup ND)  &amp;=&amp;  P(HM ) + P(ND) - P(HM  \cap ND) \\
   &amp;= &amp; 0.58 + 0.91 - 0.49 = 1.
@@ -220,11 +228,12 @@ P(HM  \cup ND)  &amp;=&amp;  P(HM ) + P(ND) - P(HM  \cap ND) \\
 ---
 
 ### Disjoint events
-- Two events are called *disjoint* or *mutually exclusive*
-if they never occur together: if we know that one of them has occurred,
+- Two events are called **disjoint** or **mutually exclusive** if they never occur together: if we know that one of them has occurred,
 we can conclude that the other event has~not. 
+
 - Disjoint events have no
 elements (outcomes) in common, and their intersection is the empty set.
+
 - For the above example, if a person is heterozygous, we know that he does not have the disease so the two events `\(HT\)` and `\(ND\)` are disjoint. 
 
 
@@ -245,8 +254,9 @@ intersection (i.e., their joint probability) is zero:
 ### Partition
 
 - When two or more events are disjoint and their union is the sample
-space `\(S\)`, we say that the events form a *partition* of the
+space `\(S\)`, we say that the events form a **partition** of the
 sample space.
+
 - Two complementary events `\(E\)` and `\(E^{c}\)` always form a partition of the
 sample space since they are disjoint and their union is the sample
 space.
@@ -258,8 +268,10 @@ space.
 - Ver often, we need to discuss possible changes in the
 probability of one event based on our knowledge regarding the
 occurrence of another event.
-- The \textbf{conditional probability}, denoted  `\(P(E_{1}|E_{2})\)`, is the
+
+- The **conditional probability**, denoted  `\(P(E_{1}|E_{2})\)`, is the
 probability of event `\(E_1\)` given that another event `\(E_2\)` has occurred.
+
 - The conditional probability of event `\(E_1\)` given event `\(E_2\)` can be
 calculated as follows: (assuming `\(P(E_{2}) \ne 0\)`)
 
@@ -286,7 +298,7 @@ partition of the sample space.
 
 - Using the above equation, we have
 `$$P(A)  =  P(A|B_{1})P(B_{1}) + \cdots + P(A|B_{K})P(B_{K}).$$`
-- This is known as the *law of total probability*.
+- This is known as the **law of total probability**.
 
 
 
@@ -294,7 +306,7 @@ partition of the sample space.
 
 ### Independent events
 
-- Two events `\(E_{1}\)` and `\(E_{2}\)` are \textbf{independent} if our
+- Two events `\(E_{1}\)` and `\(E_{2}\)` are **independent** if our
 knowledge of the occurrence of one event does not change the
 probability of occurrence of the other event. 
 
@@ -312,7 +324,7 @@ P(E_{2}|E_{1}) &amp; = &amp; P(E_{2}).
 - When two events `\(E_{1}\)` and `\(E_{2}\)` are independent, the probability
 that `\(E_{1}\)` and `\(E_{2}\)` occur simultaneously, i.e., their joint
 probability, is the product of their marginal probabilities:
-%e8 ###
+
 `$$P(E_{1} \cap E_{2}) = P(E_{1})\times P(E_{2})$$`
 
 - Therefore, the probability of the union of two independent events is as follows:
@@ -326,12 +338,15 @@ probability, is the product of their marginal probabilities:
 - Sometimes, we know the conditional
 probability of `\(E_{1}\)` given `\(E_{2}\)`, but we are interested in the
 conditional probability of `\(E_{2}\)` given `\(E_{1}\)`. 
+
 - For example, suppose
 that the probability of having lung cancer is `\(P(C) = 0.001\)` and that
 the probability of being a smoker is `\(P(SM) = 0.25\)`. 
+
 - Further, suppose
 we know that if a person has lung cancer, the probability of being a
 smoker increases to `\(P(SM |C) = 0.40\)`.  
+
 - We are, however, interested in
 the probability of developing lung cancer if a person is a smoker,
 `\(P(C|SM)\)`. 
@@ -345,7 +360,7 @@ the probability of developing lung cancer if a person is a smoker,
 shows the relationship between `\(P(E_{2}|E_{1})\)` and `\(P(E_{1}|E_{2})\)`:
 `$$P(E_{2}|E_{1})  =  \frac{P(E_{1}|E_{2})P(E_{2})}{P(E_{1})}.$$`
 
-- This formula is known as *Bayes' theorem* or *Bayes' rule*.
+- This formula is known as **Bayes' theorem** or **Bayes' rule**.
 
 ---
 
@@ -391,7 +406,7 @@ shows the relationship between `\(P(E_{2}|E_{1})\)` and `\(P(E_{1}|E_{2})\)`:
 `$$\begin{eqnarray*}
 \textrm{PPV} &amp; = &amp; \frac{\textrm{prevalence} \times \textrm{sensitivity} }{\textrm{prevalence} \times \textrm{sensitivity}+ \textrm{(1- prevalence)} \times \textrm{(1- specificity)}}
 \end{eqnarray*}$$`
-
+where *prevalence* is the overall probability of the disease in the population: `\(P(Disease)\)` 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
