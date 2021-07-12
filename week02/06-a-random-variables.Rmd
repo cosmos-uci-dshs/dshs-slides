@@ -36,11 +36,13 @@ library(fabricerin)
 ### Random Variables
 
 - In this lecture, we will discuss random variables and their probability distributions.
-- Formally, a *random variable* $X$ assigns a
+
+- Formally, a **random variable** $X$ assigns a
 numerical value to each possible outcome (and event) of a random
 phenomenon. 
+
 - For instance, we can define $X$ based on possible genotypes
-of a bi-allelic gene \textbf{A} as follows:
+of a bi-allelic gene **A** as follows:
 $$X = \left\{ \begin{array}{l@{\quad}l}
 0 &  \mbox{for genotype } \mathit{AA}, \\
 1 &  \mbox{for genotype } \mathit{Aa}, \\
@@ -96,14 +98,14 @@ $$P(X=x) = \left\{ \begin{array}{l@{\quad}l}
 ### Discrete vs. continuous random variables
 
 - We divide the random
-variables into two major groups: *discrete* and
-*continuous*. 
+variables into two major groups: **discrete** and
+**continuous**. 
 
 - Discrete random variables can take a countable set of
 values.
 
 - These variables can be categorical (nominal or ordinal), such
-as genotype, or {counts}, such as the number of patients visiting an emergency room per day, 
+as genotype, or counts, such as the number of patients visiting an emergency room per day, 
 
 - Continuous random variables can take an uncountable number of possible
 values.
@@ -119,7 +121,7 @@ value between them.
 information to find the probability of its possible values.
 
 - The probability distributions discussed here are characterized by one or more
-*parameters*.
+**parameters**.
 
 - The parameters of probability distributions we assume for random variables are usually unknown.
 - Typically, we use Greek alphabets such as $\mu$ and $\sigma$ to denote these parameters and distinguish them from known values.
@@ -133,7 +135,7 @@ random variable and use $\sigma^{2}$ to denote its variance.
 ### Discrete probability distributions
 
 - For discrete random variables, the probability distribution is fully
-defined by the *probability mass function (pmf)*. 
+defined by the **probability mass function (pmf)**. 
 
 - This is a function that specifies the probability of each possible value within
 range of random variable. 
@@ -153,9 +155,11 @@ $$P(X=x) = \left\{ \begin{array}{l@{\quad}l}
 
 - For discrete random variables, the pmf provides the probability of each
 possible value. 
+
 - For continuous random variables, the number of possible
 values is uncountable, and the probability of any specific value is
 zero. 
+
 - For these variables, we are interested in the probability that the value of
 the random variable is within a specific interval from $x_{1}$ to
 $x_{2}$; we show this probability as $P(x_{1} < X \le x_{2})$. 
@@ -165,9 +169,7 @@ $x_{2}$; we show this probability as $P(x_{1} < X \le x_{2})$.
 
 ### Probability density function
 
-- For continuous random variables, we use \textbf{probability density
-functions} (pdf) to specify the distribution. Using the pdf, we can
-obtain the probability of any interval. 
+- For continuous random variables, we use **probability density functions** (pdf) to specify the distribution. Using the pdf, we can obtain the probability of any interval. 
 
 ```{r, echo=FALSE,out.width='25%',out.height='60%',fig.align='center',fig.cap='Probability density function for BMI'}
 knitr::include_graphics('img/densityNormalBMI.png')
@@ -181,10 +183,9 @@ knitr::include_graphics('img/densityNormalBMI.png')
 
 - The total area under the probability density curve is 1. 
 
-- The curve (and its corresponding function) gives the probability of the random
-variable falling within an interval. 
-- This probability is equal to the
-area under the probability density curve over the interval.
+- The curve (and its corresponding function) gives the probability of the random variable falling within an interval. 
+
+- This probability is equal to the area under the probability density curve over the interval.
 ```{r, echo=FALSE,out.width='25%',out.height='60%',fig.align='center'}
 knitr::include_graphics('img/densityShaded2530.png')
 ```
@@ -216,21 +217,22 @@ knitr::include_graphics('img/densityShaded30.png')
 ---
 
 ### Normal distribution
+
 - Consider the probability distribution function and its corresponding probability density curve we assumed for BMI in the above example. 
-- This distribution is known as \textbf{normal}
-distribution, which is one of the most widely used distributions for
-continuous random variables. 
+
+- This distribution is known as **normal** distribution, which is one of the most widely used distributions for continuous random variables. 
+
 - Random variables with this distribution (or very close to it) occur often in nature.
 
 ---
 
 ### Normal distribution
 
-- A *normal distribution* and its corresponding pdf are fully
-specified by the mean $\mu$ and variance $\sigma^2$. 
-- A random variable $X$ with  normal distribution is denoted $X \sim N(\mu, \sigma^2)$.
-- $N(0, 1)$ is called the *standard normal distribution*.
+- A **normal distribution** and its corresponding pdf are fully specified by the mean $\mu$ and variance $\sigma^2$. 
 
+- A random variable $X$ with  normal distribution is denoted $X \sim N(\mu, \sigma^2)$.
+
+- $N(0, 1)$ is called the **standard normal distribution**.
 ```{r, echo=FALSE,out.width='25%',out.height='60%',fig.align='center'}
 knitr::include_graphics('img/simpNormalDensity.png')
 ```
@@ -289,9 +291,9 @@ knitr::include_graphics("img/standNormT.png")
 ### Student's t-distribution
 
 - A $t$-distribution is specified by only one parameter called the
-*degrees of freedom* (df). 
+**degrees of freedom** (df). 
 
-- The $t$-distribution with {df} degrees of freedom is usually denoted as $t({df})$ or $t_{df}$, where $df$ is a positive real number ($df > 0$). 
+- The $t$-distribution with {df} degrees of freedom is usually denoted as $t({df})$ or $t_{df}$, where $df$ is a positive real number ( $df > 0$ ). 
 
 - The mean of this distribution is $\mu = 0$, and
 the variance is determined by the degrees of freedom parameter,
@@ -301,12 +303,11 @@ $\sigma^{2} = df/(df - 2)$, which is of course defined when $df > 2$.
 
 ### Cumulative distribution function
 
-- We saw that by using lower tail probabilities, we can find the
-probability of any given interval.
-- Indeed, all we need to find the probabilities of any interval is a
-function that returns the lower tail probability at any given value of
-the random variable: $P(X \le x)$.
-- This function is called the *cumulative distribution function* (cdf) or simply the *distribution function*. 
+- We saw that by using lower tail probabilities, we can find the probability of any given interval.
+
+- Indeed, all we need to find the probabilities of any interval is a function that returns the lower tail probability at any given value of the random variable: $P(X \le x)$.
+
+- This function is called the **cumulative distribution function** (cdf) or simply the **distribution function**. 
 
 ---
 
@@ -342,7 +343,7 @@ $$\begin{eqnarray*}
 
 
 - The process of shifting and scaling a random variable to create a new random variable with mean
-zero and variance one is called *standardization*. 
+zero and variance one is called **standardization**. 
 
 
 ---
@@ -393,5 +394,5 @@ $$\begin{eqnarray*}
 $$\begin{eqnarray*}
 \sigma^{2}_{W} = \sigma^{2}_{X} + \sigma^{2}_{Y}.
 \end{eqnarray*}$$
-- Note that we still *add* the variances.
-- Subtracting $Y$ from $X$ is the same as adding $-Y$ to $X$. 
+
+- Note that we still *add* the variances since subtracting $Y$ from $X$ is the same as adding $-Y$ to $X$. 

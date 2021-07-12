@@ -4,6 +4,7 @@
     <title>Probability Distribution</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Babak Shahbaba" />
+    <script src="libs/header-attrs-2.9/header-attrs.js"></script>
     <link rel="stylesheet" href="slide-style.css" type="text/css" />
   </head>
   <body>
@@ -30,11 +31,13 @@ class: title-slide
 ### Random Variables
 
 - In this lecture, we will discuss random variables and their probability distributions.
-- Formally, a *random variable* `\(X\)` assigns a
+
+- Formally, a **random variable** `\(X\)` assigns a
 numerical value to each possible outcome (and event) of a random
 phenomenon. 
+
 - For instance, we can define `\(X\)` based on possible genotypes
-of a bi-allelic gene \textbf{A} as follows:
+of a bi-allelic gene **A** as follows:
 `$$X = \left\{ \begin{array}{l@{\quad}l}
 0 &amp;  \mbox{for genotype } \mathit{AA}, \\
 1 &amp;  \mbox{for genotype } \mathit{Aa}, \\
@@ -90,14 +93,14 @@ probability distribution can be simply specified as follows:
 ### Discrete vs. continuous random variables
 
 - We divide the random
-variables into two major groups: *discrete* and
-*continuous*. 
+variables into two major groups: **discrete** and
+**continuous**. 
 
 - Discrete random variables can take a countable set of
 values.
 
 - These variables can be categorical (nominal or ordinal), such
-as genotype, or {counts}, such as the number of patients visiting an emergency room per day, 
+as genotype, or counts, such as the number of patients visiting an emergency room per day, 
 
 - Continuous random variables can take an uncountable number of possible
 values.
@@ -113,7 +116,7 @@ value between them.
 information to find the probability of its possible values.
 
 - The probability distributions discussed here are characterized by one or more
-*parameters*.
+**parameters**.
 
 - The parameters of probability distributions we assume for random variables are usually unknown.
 - Typically, we use Greek alphabets such as `\(\mu\)` and `\(\sigma\)` to denote these parameters and distinguish them from known values.
@@ -127,7 +130,7 @@ random variable and use `\(\sigma^{2}\)` to denote its variance.
 ### Discrete probability distributions
 
 - For discrete random variables, the probability distribution is fully
-defined by the *probability mass function (pmf)*. 
+defined by the **probability mass function (pmf)**. 
 
 - This is a function that specifies the probability of each possible value within
 range of random variable. 
@@ -147,9 +150,11 @@ random variable `\(X\)` is
 
 - For discrete random variables, the pmf provides the probability of each
 possible value. 
+
 - For continuous random variables, the number of possible
 values is uncountable, and the probability of any specific value is
 zero. 
+
 - For these variables, we are interested in the probability that the value of
 the random variable is within a specific interval from `\(x_{1}\)` to
 `\(x_{2}\)`; we show this probability as `\(P(x_{1} &lt; X \le x_{2})\)`. 
@@ -159,9 +164,7 @@ the random variable is within a specific interval from `\(x_{1}\)` to
 
 ### Probability density function
 
-- For continuous random variables, we use \textbf{probability density
-functions} (pdf) to specify the distribution. Using the pdf, we can
-obtain the probability of any interval. 
+- For continuous random variables, we use **probability density functions** (pdf) to specify the distribution. Using the pdf, we can obtain the probability of any interval. 
 
 &lt;div class="figure" style="text-align: center"&gt;
 &lt;img src="img/densityNormalBMI.png" alt="Probability density function for BMI" width="25%" height="60%" /&gt;
@@ -176,10 +179,9 @@ obtain the probability of any interval.
 
 - The total area under the probability density curve is 1. 
 
-- The curve (and its corresponding function) gives the probability of the random
-variable falling within an interval. 
-- This probability is equal to the
-area under the probability density curve over the interval.
+- The curve (and its corresponding function) gives the probability of the random variable falling within an interval. 
+
+- This probability is equal to the area under the probability density curve over the interval.
 &lt;img src="img/densityShaded2530.png" width="25%" height="60%" style="display: block; margin: auto;" /&gt;
 
 
@@ -205,21 +207,22 @@ measuring the area under the curve to the right of `\(x\)`.
 ---
 
 ### Normal distribution
+
 - Consider the probability distribution function and its corresponding probability density curve we assumed for BMI in the above example. 
-- This distribution is known as \textbf{normal}
-distribution, which is one of the most widely used distributions for
-continuous random variables. 
+
+- This distribution is known as **normal** distribution, which is one of the most widely used distributions for continuous random variables. 
+
 - Random variables with this distribution (or very close to it) occur often in nature.
 
 ---
 
 ### Normal distribution
 
-- A *normal distribution* and its corresponding pdf are fully
-specified by the mean `\(\mu\)` and variance `\(\sigma^2\)`. 
-- A random variable `\(X\)` with  normal distribution is denoted `\(X \sim N(\mu, \sigma^2)\)`.
-- `\(N(0, 1)\)` is called the *standard normal distribution*.
+- A **normal distribution** and its corresponding pdf are fully specified by the mean `\(\mu\)` and variance `\(\sigma^2\)`. 
 
+- A random variable `\(X\)` with  normal distribution is denoted `\(X \sim N(\mu, \sigma^2)\)`.
+
+- `\(N(0, 1)\)` is called the **standard normal distribution**.
 &lt;img src="img/simpNormalDensity.png" width="25%" height="60%" style="display: block; margin: auto;" /&gt;
 
 
@@ -270,9 +273,9 @@ simply the `\(t\)`-{distribution}.
 ### Student's t-distribution
 
 - A `\(t\)`-distribution is specified by only one parameter called the
-*degrees of freedom* (df). 
+**degrees of freedom** (df). 
 
-- The `\(t\)`-distribution with {df} degrees of freedom is usually denoted as `\(t({df})\)` or `\(t_{df}\)`, where `\(df\)` is a positive real number ($df &gt; 0$). 
+- The `\(t\)`-distribution with {df} degrees of freedom is usually denoted as `\(t({df})\)` or `\(t_{df}\)`, where `\(df\)` is a positive real number ( `\(df &gt; 0\)` ). 
 
 - The mean of this distribution is `\(\mu = 0\)`, and
 the variance is determined by the degrees of freedom parameter,
@@ -282,12 +285,11 @@ the variance is determined by the degrees of freedom parameter,
 
 ### Cumulative distribution function
 
-- We saw that by using lower tail probabilities, we can find the
-probability of any given interval.
-- Indeed, all we need to find the probabilities of any interval is a
-function that returns the lower tail probability at any given value of
-the random variable: `\(P(X \le x)\)`.
-- This function is called the *cumulative distribution function* (cdf) or simply the *distribution function*. 
+- We saw that by using lower tail probabilities, we can find the probability of any given interval.
+
+- Indeed, all we need to find the probabilities of any interval is a function that returns the lower tail probability at any given value of the random variable: `\(P(X \le x)\)`.
+
+- This function is called the **cumulative distribution function** (cdf) or simply the **distribution function**. 
 
 ---
 
@@ -319,7 +321,7 @@ the random variable: `\(P(X \le x)\)`.
 
 
 - The process of shifting and scaling a random variable to create a new random variable with mean
-zero and variance one is called *standardization*. 
+zero and variance one is called **standardization**. 
 
 
 ---
@@ -370,117 +372,8 @@ If we subtract `\(Y\)` from `\(X\)`, then
 `$$\begin{eqnarray*}
 \sigma^{2}_{W} = \sigma^{2}_{X} + \sigma^{2}_{Y}.
 \end{eqnarray*}$$`
-- Note that we still *add* the variances.
-- Subtracting `\(Y\)` from `\(X\)` is the same as adding `\(-Y\)` to `\(X\)`. 
 
----
-### Exercise
-
-What would be the most appropriate probability distribution for each of the following random variables:
-- Whether a tumor is benign or malignant
-- Number of people with a malignant tumor out of 10 patients with tumor 
-- Size of tumors
-- Number of people diagnosed with malignant tumor in California every year
-
----
-### Exercise
-
-Consider the following plots. Write down these probabilities:
-- `\(P(X &lt; 3)\)`
-- `\(P(1&lt; X \le 4)\)`
-- `\(P(Y &gt; 5)\)`
-
-&lt;img src="img/finalQ1a.png" width="30%" height="49%" style="display: block; margin: auto;" /&gt;
-
----
-### Exercise
-
-Consider the following plots. Write down these probabilities:
-- `\(P(X &lt; 3)\)`
-- `\(P(1&lt; X \le 4)\)`
-- `\(P(Y &gt; 5)\)`
-
-&lt;img src="img/finalQ1b.png" width="30%" height="49%" style="display: block; margin: auto;" /&gt;
-
----
-### Exercise
-
-Consider Binomial(10, 0.3) distribution. Do the following tasks:
-
-- Plot the probability mass function and cumulative distribution function. 
-- Write down the mean and standard deviation of each distribution. 
-- Find the lower tail probability of 4.
-- What is the probability that the value of the random variable is 2?
-- What is the probability that the value of the random variable is bigger than 2 and less than or equal to 4? 
-
----
-### Exercise
-
-Consider `\(N(3, 2.1)\)` distribution. Do the following tasks:
-
-- Plot the probability density function and cumulative distribution function. 
-- Write down the mean and standard deviation of each distribution. 
-- Find the lower tail probability of 4.
-- What is the probability that the value of the random variable is 2?
-- What is the probability that the value of the random variable is bigger than 2 and less than or equal to 4? 
-
----
-### Exercise
-
-For the probability distributions Binomial(100, 0.3) and `\(N(30, 21)\)`, find the lower tail probability of 35 and the upper tail probability of 27. Compare the results based on the two distributions. 
-
----
-### Exercise
-
-Suppose `\(X\)` has a `\(t\)`-distribution with 6 degrees of freedom. 
-
-- Find the lower tail probabilities of `\(-1\)` and `\(1.5\)`. 
-- Find the 0.95 and 0.9 quantiles. 
-
----
-### Exercise
-
-National Heart, Lung and Blood Institute defines the following categories based on Systolic Blood Pressure ($SBP$):
-- Normal:  `\(SBP \le 120\)`
-- Prehypertension: $ 120 &lt; SBP \le 140 $
-- High blood pressure: `\(SBP &gt; 140\)`
-
-If `\(SBP\)` in the US has a normal distribution such that `\(SBP \sim N(125, 15^{2})\)`,
-
-- Use Rcmdr to find the probability of each group. 
-- Find the intervals that include 68, 95, and 99.7\% of the population. 
-- What are the lower and upper tail probabilities for `\(SBP\)` equal to 115? 
-
----
-### Exercise
-
-Assume that BMI in US has a `\(N(27, 6^2)\)` distribution. Following the recommendation by National Heart, Lung, and Blood Institute, we define the following BMI categories:
-
-- Underweight:  `\(BMI \le 18.5\)`
-- Normal weight: $ 18.5 &lt; BMI \le 25 $
-- Overweight: $ 25 &lt; BMI \le 30$
-- Obesity: `\(BMI &gt; 30\)`
-
-
-- Use R to find the probability of each group. 
-- Find the intervals that include 68, 95, and 99.7% of the population. 
-- What is the probability of being either underweight OR obese (i.e., the union of the two intervals)? 
-- What are the lower and upper tail probabilities for BMI equal to 29.2?
-
----
-### Exercise
-
-For the above question, we denote BMI as `\(X\)`. Find the value `\(x\)` such that `\(P(X \le x) = 0.2\)`. Next, find the value `\(x\)` such that `\(P(X &gt; x) = 0.2\)`.
-
----
-### Exercise
-
-If the height (in inches) of newborn babies has the `\(N(18, 1)\)` distribution, what is the probability the the height of a newborn baby is between 17 and 20 inches? What is the distribution of height in centimeters (1 inch = 2.54 cm)? Using this distribution, what is the probability that the height of a newborn baby is between 43.18 cm (17 inches) and 50.80 cm (20 inches)?
-
----
-### Exercise
-
-Suppose the distribution of systolic blood pressure, `\(X\)`, among people suffering from hypertension is `\(N(153, 4^{2})\)`. Further, suppose that researchers have found a new treatment that drops systolic blood pressure by 4 points on average. The effect of drug, `\(Y\)`, varies among patients randomly and it does not depend on their current blood pressure level. If the variance of `\(Y\)` is 1. What is the mean (expectation) and variance of systolic blood pressure if every person in the population starts using the drug? What is the distribution of systolic blood pressure in this case if we assume `\(Y\)` has a normal distribution?
+- Note that we still *add* the variances since subtracting `\(Y\)` from `\(X\)` is the same as adding `\(-Y\)` to `\(X\)`. 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
