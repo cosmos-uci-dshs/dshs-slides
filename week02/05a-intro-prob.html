@@ -31,35 +31,36 @@ class: title-slide
 class: middle
 
 ### Introduction
- - We have used plots and summary statistics to learn about the distribution of variables and to investigate their relationships. 
+ - We have used plots and summary statistics to learn about the distribution of different variables in the observed data and to investigate their relationships. 
  
- - We now want to **generalize** our findings to the population. 
+ - We now want to **generalize** our findings to the entire population of interest. 
  
  - However, we almost always remain uncertain about the true distributions and relationships in the population.
  
  - Therefore, when we generalize our findings from a sample to the whole population, we should explicitly specify the extent of our uncertainty.  
  
- - We now discuss probability as a measure of uncertainty.
+ - We use probability as a measure of our uncertainty.
  
- - We use some examples from genetics.  
  
 ---
  
 ### Some Commonly Used Genetic Terms
- 
-- Gene
 
-- Single Nucleotide Polymorphisms (SNPs)
+- Throughout this lecture, we will use the following concepts from genetics:  
 
-- Alleles
+  - Gene
 
-- Genotype
+  - Single Nucleotide Polymorphisms (SNPs)
 
-- Homozygous vs. heterozygous
+  - Alleles
 
-- Phenotype
+  - Genotype
 
-- Recessive vs. dominant
+  - Homozygous vs. heterozygous
+
+  - Phenotype
+
+  - Recessive vs. dominant
 
 ---
 
@@ -80,8 +81,7 @@ class: middle
 
 ### Probability
 
-- To each possible outcome in the sample space, we assign a probability
-`\(P\)`, which represents how certain we are about the occurrence of the corresponding outcome. 
+- To each possible outcome in the sample space, we assign a probability `\(P\)`, which represents how certain we are about the occurrence of the corresponding outcome. 
 
 - For an outcome `\(o\)`, we denote the probability as `\(P(o)\)`, where `\(0 \le P(o) \le 1\)`. 
 
@@ -391,56 +391,6 @@ shows the relationship between `\(P(E_{2}|E_{1})\)` and `\(P(E_{1}|E_{2})\)`:
 `$$\begin{eqnarray*}
 \textrm{PPV} &amp; = &amp; \frac{\textrm{prevalence} \times \textrm{sensitivity} }{\textrm{prevalence} \times \textrm{sensitivity}+ \textrm{(1- prevalence)} \times \textrm{(1- specificity)}}
 \end{eqnarray*}$$`
-
-
----
-### Exercise 
-
-
-Consider two events `\(E_{1}\)` and `\(E_{2}\)`, where `\(P(E_{1}) = 0.3\)` and `\(P(E_{2}) = 0.5\)`. Calculate the following probabilities:
-
-- `\(P(E_{1} \cup E_{2})\)` if the events are disjoint. In this case, are these two events partitioning the sample space?
-- `\(P(E_{3})\)`, where `\(E_{3} = (E_{1} \cup E_2)^c\)` and `\(E_1\)` and `\(E_2\)` are disjoint.
-- `\(P(E_{1} \cap E_{2})\)` if the events are independent.
-- `\(P(E_{1} \cup E_{2})\)` if the events are independent.
-- `\(P(E_{2} | E_{1})\)` if  `\(P(E_{1} | E_{2}) = 0.35\)`. In this case, are these two events independent?
-
----
-
-### Exercise 
-
-In a population that is in Hardy-Weinberg equilibrium, `\(P(a) = 0.1\)` and `\(P(A) = 0.9\)`. Find the probability of each possible genotype. 
-
-
----
-
-### Exercise 
-
-Assume that the the probability of having the disease is 0.4, and the disease is not genetic (i.e., it is independent from the genotype of individuals). Also assume that the gene `\(A\)` has two alleles `\(A\)` and `\(a\)` such that `\(P(A) = 0.3\)` and `\(P(a) = 0.7\)`. If the population is in Hardy-Weinberg equilibrium, write down the sample space for the combination of the disease status ( `\(D\)` for diseased and `\(H\)` for healthy) and different genotypes along with the probability of each possible combination. 
-
----
-
-### Exercise 
-
-For the above question, find the probabilities for all possible combinations of genotypes and the disease status assuming that the disease is related to the gene {\bf{A}} such that `\(P(D| aa) = 0.5\)` and `\(P(D | Aa) = P(D | AA) = 0.3\)`.
-
----
-
-### Exercise 
-
-Suppose a pregnant woman is going to give birth to a girl or a boy with equal probabilities. However, if the baby is a boy, the probability that he has black (Bk) hair is 0.7, whereas this probability is 0.4 if the baby is a girl. Alternatively, the baby could have blond (Bd) hair. Using a tree diagram, find the sample space and the corresponding probabilities for all possible combinations of gender and hair color for the baby.
-
----
-
-### Exercise 
-
-Suppose the probability of being affected by H1N1 flu is 0.02. We found that among people who are affected by H1N1, the probability that a person washes her hands regularly is 0.3. If the probability of washing hands regularly in general (regardless of whether the person has the H1N1 flu or not) is 0.6. What is the probability of getting the H1N1 flu if a person washes her hands regularly?
-
----
-
-### Exercise 
-
-A person has received the result of his medical test and realized that his diagnosis was positive (affected by the disease). However, the lab report stated that this kind of test has false positive rate of 0.06 (i.e., diagnosing a healthy person, `\(H\)`, as affected, `\(D\)` ), and false negative rate of 0.038 (i.e., diagnosing an affected person as healthy). Therefore, while this news was devastating, there is a chance that he was misdiagnosed. After some research, he found out that the probability of this disease in the population is `\(P(D) = 0.02\)`. Find the probability that he is actually affected by the disease given the positive lab result. 
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
