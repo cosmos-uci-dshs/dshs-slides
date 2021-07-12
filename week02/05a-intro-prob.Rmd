@@ -235,8 +235,7 @@ P(HM  \cup ND)  &=&  P(HM ) + P(ND) - P(HM  \cap ND) \\
 ---
 
 ### Disjoint events
-- Two events are called **disjoint** or **mutually exclusive** if they never occur together: if we know that one of them has occurred,
-we can conclude that the other event has~not. 
+- Two events are called **disjoint** or **mutually exclusive** if they never occur together: if we know that one of them has occurred, we can conclude that the other event has not occurred. 
 
 - Disjoint events have no
 elements (outcomes) in common, and their intersection is the empty set.
@@ -382,6 +381,31 @@ $$P(C|SM)  =  \frac{P(SM|C)P(C) }{P(SM)} = \frac{ 0.4 \times 0.001}{0.25} = 0.00
 0.001 to 0.0016. 
 
 
+
+---
+
+### A more  general form of Bayes' theorem
+
+- Suppose a set of $K$ events $B_1, B_2, \ldots, B_K$ form a partition of the sample space. We can write the Bayes' theorem for each of the partitioning events as follows: 
+$$\begin{eqnarray*}
+P(B_{i}|A) & = & \frac{ P(A|B_{i})P(B_{i})  }{P(A)}
+\end{eqnarray*}$$
+
+- Here, $B_{i}$ is one of the partitioning events and $A$ is an event in the sample space. Using the law of total probability, we have
+$$\begin{eqnarray*}
+P(A) = \sum^{K}_{k=1}P(A|B_k)P(B_k)
+\end{eqnarray*}$$
+
+---
+
+### A more  general form of Bayes' theorem
+
+- Therefore, we can write the general form of Bayes' theorem as 
+$$\begin{eqnarray}
+P(B_{i}|A) & = & \frac{ P(A|B_{i})P(B_{i})  }{\sum^{K}_{k=1}P(A|B_k)P(B_k)}
+\end{eqnarray}$$
+
+- We will use this general form in analysis of diagnostic tests discussed below. 
 ---
 
 ### Diagnostic tests
@@ -414,9 +438,30 @@ $$\begin{eqnarray*}
 \textrm{Specificity} & = & P(\textrm{Negative} | \textrm{No Disease})\\
 \textrm{Positive Predictive Value (PPV)} & = & P(\textrm{Disease} | \textrm{Positive})
 \end{eqnarray*}$$
-
-- Using Bayes' theorem, we have:
+- Using the general form of Bayes' theorem, we have:
 $$\begin{eqnarray*}
-\textrm{PPV} & = & \frac{\textrm{prevalence} \times \textrm{sensitivity} }{\textrm{prevalence} \times \textrm{sensitivity}+ \textrm{(1- prevalence)} \times \textrm{(1- specificity)}}
+\textrm{PPV} & = & \frac{\textrm{sensitivity} \times \textrm{prevalence}  }{\textrm{sensitivity} \times \textrm{prevalence}  +  \textrm{(1- specificity)} \times \textrm{(1- prevalence)} }
 \end{eqnarray*}$$
 where *prevalence* is the overall probability of the disease in the population: $P(Disease)$ 
+
+---
+
+### Diagnostic tests
+
+- The following plot is used to obtain the value of PPV. 
+
+```{r, echo=FALSE,out.width='50%',fig.align='center'}
+knitr::include_graphics('img/fp_tp.png')
+```
+
+---
+
+### Diagnostic tests
+
+- In the above figure, the following abbreviations are used: $S$ for sample space, $H$ for healthy, $D$ for diseased, $T^-$ for negative test result, $T^+$ for positive test result. 
+
+- The shaded area to the right of vertical line is the true positive $TP$, the shaded area to the left of the vertical line is the false negative $FN$, the unshaded area to the left of the vertical line is the true negative $TN$, and the unshaded area to the right of the vertical line is the false negative $FN$ for the test.
+
+- Therefore, the general form of Bayes' theorm can be written as follows:
+
+$$P(D|T^{+})  =  \frac{ P(T^{+}|D)P(D)}{P(T^{+}|D)P(D) + P(T^{+} | H)P(H)} $$
