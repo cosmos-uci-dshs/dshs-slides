@@ -41,7 +41,7 @@ library(fabricerin)
 numerical value to each possible outcome (and event) of a random
 phenomenon. 
 
-- For instance, we can define $X$ based on possible genotypes
+- For instance, we can define $X$ for possible genotypes
 of a bi-allelic gene **A** as follows:
 $$X = \left\{ \begin{array}{l@{\quad}l}
 0 &  \mbox{for genotype } \mathit{AA}, \\
@@ -57,7 +57,7 @@ $$X = \left\{ \begin{array}{l@{\quad}l}
 ### Random Variables
 
 - After we define a random variable, we can find the probabilities for
-its possible values based on the probabilities for its underlying
+its possible values based on the probabilities specified for its underlying
 random phenomenon. This way, instead of talking about the probabilities
 for different outcomes and events, we can talk about the probability of
 different values for a random variable. 
@@ -65,7 +65,7 @@ different values for a random variable.
 - For example, suppose $P({AA}) = 0.49$, $P({Aa}) = 0.42$, and $P({aa}) = 0.09$. 
 
 - Then, we can say that $P(X=0) = 0.49$, i.e., $X$ is equal
-to 0 with probability of 0.49. 
+to $0$ with probability of 0.49. 
 
 - Note that the total probability for the random variable is still 1. 
 
@@ -107,7 +107,7 @@ values.
 - These variables can be categorical (nominal or ordinal), such
 as genotype, or counts, such as the number of patients visiting an emergency room per day, 
 
-- Continuous random variables can take an uncountable number of possible
+- Continuous random variables, for example BMI, can take an uncountable number of possible
 values.
 
 - For any two possible values of this random variable, we can always find another
@@ -135,9 +135,9 @@ random variable and use $\sigma^{2}$ to denote its variance.
 ### Discrete probability distributions
 
 - For discrete random variables, the probability distribution is fully
-defined by the **probability mass function (pmf)**. 
+defined by its **probability mass function** (pmf). 
 
-- This is a function that specifies the probability of each possible value within
+- This is a function that specifies the probability of each possible value within the
 range of random variable. 
 
 - For the genotype example, the pmf of the
@@ -160,7 +160,7 @@ possible value.
 values is uncountable, and the probability of any specific value is
 zero. 
 
-- For these variables, we are interested in the probability that the value of
+- For these variables, we are usually interested in the probability that the value of
 the random variable is within a specific interval from $x_{1}$ to
 $x_{2}$; we show this probability as $P(x_{1} < X \le x_{2})$. 
 
@@ -206,13 +206,27 @@ knitr::include_graphics('img/densityShaded18.png')
 
 ### Upper tail probability
 
-- The probability of observing values greater than $x$,
-\mbox{$P(X > x)$}, is called the upper tail probability and is found by
+- The probability of observing values greater than $x$, $P(X > x)$, is called the upper tail probability and is found by
 measuring the area under the curve to the right of $x$. 
 
 ```{r, echo=FALSE,out.width='25%',out.height='60%',fig.align='center'}
 knitr::include_graphics('img/densityShaded30.png')
 ```
+
+---
+
+### Probability of intervals
+
+- The probability of any interval from $x_{1}$ to $x_{2}$, where $x_{1} < x_{2}$, can be obtained using the corresponding lower tail probabilities for these two points as follows:
+$$\begin{equation*}
+P(x_1 < X \le x_2) = P(X \le x_2) - P(X \le x_1).
+\end{equation*}$$
+
+- For example, the probability of a BMI between 25 and 30 is
+$$\begin{equation*}
+P(25 < X \le 30) = P(X \le 30) - P(X \le 25).
+\end{equation*}$$
+
 
 ---
 
@@ -277,7 +291,7 @@ knitr::include_graphics("img/normal95.png")
 ### Student's t-distribution
 
 - Another continuous probability distribution that is used very often in
-statistics is the \textbf{Student's} $t$-{distribution} or
+statistics is the **Student's t**-distribution or
 simply the $t$-{distribution}.
 
 
@@ -293,7 +307,7 @@ knitr::include_graphics("img/standNormT.png")
 - A $t$-distribution is specified by only one parameter called the
 **degrees of freedom** (df). 
 
-- The $t$-distribution with {df} degrees of freedom is usually denoted as $t({df})$ or $t_{df}$, where $df$ is a positive real number ( $df > 0$ ). 
+- The $t$-distribution with *df* degrees of freedom is usually denoted as $t({df})$ or $t_{df}$, where $df$ is a positive real number ( $df > 0$ ). 
 
 - The mean of this distribution is $\mu = 0$, and
 the variance is determined by the degrees of freedom parameter,
@@ -305,15 +319,15 @@ $\sigma^{2} = df/(df - 2)$, which is of course defined when $df > 2$.
 
 - We saw that by using lower tail probabilities, we can find the probability of any given interval.
 
-- Indeed, all we need to find the probabilities of any interval is a function that returns the lower tail probability at any given value of the random variable: $P(X \le x)$.
+- Indeed, all we need to find the probabilities of any interval is a function that returns the lower tail probability at any given value $x$ of the random variable: $P(X \le x)$.
 
 - This function is called the **cumulative distribution function** (cdf) or simply the **distribution function**. 
 
 ---
 
-### Quantiles
+### Cumulative distribution function
 
-- We can use the cdf plot in the reverse direction to find the value of the random variable for a given lower tail probability. 
+- We can use the cdf plot to find the lower tail probability for any given value as shown in the following figure. 
 
 ```{r, echo=FALSE,out.width='30%',out.height='49%',fig.show='hold',fig.align='center'}
 knitr::include_graphics("img/standNormCdf.png")
@@ -323,7 +337,7 @@ knitr::include_graphics("img/standNormCdf.png")
 
 ### Quantiles
 
-- We can use the cdf plot in the reverse direction to find the value of the random variable for a given lower tail probability. 
+- We can also use the cdf plot in the reverse direction to find the value of the random variable for a given lower tail probability: quaantiles. 
 
 ```{r, echo=FALSE,out.width='30%',out.height='49%',fig.show='hold',fig.align='center'}
 knitr::include_graphics("img/standNormQuant.png")
@@ -342,16 +356,16 @@ $$\begin{eqnarray*}
 \end{eqnarray*}$$
 
 
-- The process of shifting and scaling a random variable to create a new random variable with mean
-zero and variance one is called **standardization**. 
 
 
 ---
 
 ### Scaling and shifting random variables
 
-- For this, we
-first subtract the mean $\mu$ and then divide the result by the standard deviation $\sigma$.
+- The process of shifting and scaling a random variable to create a new random variable with mean
+zero and variance one is called **standardization**. 
+
+- For this, we first subtract the mean $\mu$ and then divide the result by the standard deviation $\sigma$.
 $$\begin{eqnarray*}
 Z = \frac{X - \mu}{\sigma}.
 \end{eqnarray*}$$
