@@ -149,6 +149,51 @@ $$P(X=x) = \left\{ \begin{array}{l@{\quad}l}
 0.09 &  \mbox{for } x=2.
 \end{array} \right.$$
 
+
+---
+
+### Bernoulli distribution
+
+- Binary random variables (e.g., healthy/diseased) are abundant in scientific studies. 
+- The binary random variable $X$ with possible values 0 and 1 has a **Bernoulli** distribution with parameter $\theta$. 
+- Here, $P(X=1) = \theta$ and $P(X=0) = 1 - \theta$. 
+
+- For example,  
+$$P(X=x) = \left\{ \begin{array}{l@{\quad}l}
+0.2 &  \mbox{for } x=0, \\
+0.8 &  \mbox{for } x=1.
+\end{array} \right.$$
+
+- We denote this as $X \sim \textrm{Bernoulli}(\theta)$, where $0 \le \theta \le 1$.
+
+
+
+
+---
+
+### Bernoulli distribution
+
+- The mean of a binary random variable, $X$, with $\text{Bernoulli} (\theta)$ distribution is~$\theta$. We show this as $\mu = \theta$. 
+
+- The variance of a random variable with $\text{Bernoulli}(\theta)$ distribution is $\sigma^{2} = \theta(1- \theta) = \mu(1- \mu)$.
+
+- The standard deviation is obtained by taking the square root of variance: $\sigma = \sqrt{\theta (1- \theta)} = \sqrt{\mu (1- \mu)}$.
+
+
+---
+
+### Binomial distribution
+
+- A sequence of binary random variables $X_{1}, X_{2}, \ldots, X_{n}$ is called **Bernoulli trials** if they all have the same Bernoulli distribution and  are independent. 
+
+- The random variable $Y$ representing the number of times the outcome of interest occurs in $n$ Bernoulli trials (i.e., the sum of Bernoulli trials) has a **Binomial** distribution denoted as $\textrm{Binomial}(n, \theta)$.
+
+- The pmf of a $\textrm{Binomial}(n, \theta)$ specifies the probability of each possible value (integers from 0 through $n$) of the random variable.
+
+- The theoretical (population) mean of a random variable $Y$ with $\textrm{Binomial}(n, \theta)$ distribution is $\mu = n\theta$. The theoretical (population) variance of $Y$ is $\sigma^{2} = n\theta(1-\theta)$.
+
+
+
 ---
 
 ### Continuous probability distributions
