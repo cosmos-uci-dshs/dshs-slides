@@ -173,7 +173,7 @@ $$P(X=x) = \left\{ \begin{array}{l@{\quad}l}
 
 ### Bernoulli distribution
 
-- The mean of a binary random variable, $X$, with $\text{Bernoulli} (\theta)$ distribution is~$\theta$. We show this as $\mu = \theta$. 
+- The mean of a binary random variable, $X$, with $\text{Bernoulli} (\theta)$ distribution is $\theta$. We show this as $\mu = \theta$. 
 
 - The variance of a random variable with $\text{Bernoulli}(\theta)$ distribution is $\sigma^{2} = \theta(1- \theta) = \mu(1- \mu)$.
 
