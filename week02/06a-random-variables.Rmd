@@ -67,7 +67,7 @@ different values for a random variable.
 - Then, we can say that $P(X=0) = 0.49$, i.e., $X$ is equal
 to $0$ with probability of 0.49. 
 
-- Note that the total probability for the random variable is still 1. 
+- Note that the total probability for the random variable is still 1 and all the probability rules we discussed still hold. 
 
 
 
