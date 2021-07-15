@@ -1,39 +1,51 @@
-<!DOCTYPE html>
-<html lang="" xml:lang="">
-  <head>
-    <title>07_a_SamplingDistn.knit</title>
-    <meta charset="utf-8" />
-    <script src="libs/header-attrs-2.9/header-attrs.js"></script>
-    <link rel="stylesheet" href="slide-style.css" type="text/css" />
-  </head>
-  <body>
-    <textarea id="source">
-
+---
+title: "Samples, Statistics and their Distributions"
+author: 
+  - "Dr. Uma Ravat 
+  
+  University of California at Santa Barbara"
+output:
+  xaringan::moon_reader:
+    css: ["slide-style.css"]
+    lib_dir: libs
+    seal: false
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: "pygments"
+      highlightLines: true
+      highlightLanguage: "r"
+      ratio: 16:9
+      countdown: 60000
+      
+---
 layout: true
 
-
+```{r setup, include=FALSE}
+library(tidyverse)
+```
 ---
 class: title-slide
 
 
 
-&lt;br&gt;
-&lt;br&gt;
+<br>
+<br>
 .right-panel[ 
 
-# Samples, Statistics and their Distributions
-## Dr. Uma Ravat
-University of California at Santa Barbara
+# `r rmarkdown::metadata$title`
+## `r rmarkdown::metadata$author`
 
-&lt;br&gt;
-&lt;br&gt;
-Copyright &amp;copy; &lt;a href="https://www.pstat.ucsb.edu/people/uma-ravat"&gt;Dr. Uma Ravat&lt;/a&gt;
+<br>
+<br>
+Copyright &copy; <a href="https://www.pstat.ucsb.edu/people/uma-ravat">Dr. Uma Ravat</a>
 ]
 
 ---
 class: middle center
 ## Population and Sample
-&lt;img src="./img/pic-pop_sample.png" width="80%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE,out.width='80%',fig.align='center'}
+knitr::include_graphics('./img/pic-pop_sample.png')
+```
 
 ---
 class: middle 
@@ -76,11 +88,17 @@ class: middle
 ### these 3 samples
 
 .pull-left[
-&lt;img src="./img/pic-sample-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE,out.width='80%',fig.align='center'}
+knitr::include_graphics('./img/pic-sample-1.png')
+```
 
-&lt;img src="./img/pic-sample-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE,out.width='80%',fig.align='center'}
+knitr::include_graphics('./img/pic-sample-1.png')
+```
 
-&lt;img src="./img/pic-sample-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE,out.width='80%',fig.align='center'}
+knitr::include_graphics('./img/pic-sample-1.png')
+```
 
 ]
 ]
@@ -91,11 +109,17 @@ class: middle
 ###  **OR** these 3 samples ? 
 
 .pull-left[
-&lt;img src="./img/pic-sample-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE,out.width='80%',fig.align='center'}
+knitr::include_graphics('./img/pic-sample-1.png')
+```
 
-&lt;img src="./img/pic-sample-2.png" width="80%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE,out.width='80%',fig.align='center'}
+knitr::include_graphics('./img/pic-sample-2.png')
+```
 
-&lt;img src="./img/pic-sample-3.png" width="80%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE,out.width='80%',fig.align='center'}
+knitr::include_graphics('./img/pic-sample-3.png')
+```
 
 ]
 
@@ -106,11 +130,17 @@ class: center middle
 
 ## How variable are these samples ?
 
-&lt;img src="./img/pic-sample-1.png" width="15%" /&gt;
+```{r echo=FALSE, out.width = '15%'}
+knitr::include_graphics("./img/pic-sample-1.png")
+```
 
-&lt;img src="./img/pic-sample-2.png" width="15%" /&gt;
+```{r echo=FALSE, out.width = '15%'}
+knitr::include_graphics("./img/pic-sample-2.png")
+```
 
-&lt;img src="./img/pic-sample-3.png" width="15%" /&gt;
+```{r echo=FALSE, out.width = '15%'}
+knitr::include_graphics("./img/pic-sample-3.png")
+```
 
 .left[
 **Sampling variability: **
@@ -161,11 +191,11 @@ class: center top
 
 .pull-left[
 
-&lt;img src="./img/pic-sample-5.png" width="96" height="65"&gt;
-&lt;br&gt;
-&lt;img src="./img/pic-sample-8.png" width="96" height="65"&gt;
-&lt;br&gt;
-&lt;img src="./img/pic-sample-1.png" width="96" height="65"&gt;
+<img src="./img/pic-sample-5.png" width="96" height="65">
+<br>
+<img src="./img/pic-sample-8.png" width="96" height="65">
+<br>
+<img src="./img/pic-sample-1.png" width="96" height="65">
 
 ]
 
@@ -187,7 +217,7 @@ class: middle inverse
 set Probability of orange  = 0.5, Number of candies = 10,  	Number of samples = 1 
 2. In **choose statistic** in the middle left, select Proportion of orange
 3. Click draw samples!
-4. Put in the chat the value reported as  the Most recent `\(\hat{p}\)` in blue.
+4. Put in the chat the value reported as  the Most recent $\hat{p}$ in blue.
 
 --
 ### Thank you all! You saved me a lot of work! 
@@ -199,31 +229,31 @@ class: center split-six
 ### _What would happen if.._
 
 I take a random sample of 10 Reese’s Pieces candies from  the machine, ~~3~~  `30` times ?
-&lt;br&gt;
+<br>
 ]
 
 --
 
 .row[
-&lt;img src="./img/pic-sample-5.png" width="96" height="65"&gt;
-&lt;img src="./img/pic-sample-8.png" width="96" height="65"&gt;
-&lt;img src="./img/pic-sample-1.png" width="96" height="65"&gt;
+<img src="./img/pic-sample-5.png" width="96" height="65">
+<img src="./img/pic-sample-8.png" width="96" height="65">
+<img src="./img/pic-sample-1.png" width="96" height="65">
 ]
 
 .row[
-&lt;img src="./img/pic-sample-6.png" width="96" height="65"&gt;
-&lt;img src="./img/pic-sample-9.png" width="96" height="65"&gt;
-&lt;img src="./img/pic-sample-2.png" width="96" height="65"&gt;
+<img src="./img/pic-sample-6.png" width="96" height="65">
+<img src="./img/pic-sample-9.png" width="96" height="65">
+<img src="./img/pic-sample-2.png" width="96" height="65">
 ]
 
 .row[
- `\(\vdots\)`
+ $\vdots$
 ]
 
 .row[
-&lt;img src="./img/pic-sample-7.png" width="96" height="65"&gt;
-&lt;img src="./img/pic-sample-10.png" width="96" height="65"&gt;
-&lt;img src="./img/pic-sample-3.png" width="96" height="65"&gt;
+<img src="./img/pic-sample-7.png" width="96" height="65">
+<img src="./img/pic-sample-10.png" width="96" height="65">
+<img src="./img/pic-sample-3.png" width="96" height="65">
 ]
 
 
@@ -235,11 +265,11 @@ and look at the proportion of orange candy in these samples?
 class: middle
 
 .pull-left[
-#### sample #1 &lt;br&gt;
-#### sample #2 &lt;br&gt;
-#### sample #3 &lt;br&gt;
-#### `\(\cdots\)`  &lt;br&gt;
-#### sample #30 &lt;br&gt;
+#### sample #1 <br>
+#### sample #2 <br>
+#### sample #3 <br>
+#### $\cdots$  <br>
+#### sample #30 <br>
 ]
 
 .pull-right[
@@ -256,7 +286,7 @@ class: middle
 ### How might we use this to quantify sampling variability?
 
 --
-   - standard deviation of the 30 numbers:  \{ 4/10, 6/10, 5/10, `\(\cdots\)` , 8/10\}
+   - standard deviation of the 30 numbers:  \{ 4/10, 6/10, 5/10, $\cdots$ , 8/10\}
 
 
 ---
@@ -266,7 +296,7 @@ class: center
 
 --
 
-&lt;img src="./img/visualizationOfsamplingdistn.png" width="500" height="450"&gt;
+<img src="./img/visualizationOfsamplingdistn.png" width="500" height="450">
 
 ---
 class: middle
@@ -274,7 +304,7 @@ class: middle
 ### Quantifying sampling variability SOLVED!
 
 .pull-left[
-&lt;img src="./img/Quantifying_sampling_variability.png" width="500" height="450"&gt;
+<img src="./img/Quantifying_sampling_variability.png" width="500" height="450">
 ]
 
 --
@@ -308,7 +338,7 @@ If we were to repeatedly take random samples of _fixed size_ from the population
 .pull-right[
 This distribution is called the **sampling distribution of sample proportion**
 
-&lt;img src="./img/visualizationOfsamplingdistn.png" width="300" height="220"&gt;Technically, this is actually an approximation of the theoretical sampling distribution.
+<img src="./img/visualizationOfsamplingdistn.png" width="300" height="220">Technically, this is actually an approximation of the theoretical sampling distribution.
 ]
 
 
@@ -336,8 +366,8 @@ Go [here](http://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?candy=1
 class: top
 
 
-&lt;img src="./img/clt_prop_grid_1.png" width="500" height="550"&gt;
-&lt;img src="./img/clt_prop_grid_2.png" width="500" height="550"&gt;
+<img src="./img/clt_prop_grid_1.png" width="500" height="550">
+<img src="./img/clt_prop_grid_2.png" width="500" height="550">
 
 
 .footnote[Source:  OpenIntro.org]
@@ -370,14 +400,14 @@ class: middle
 
 .pull-left[
 - The population’s numerical characteristics are **parameters**. 
-    - proportion of orange Reeses pieces in the candy machine is the population parameter `\(p\)`
-    - `\(p = 0.4\)`
+    - proportion of orange Reeses pieces in the candy machine is the population parameter $p$
+    - $p = 0.4$
 ]
 
 .pull-right[
 - The sample’s numerical characteristics are **statistics**
-    - proportion of orange Reeses pieces in the sample is the sample statistic `\(\hat{p}\)`
-    - `\(\hat{p} = 0.3\)` 
+    - proportion of orange Reeses pieces in the sample is the sample statistic $\hat{p}$
+    - $\hat{p} = 0.3$ 
 ]  
 
 
@@ -385,7 +415,7 @@ class: middle
 
 - The distribution of the sample statistic is the **sampling distribution** **of the sample statistic**
     - the sampling distribution of the sample proportion (of orange candy)
-    - the sampling distribution of `\(\hat{p}\)`
+    - the sampling distribution of $\hat{p}$
     - the sampling distribution (when the context is clear)
     
 ---
@@ -397,7 +427,7 @@ class: middle
     - Sampling variability is just the standard error
     
 - A sample statistic is also called a **point estimate of the population parameter**    
-   - When we take a sample and calculate the sample proportion to get `\(\hat{p} = 0.3\)` then we say " 0.3  is a **point estimate** of the parameter `\(p\)`"
+   - When we take a sample and calculate the sample proportion to get $\hat{p} = 0.3$ then we say " 0.3  is a **point estimate** of the parameter $p$"
    
 
 
@@ -407,19 +437,19 @@ class: middle
 
 .footnote[`*` CLT holds if if np and n(1-p) are large (10 or more)]
 
-Under certain conditions for sample size `\(n\)` and population proportion `\(p\)`*, the sampling distribution of sample proportion `\(\hat{p}\)` is 
+Under certain conditions for sample size $n$ and population proportion $p$*, the sampling distribution of sample proportion $\hat{p}$ is 
 
 - approximately normally distributed 
-- with mean equal to the population proportion, `\(p\)`, 
-- standard error (SE) equal to `\(\sqrt{\frac{p~(1-p)}{n}}\)`.
+- with mean equal to the population proportion, $p$, 
+- standard error (SE) equal to $\sqrt{\frac{p~(1-p)}{n}}$.
 
 $$ \hat{p} \sim \text{ approximately }N (mean = p , SE = \sqrt{\frac{p~(1-p)}{n}}) $$
 
 --
 
 - As sample size increases, standard error (variance) decreases
-- For large sample sizes, `\(\hat{p}\)` will be close to true population proportion `\(p\)`.
-- `\(\hat{p}\)` serves as a point estimate for `\(p\)`
+- For large sample sizes, $\hat{p}$ will be close to true population proportion $p$.
+- $\hat{p}$ serves as a point estimate for $p$
 
 
 ---
@@ -440,11 +470,11 @@ class: middle
 # Central Limit Theorem for sample mean
 
 
-For **any** population with population mean `\(\mu\)` and population variance `\(\sigma^2\)`, when sample size is large  ( `\(n \geq 30\)`), the sampling distribution of sample mean `\(\bar{x}\)` is  
+For **any** population with population mean $\mu$ and population variance $\sigma^2$, when sample size is large  ( $n \geq 30$), the sampling distribution of sample mean $\bar{x}$ is  
 
 1. approximately normally distributed
-2. with mean equal to the population mean `\(\mu\)`, 
-3. standard error (SE) equal to `\(\frac{\sigma}{\sqrt{n}}\)`
+2. with mean equal to the population mean $\mu$, 
+3. standard error (SE) equal to $\frac{\sigma}{\sqrt{n}}$
 
 
 $$ \bar{x} \sim N (mean = \mu, SE = \frac{\sigma}{\sqrt{n}}) $$
@@ -452,8 +482,8 @@ $$ \bar{x} \sim N (mean = \mu, SE = \frac{\sigma}{\sqrt{n}}) $$
 
 - Holds for [**any population**](https://onlinestatbook.com/stat_sim/sampling_dist/), even not normal, skewed etc.
 - As sample size increases, standard error (variance) decreases
-- For large sample sizes, `\(\bar{x}\)` will be close to true population mean `\(\mu\)`.
-- `\(\bar{x}\)` serves as a point estimate for `\(\mu\)`
+- For large sample sizes, $\bar{x}$ will be close to true population mean $\mu$.
+- $\bar{x}$ serves as a point estimate for $\mu$
 
 ---
 class: middle 
@@ -501,8 +531,8 @@ Let's consider the random variable `weight`
 
 - Are we given the population weights?
 - Are we given the sample weights?
-- Are we given the population mean weight `\(\mu\)`?
-- Are we given the sample mean weight `\(\bar{x}\)`?
+- Are we given the population mean weight $\mu$?
+- Are we given the sample mean weight $\bar{x}$?
 
 --
 
@@ -531,7 +561,9 @@ class: middle
 
 -  Yet, it is useful to always think of a point estimate as coming from such a hypothetical distribution.
 
-&lt;img src="./img/clt_prop_example.png" width="15%" style="display: block; margin: auto;" /&gt;
+```{r, echo=FALSE,out.width='15%',fig.align='center'}
+knitr::include_graphics('./img/clt_prop_example.png')
+```
 
 
 --
@@ -565,7 +597,7 @@ From CLT, this sampling distribution
 - would actually be approximately normal
 - would be centered at 68 kg.
 - The variance of the weights can also be estimated using the sample variance . 
-- The standard error of the sampling distribution can then be estimated to be the `\(\sqrt{\frac{\text{sample variance}}{13572}}\)`.
+- The standard error of the sampling distribution can then be estimated to be the $\sqrt{\frac{\text{sample variance}}{13572}}$.
 
 
 
@@ -608,173 +640,3 @@ This content has been developed and shaped by referring to several materials inc
 class: inverse center middle
 
 # Next, let's flip things a bit
-    </textarea>
-<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create({
-"slideNumberFormat": "%current%",
-"highlightStyle": "pygments",
-"highlightLines": true,
-"highlightLanguage": "r",
-"ratio": "16:9"
-});
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
-  window.dispatchEvent(new Event('resize'));
-});
-(function(d) {
-  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
-  if (!r) return;
-  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
-  d.head.appendChild(s);
-})(document);
-
-(function(d) {
-  var el = d.getElementsByClassName("remark-slides-area");
-  if (!el) return;
-  var slide, slides = slideshow.getSlides(), els = el[0].children;
-  for (var i = 1; i < slides.length; i++) {
-    slide = slides[i];
-    if (slide.properties.continued === "true" || slide.properties.count === "false") {
-      els[i - 1].className += ' has-continuation';
-    }
-  }
-  var s = d.createElement("style");
-  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
-  d.head.appendChild(s);
-})(document);
-// delete the temporary CSS (for displaying all slides initially) when the user
-// starts to view slides
-(function() {
-  var deleted = false;
-  slideshow.on('beforeShowSlide', function(slide) {
-    if (deleted) return;
-    var sheets = document.styleSheets, node;
-    for (var i = 0; i < sheets.length; i++) {
-      node = sheets[i].ownerNode;
-      if (node.dataset["target"] !== "print-only") continue;
-      node.parentNode.removeChild(node);
-    }
-    deleted = true;
-  });
-})();
-(function() {
-  "use strict"
-  // Replace <script> tags in slides area to make them executable
-  var scripts = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container script'
-  );
-  if (!scripts.length) return;
-  for (var i = 0; i < scripts.length; i++) {
-    var s = document.createElement('script');
-    var code = document.createTextNode(scripts[i].textContent);
-    s.appendChild(code);
-    var scriptAttrs = scripts[i].attributes;
-    for (var j = 0; j < scriptAttrs.length; j++) {
-      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
-    }
-    scripts[i].parentElement.replaceChild(s, scripts[i]);
-  }
-})();
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-(function(time) {
-  var d2 = function(number) {
-    return ('0' + number).slice(-2); // left-pad 0 to minutes/seconds
-  },
-
-  time_format = function(total) {
-    var secs = Math.abs(total) / 1000;
-    var h = Math.floor(secs / 3600);
-    var m = Math.floor(secs % 3600 / 60);
-    var s = Math.round(secs % 60);
-    var res = d2(m) + ':' + d2(s);
-    if (h > 0) res = h + ':' + res;
-    return res;  // [hh:]mm:ss
-  },
-
-  slide_number_div = function(i) {
-    return document.getElementsByClassName('remark-slide-number').item(i);
-  },
-
-  current_page_number = function(i) {
-    return slide_number_div(i).firstChild.textContent;  // text "i / N"
-  };
-
-  var timer = document.createElement('span'); timer.id = 'slide-time-left';
-  var time_left = time, k = slideshow.getCurrentSlideIndex(),
-      last_page_number = current_page_number(k);
-
-  setInterval(function() {
-    time_left = time_left - 1000;
-    timer.innerHTML = ' ' + time_format(time_left);
-    if (time_left < 0) timer.style.color = 'red';
-  }, 1000);
-
-  slide_number_div(k).appendChild(timer);
-
-  slideshow.on('showSlide', function(slide) {
-    var i = slide.getSlideIndex(), n = current_page_number(i);
-    // reset timer when a new slide is shown and the page number is changed
-    if (last_page_number !== n) {
-      time_left = time; last_page_number = n;
-      timer.innerHTML = ' ' + time_format(time); timer.style.color = null;
-    }
-    slide_number_div(i).appendChild(timer);
-  });
-})(60000);
-// adds .remark-code-has-line-highlighted class to <pre> parent elements
-// of code chunks containing highlighted lines with class .remark-code-line-highlighted
-(function(d) {
-  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
-  const preParents = [];
-  const findPreParent = function(line, p = 0) {
-    if (p > 1) return null; // traverse up no further than grandparent
-    const el = line.parentElement;
-    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
-  };
-
-  for (let line of hlines) {
-    let pre = findPreParent(line);
-    if (pre && !preParents.includes(pre)) preParents.push(pre);
-  }
-  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
-})(document);</script>
-
-<script>
-slideshow._releaseMath = function(el) {
-  var i, text, code, codes = el.getElementsByTagName('code');
-  for (i = 0; i < codes.length;) {
-    code = codes[i];
-    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
-      text = code.textContent;
-      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
-          /^\$\$(.|\s)+\$\$$/.test(text) ||
-          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
-        code.outerHTML = code.innerHTML;  // remove <code></code>
-        continue;
-      }
-    }
-    i++;
-  }
-};
-slideshow._releaseMath(document);
-</script>
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-(function () {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
-  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
-    script.src  = script.src.replace(/^https?:/, '');
-  document.getElementsByTagName('head')[0].appendChild(script);
-})();
-</script>
-  </body>
-</html>
