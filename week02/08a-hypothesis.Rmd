@@ -39,14 +39,11 @@ class: middle
 
 ### Hypothesis
 
-- In general, many scientific investigations start by expressing a *hypothesis*. 
+- In general, many scientific investigations start by expressing a **hypothesis**. 
 
-- For example, Mackowiak et al (1992) hypothesized that the average normal (i.e., for healthy people) body
-temperature is less than the widely accepted value of
-$98.6F$. 
+- For example, Mackowiak et al (1992) hypothesized that the average normal (i.e., for healthy people) body temperature is less than the widely accepted value of $98.6F$. 
 
-- If we denote the population mean of normal
-body temperature as $\mu$, then we can express this hypothesis as $\mu < 98.6$.
+- If we denote the population mean of normal body temperature as $\mu$, then we can express this hypothesis as $\mu < 98.6$.
 
 ---
 
@@ -63,7 +60,7 @@ body temperature as $\mu$, then we can express this hypothesis as $\mu < 98.6$.
 
 ### Null and alternative hypotheses
 
-- Consider the body temperature example, where we want to examine the null hypothesis $H_{0}: \mu = 98.6$ against the alternative hypothesis $H_A: \mu < 98.6$. 
+- Consider the body temperature example, where we want to examine the null hypothesis $$H_{0}: \mu = 98.6$$ against the alternative hypothesis $$H_A: \mu < 98.6$$. 
 
 - To start, suppose that $\sigma^{2} = 1$ is known.
 
@@ -146,67 +143,12 @@ knitr::include_graphics('img/pValLower.png')
 as or more extreme than the observed value, based on the null
 distribution in the direction supporting the alternative hypothesis. 
 
-- This probability is also called the $p$-*value*}* and denoted $p_{\mathrm{obs}}$.
+- This probability is also called the **p-value** and denoted $p_{\mathrm{obs}}$.
 
 - For the above example, 
 $$\begin{equation*}
 p_{\mathrm{obs}} = P(\bar{X}  \le \bar{x} | H_{0}),
 \end{equation*}$$
-
-
----
-
-### z-score
-
-- In practice, it is more common to use the standardized version of the
-sample mean as our test statistic. 
-
-- We know that if a random variable is
-normally distributed (as it is the case for $\bar{X}$), subtracting the
-mean and dividing by standard deviation creates a new random variable
-with standard normal distribution,
-$$\begin{equation*}
-Z   \sim  N(0,  1).
-\end{equation*}$$
-
----
-
-### z-score
-
-- We refer to the standardized value of the observed test statistic as
-the $z$-*score*,
-$$\begin{eqnarray*}
-z  & = & \frac{\bar{x} - \mu_{0}}{\sigma/\sqrt{n}},\\
- & = & \frac{98.4 - 98.6}{0.2} = -1.
-\end{eqnarray*}$$
-
----
-
-### z-test
-
-- We refer to the corresponding hypothesis test of the
-population mean as the $z$-test. 
-
-- In a $z$-test, instead of comparing
-the observed sample mean $\bar{x}$ to the population mean according to
-the null hypothesis, we compare the $z$-score to 0. 
-
-
----
-
-### z-test
-
-```{r, echo=FALSE,out.width='40%',out.height='60%',fig.align='center'}
-knitr::include_graphics('img/pValLower.png')
-```
-
----
-
-### z-test
-
-```{r, echo=FALSE,out.width='40%',out.height='60%',fig.align='center'}
-knitr::include_graphics('img/pValLowerZ.png')
-```
 
 
 ---
@@ -234,13 +176,13 @@ $P(H_{0} | \bar{X} = \bar{x})$.
 
 - The alternative hypothesis $H_{A}: \mu < 98.6$ or $H_{A}: \mu > 98.6$ are called *one-sided* alternatives. 
 
-- For these hypotheses, $p_{\mathrm{obs}} = P(Z \le z)$ and $p_{\mathrm{obs}} = P(Z \ge z)$ respectively.
+- For these hypotheses, $p_{\mathrm{obs}} = P( \bar{X} \le \bar{x} | H_0)$ and $p_{\mathrm{obs}} = P(\bar{X} \ge \bar{x}| H_0)$ respectively.
 
 - In contrast, the alternative hypothesis $H_{A}: \mu \ne 98.6$ is *two-sided*. 
 
 - For the above three alternatives, the null hypothesis is the same, $H_{0}: \mu = 98.6$
 
-- In this case, $p_{\mathrm{obs}} = 2 \times P(Z \geq |z|)$.
+- In this case, $p_{\mathrm{obs}} = 2 \times P(\bar{X} \geq |\bar{x}| | H_0)$.
 
 ---
 
@@ -263,7 +205,7 @@ of uncertainty by using the $t$-distribution with $n-1$ degrees of
 freedom instead of the standard normal distribution. 
 
 - The hypothesis
-testing procedure is then called the $t$-test.
+testing procedure is then called the **t-test**.
 
 
 ---
@@ -321,12 +263,5 @@ $\sigma^{2} = \mu_{0}(1-\mu_{0})$.
 $$\begin{equation*}
 \bar{X}| H_{0}  \sim  N\bigl(\mu_{0},  \mu_{0}(1-\mu_{0})/n\bigr).
 \end{equation*}$$
-- This means that
-$$\begin{equation*}
-Z  =  \frac{\bar{X} - \mu_{0}}{\sqrt{ \mu_{0}(1-\mu_{0})/n}} \sim N(0, 1).
-\end{equation*}$$
-- As a result, we obtain the $z$-score as follows, where $p$ is the sample proportion (mean)
-$$\begin{equation*}
-z = \frac{p - \mu_0}{\sqrt{\mu_0(1-\mu_0)/n}},
-\end{equation*}$$
+
 

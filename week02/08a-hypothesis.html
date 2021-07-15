@@ -34,14 +34,11 @@ class: middle
 
 ### Hypothesis
 
-- In general, many scientific investigations start by expressing a *hypothesis*. 
+- In general, many scientific investigations start by expressing a **hypothesis**. 
 
-- For example, Mackowiak et al (1992) hypothesized that the average normal (i.e., for healthy people) body
-temperature is less than the widely accepted value of
-`\(98.6F\)`. 
+- For example, Mackowiak et al (1992) hypothesized that the average normal (i.e., for healthy people) body temperature is less than the widely accepted value of `\(98.6F\)`. 
 
-- If we denote the population mean of normal
-body temperature as `\(\mu\)`, then we can express this hypothesis as `\(\mu &lt; 98.6\)`.
+- If we denote the population mean of normal body temperature as `\(\mu\)`, then we can express this hypothesis as `\(\mu &lt; 98.6\)`.
 
 ---
 
@@ -58,7 +55,7 @@ body temperature as `\(\mu\)`, then we can express this hypothesis as `\(\mu &lt
 
 ### Null and alternative hypotheses
 
-- Consider the body temperature example, where we want to examine the null hypothesis `\(H_{0}: \mu = 98.6\)` against the alternative hypothesis `\(H_A: \mu &lt; 98.6\)`. 
+- Consider the body temperature example, where we want to examine the null hypothesis `$$H_{0}: \mu = 98.6$$` against the alternative hypothesis `$$H_A: \mu &lt; 98.6$$`. 
 
 - To start, suppose that `\(\sigma^{2} = 1\)` is known.
 
@@ -139,63 +136,12 @@ probability of this value from the null distribution.
 as or more extreme than the observed value, based on the null
 distribution in the direction supporting the alternative hypothesis. 
 
-- This probability is also called the `\(p\)`-*value*}* and denoted `\(p_{\mathrm{obs}}\)`.
+- This probability is also called the **p-value** and denoted `\(p_{\mathrm{obs}}\)`.
 
 - For the above example, 
 `$$\begin{equation*}
 p_{\mathrm{obs}} = P(\bar{X}  \le \bar{x} | H_{0}),
 \end{equation*}$$`
-
-
----
-
-### z-score
-
-- In practice, it is more common to use the standardized version of the
-sample mean as our test statistic. 
-
-- We know that if a random variable is
-normally distributed (as it is the case for `\(\bar{X}\)`), subtracting the
-mean and dividing by standard deviation creates a new random variable
-with standard normal distribution,
-`$$\begin{equation*}
-Z   \sim  N(0,  1).
-\end{equation*}$$`
-
----
-
-### z-score
-
-- We refer to the standardized value of the observed test statistic as
-the `\(z\)`-*score*,
-`$$\begin{eqnarray*}
-z  &amp; = &amp; \frac{\bar{x} - \mu_{0}}{\sigma/\sqrt{n}},\\
- &amp; = &amp; \frac{98.4 - 98.6}{0.2} = -1.
-\end{eqnarray*}$$`
-
----
-
-### z-test
-
-- We refer to the corresponding hypothesis test of the
-population mean as the `\(z\)`-test. 
-
-- In a `\(z\)`-test, instead of comparing
-the observed sample mean `\(\bar{x}\)` to the population mean according to
-the null hypothesis, we compare the `\(z\)`-score to 0. 
-
-
----
-
-### z-test
-
-&lt;img src="img/pValLower.png" width="40%" height="60%" style="display: block; margin: auto;" /&gt;
-
----
-
-### z-test
-
-&lt;img src="img/pValLowerZ.png" width="40%" height="60%" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -223,13 +169,13 @@ more extreme than what has been observed) of the test statistic assuming that th
 
 - The alternative hypothesis `\(H_{A}: \mu &lt; 98.6\)` or `\(H_{A}: \mu &gt; 98.6\)` are called *one-sided* alternatives. 
 
-- For these hypotheses, `\(p_{\mathrm{obs}} = P(Z \le z)\)` and `\(p_{\mathrm{obs}} = P(Z \ge z)\)` respectively.
+- For these hypotheses, `\(p_{\mathrm{obs}} = P( \bar{X} \le \bar{x} | H_0)\)` and `\(p_{\mathrm{obs}} = P(\bar{X} \ge \bar{x}| H_0)\)` respectively.
 
 - In contrast, the alternative hypothesis `\(H_{A}: \mu \ne 98.6\)` is *two-sided*. 
 
 - For the above three alternatives, the null hypothesis is the same, `\(H_{0}: \mu = 98.6\)`
 
-- In this case, `\(p_{\mathrm{obs}} = 2 \times P(Z \geq |z|)\)`.
+- In this case, `\(p_{\mathrm{obs}} = 2 \times P(\bar{X} \geq |\bar{x}| | H_0)\)`.
 
 ---
 
@@ -252,7 +198,7 @@ of uncertainty by using the `\(t\)`-distribution with `\(n-1\)` degrees of
 freedom instead of the standard normal distribution. 
 
 - The hypothesis
-testing procedure is then called the `\(t\)`-test.
+testing procedure is then called the **t-test**.
 
 
 ---
@@ -310,57 +256,6 @@ to the null hypothesis, we also specify the population variance as
 `$$\begin{equation*}
 \bar{X}| H_{0}  \sim  N\bigl(\mu_{0},  \mu_{0}(1-\mu_{0})/n\bigr).
 \end{equation*}$$`
-- This means that
-`$$\begin{equation*}
-Z  =  \frac{\bar{X} - \mu_{0}}{\sqrt{ \mu_{0}(1-\mu_{0})/n}} \sim N(0, 1).
-\end{equation*}$$`
-- As a result, we obtain the `\(z\)`-score as follows, where `\(p\)` is the sample proportion (mean)
-`$$\begin{equation*}
-z = \frac{p - \mu_0}{\sqrt{\mu_0(1-\mu_0)/n}},
-\end{equation*}$$`
-
-
----
-
-### Exercises
-
-Suppose the population mean of systolic blood pressure in the US is 115. We hypothesize mean systolic blood pressure is lower than 115 among people who consume a small amount (e.g., around 3.5 ounces) of dark chocolate every day. Assume that systolic blood pressure, `\(X\)`, in this population has a `\(N(\mu, \sigma^{2})\)` distribution. To evaluate our hypothesis, we randomly selected 100 people, who include a small amount of dark chocolate in their daily diet, and measured their blood pressure. If the sample mean is `\(\bar{x} = 111\)` and the sample variance is `\(s = 32\)`, can we reject the null hypothesis at 0.1 confidence level?
-
----
-
-### Exercises
-
-Use the Pima.tr data set to evaluate the hypothesis that the population mean of diastolic blood pressure for Pima Indian women is not 70. 
-
----
-
-### Exercises
-
-Consider the problem of estimating the proportion of people who regularly smoke. We use `\(X\)` to denote smoking status, and `\(\mu\)` to denote the population proportion of people who smoke. We hypothesize that the population proportion is less than 0.2. Write down the null and alternative hypotheses. Suppose we interview 150 people and find that 27 of them smoke regularly. Evaluate the null hypothesis. 
-
----
-
-### Exercises
-
-We believe that the population mean of normal body temperature is less that the widely accepted value of `\(98.6\,^{\circ}\mathrm{F}\)`. Write down the null hypothesis and evaluate it using the ``BodyTemperature.txt'' data.
-
----
-
-### Exercises
-
-Download the ``BodyTemperature.txt'' data set from the course website. For the heart rate variable, we want to evaluate the following hypotheses. We set the significance level (cutoff) to 0.01.
-
-- Evaluate the hypothesis that the population mean is less than 75. (Write down the null and alternative hypotheses. Discuss your findings.)
-
-- Evaluate the hypothesis that the population mean is different from 75. (Write down the null and alternative hypotheses. Discuss your findings.)
-
-
-
----
-
-### Exercises
-
-- We hypothesize that more than 5% of pregnant women have history of hypertension. Write down the null and alternative hypotheses. Use the {birthwt} data set (available from the MASS package) to evaluate this hypothesis (with discussion). We set the significance level (cutoff) to 0.05. (In {birthwt} data set, the variable {ht} shows the hypertension history: {ht=1} when women have history of hypertension, {ht=0} otherwise.)
 
 
     </textarea>
