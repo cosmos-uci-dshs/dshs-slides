@@ -84,7 +84,7 @@ H_{A}: \mu_{1} - \mu_{2} \ne 0  \\
 \end{array}$$
 
 - Then the corresponding null hypothesis is that there is no difference
-in the population means, $$H_{0}: \mu_{1} - \mu_{2} = 0$$.
+in the population means, $$H_{0}: \mu_{1} - \mu_{2} = 0$$
 
 
 ---
