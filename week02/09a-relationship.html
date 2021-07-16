@@ -33,9 +33,7 @@ class: title-slide
 
 - We now discuss hypothesis testing regarding possible relationships between two variables. 
 
-- We first focus on problems where we are investigating the
-relationship between one binary categorical variable (e.g., gender) and
-one numerical variable (e.g., body temperature).  
+- We first focus on problems where we are investigating the relationship between one binary categorical variable (e.g., gender) and one numerical variable (e.g., body temperature).  
 
 - Later, we discuss the relationship between two categorical variables (e.g., treatment and survival status).
 
@@ -51,7 +49,7 @@ one numerical variable (e.g., body temperature).
 
 ---
 
-### Relationship Between a Numerical Variable and a Binary Variable
+### Two sample t-test
 
 
 - In general, we can denote the means of the two groups as `\(\mu_{1}\)` and
@@ -69,7 +67,7 @@ H_{A}: \mu_{1} \ne \mu_{2}  \\
 
 ---
 
-### Relationship Between a Numerical Variable and a Binary Variable
+### Two sample t-test
 
 
 - We can also express these hypotheses in terms of the
@@ -84,89 +82,21 @@ in the population means, `$$H_{0}: \mu_{1} - \mu_{2} = 0$$`.
 
 ---
 
-### Relationship Between a Numerical Variable and a Binary Variable
+### Two sample t-test
 
 
 - Previously, we used the sample mean `\(\bar{X}\)` to perform statistical
 inference regarding the population mean `\(\mu\)`. 
 
 - To evaluate our
-hypothesis regarding the difference between two means, `\(\mu_{1} - \mu_{2}\)`, it is reasonable to choose the difference between the sample
-means, `\(\bar{X}_{1} - \bar{X}_{2}\)`, as our statistic. 
+hypothesis regarding the difference between two means, `\(\mu_{1} - \mu_{2}\)`, it is reasonable to examine the difference between the sample
+means, `\(\bar{X}_{1} - \bar{X}_{2}\)`, as our test statistic. 
 
-- We use the following notations:
-`$$\begin{eqnarray*}
-\mu_{12} &amp; = &amp; \mu_{1} - \mu_{2},\\
-\bar{X}_{12} &amp; = &amp; \bar{X}_{1} - \bar{X}_{2}.
-\end{eqnarray*}$$`
+- For this, we can simply use the `t.test()` function in R.
 
 ---
 
-### Relationship Between a Numerical Variable and a Binary Variable
-
-- By the Central Limit Theorem,
-`$$\begin{eqnarray*}
-\bar{X}_{1} &amp; \sim &amp; N\bigl(\mu_{1}, \sigma^{2}_{1}/n_{1}\bigr),\\
-\bar{X}_{2} &amp; \sim &amp; N\bigl(\mu_{2}, \sigma^{2}_{2}/n_{2}\bigr),
-\end{eqnarray*}$$`
-where `\(n_{1}\)` and `\(n_{2}\)` are the number of observations
-
-- Therefore, 
-`$$\begin{equation*}
-\bar{X}_{12}  \sim N\bigl(\mu_1 - \mu_2,\ \sigma^{2}_{1}/n_{1} + \sigma^{2}_{2}/n_{2}\bigr).
-\end{equation*}$$`
----
-
-### Relationship Between a Numerical Variable and a Binary Variable
-
-- We can rewrite this as
-`$$\begin{equation*}
-\bar{X}_{12}  \sim N\bigl(\mu_{12},\ \mathit{SD}_{12}^{2}\bigr).
-\end{equation*}$$`
-where
-`$$\begin{equation*}
-\mathit{SD}_{12}  =  \sqrt{ \sigma^{2}_{1}/n_{1} + \sigma^{2}_{2}/n_{2} }.
-\end{equation*}$$`
-
-
----
-
-### Relationship Between a Numerical Variable and a Binary Variable
-
-- We want to test our hypothesis that `\(H_{A}: \mu_{12} \ne 0\)` (i.e., the
-difference between the two means is not zero) against the null
-hypothesis that `\(H_{0}: \mu_{12} = 0\)`. 
-
-- To use `\(\bar{X}_{12}\)` as a test
-statistic, we need to find its sampling distribution under the null
-hypothesis (i.e., its null distribution).
-
-- If the null hypothesis is true, then `\(\mu_{12} = 0\)`. Therefore, the
-null distribution of `\(\bar{X}_{12}\)` is
-`$$\begin{equation*}
-\bar{X}_{12}  \sim N\bigl(0, \mathit{SD}_{12}^{2}\bigr).
-\end{equation*}$$`
-
-
----
-
-### Two-Sample `\(t\)`-test
-
-- In practice, `\(SD_{12}\)` is not known since `\(\sigma_{1}\)` and `\(\sigma_{2}\)` are unknown. 
-
-- We can estimate it as follows:
-`$$\begin{eqnarray*}
-\mathit{SE}_{12} = \sqrt{s^{2}_{1}/n_{1} + s^{2}_{2}/n_{2} },
-\end{eqnarray*}$$`
-where `\(\mathit{SE}_{12}\)` is the \emph{standard error} of `\(\bar{X}_{12}\)`.
-
-- Then, instead of the standard normal distribution, we need to use `\(t\)`-distributions to find `\(p\)`-values.
-
-- For this, we can use the `t.test()` function in R.
-
----
-
-### Paired `\(t\)`-test
+### Paired t-test
 
 - While we hope that the two samples taken from the population are
 comparable except for the characteristic that defines the grouping,
@@ -185,7 +115,7 @@ grouping.
 
 ---
 
-### Paired `\(t\)`-test
+### Paired t-test
 
 - When the individuals in the two groups are paired, we use the **paired**
 `\(t\)`-test to take the pairing of the observations between the two
@@ -263,11 +193,19 @@ q &amp;=&amp; \frac{(86 - 79.1 )^2}{79.1} + \frac{(29 - 35.9 )^2}{35.9} + \frac{
 
 ### Smoking and low birthweight babies
 
-- Because the table has `\(I=2\)` rows and `\(J=2\)` columns, the approximate null distribution of `\(Q\)` is `\(\chi^{2}\)` with `\((2-1)\times (2-1) = 1\)` degrees of freedom. 
+- Because the table has `\(I=2\)` rows and `\(J=2\)` columns, the approximate null distribution is `\(\chi^{2}\)` with `\((2-1)\times (2-1) = 1\)` degrees of freedom. 
 
 - Consequently, the observed `\(p\)`-value is the upper tail probability of 4.9 using `\(\chi^2(1)\)` distribution.
 
 - For this example, `\(p\)`-value = 0.026.
+
+```r
+pchisq(4.9, df=1, lower.tail = FALSE)
+```
+
+```
+## [1] 0.0268567
+```
 
 - In practice, we simply use the `chisq.test()` in R.
     </textarea>
