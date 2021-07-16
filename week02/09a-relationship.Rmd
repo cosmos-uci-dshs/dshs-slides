@@ -180,6 +180,28 @@ Q =  \sum_{i} \sum_{j} \frac{(O_{ij} - E_{ij})^{2}}{E_{ij}}.
 columns), the $Q$ statistic has approximately the $\chi^2$ distribution
 with $(I-1)\times(J-1)$ degrees of freedom under the null.
 
+---
+
+### Pearson's $\chi^{2}$ Test of Independence
+
+- The plot of the pdf for a $\chi^2$ distribution with various degrees of freedom.
+
+```{r, echo=FALSE,out.width='40%',fig.align='center'}
+knitr::include_graphics('img/chisqPDF.png')
+```
+
+---
+
+### Pearson's $\chi^{2}$ Test of Independence
+
+Pearson's $\chi^{2}$ Test of Independence
+
+- To obtain the p-value, we find the upper tail probability of the observed value of $Q$ denoted as $q$. 
+
+```{r, echo=FALSE,out.width='30%',fig.align='center'}
+knitr::include_graphics('img/pValX2.png')
+```
+
 
 ---
 
