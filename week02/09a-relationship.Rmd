@@ -77,10 +77,12 @@ H_{A}: \mu_{1} \ne \mu_{2}  \\
 
 - We can also express these hypotheses in terms of the
 *difference* in the means: 
+$$\begin{array}[t]{l@{\quad}p{6.7cm}}
+H_{A}: \mu_{1}  - \mu_{2} > 0 \\
+H_{A}: \mu_{1} - \mu_{2} < 0  \\
+H_{A}: \mu_{1} - \mu_{2} \ne 0  \\
+\end{array}$$
 
-$$H_{A}: \mu_{1}  - \mu_{2} > 0$$
-$$H_{A}: \mu_{1} - \mu_{2} < 0$$
-$$H_{A}: \mu_{1} - \mu_{2} \ne 0$$.
 - Then the corresponding null hypothesis is that there is no difference
 in the population means, $$H_{0}: \mu_{1} - \mu_{2} = 0$$.
 
