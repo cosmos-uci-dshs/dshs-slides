@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Linear Regression</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dr. Babak Shahbaba" />
+    <script src="libs/header-attrs-2.9/header-attrs.js"></script>
+    <link rel="stylesheet" href="slide-style.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+class: title-slide
+
+
+
+&lt;br&gt;
+&lt;br&gt;
+.right-panel[ 
+&lt;br&gt;
+
+# Linear Regression
+
+### Dr. Babak Shahbaba
+
+]
+
+
+---
+
+### Introduction
+
+
+- We now discuss **linear regression models** for either testing a hypothesis
+regarding the relationship between one or more \emph{explanatory variables} and a response variable, or **predicting** unknown values of the
+response variable using one or more **predictors**.
+
+- We use `\(X\)` to denote explanatory variables and `\(Y\)` to
+denote response variables. 
+
+- We start by focusing on problems where the explanatory
+variable is binary. As before, the binary variable `\(X\)` can be
+either 0 or 1. 
+
+- We then continue our discussion for situations
+where the explanatory variable is numerical.
+
+
+---
+
+### One Binary Explanatory Variable
+
+
+- Suppose that we want to investigate the relationship between sodium
+chloride (salt) consumption (low vs. high consumption) and blood pressure among elderly people
+(e.g., above 65 years old). 
+
+&lt;img src="img/saltBP0.png" width="35%" height="40%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+### One Binary Explanatory Variable
+
+
+- The following figure shows the dot plot along with sample means, shown as black circles, for each group. 
+
+- We connect the two sample means to show the overall pattern for how blood pressure changes from one
+group to another.
+
+&lt;img src="img/saltBP1.png" width="27%" height="40%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+### One Binary Explanatory Variable
+
+
+- Using the intercept `\(a\)` and slope `\(b\)`, we can write the equation for
+the straight line that connects the estimates of the response variable for different values of `\(X\)` as follows:
+`$$\begin{equation*}
+\hat{y}  =  a + b x.
+\end{equation*}$$`
+
+- The slope is also knows as the **regression coefficient** of `\(X\)`.
+
+- For this example,
+`$$\begin{equation*}
+\hat{y}  =  133.17 + 6.25 x.
+\end{equation*}$$`
+
+---
+
+### One Binary Explanatory Variable
+
+- We expect that on average the blood
+pressure increases by 6.25 units for one unit increase in `\(X\)`. 
+
+- In this case, one unit increase in `\(X\)` from 0
+to 1 means moving from low to high sodium chloride
+diet group.
+
+
+
+---
+
+### One Binary Explanatory Variable
+
+- For an individual with `\(x=0\)` (i.e., low sodium chloride diet), the estimate according to the above regression line is
+`$$\begin{eqnarray*}
+\hat{y} &amp; = &amp; a + b \times 0 = a \\
+&amp; = &amp; \hat{y}_{x=0},
+\end{eqnarray*}$$`
+which is the sample mean for the first group. 
+
+
+---
+
+### One Binary Explanatory Variable
+
+- For an individual with `\(x=1\)` (i.e., high sodium chloride diet), the estimate according to the above regression line is
+`$$\begin{eqnarray*}
+\hat{y} &amp; = &amp; a + b \times 1 = a+b \\
+&amp; = &amp; \hat{y}_{x=0} + \hat{y}_{x=1} - \hat{y}_{x=0} \\
+&amp; = &amp; \hat{y}_{x=1}.
+\end{eqnarray*}$$`
+
+
+
+
+---
+
+### One Binary Explanatory Variable
+
+
+- We refer to the difference between the observed and estimated values of
+the response variable as the **residual**. 
+
+- For individual `\(i\)`, we denote the residual `\(e_{i}\)` and calculate it as follows:
+`$$\begin{equation*}
+e_{i}  =  y_{i} - \hat{y}_{i}.
+\end{equation*}$$`
+
+- For instance, if someone belongs to the first group, her estimated blood pressure is `\(\hat{y}_{i} = a =133.17\)`. 
+
+- Now if the observed value of her blood pressure is `\(y_{i} = 135.08\)`, then the residual~is
+`$$\begin{equation*}
+e_{i}  = 135.08 - 133.17 = 1.91.
+\end{equation*}$$`
+
+
+---
+
+### Residual sum of squares
+
+- As a measure of discrepancy between the observed values and those
+estimated by the line, we calculate the **Residual Sum of
+Squares** (RSS):
+`$$\begin{equation*}
+\mathit{RSS} =  \sum_{i}^{n} e_{i}^{2}.
+\label{RSS}
+\end{equation*}$$`
+
+- Here, `\(e_i\)` is the residual of the `\(i\)`th observation, and `\(n\)` is the
+sample size. 
+
+- The square of each residual is used so that its sign becomes irrelevant.
+
+---
+
+### One Numerical Explanatory Variable
+
+
+- We now discuss simple linear regression models (i.e., linear regression with only one explanatory variable), where the explanatory variable is numerical.
+
+&lt;img src="img/bpBySalt.png" width="35%" height="40%" style="display: block; margin: auto;" /&gt;
+
+
+
+
+
+
+
+
+---
+
+### One Numerical Explanatory Variable
+
+
+- Among all possible lines we can pass through the data, we choose the one with the smallest sum of squared residuals. The resulting line is called the **least-squares regression line**.
+
+
+&lt;img src="img/bpSaltLines.png" width="35%" height="40%" style="display: block; margin: auto;" /&gt;
+
+
+
+
+
+---
+
+### Statistical inference using regression models
+
+- We can use R or R-Commander to find the least-squares regression line. 
+
+- The slope of the regression line plays an important role in evaluating the relationship between the response variable and explanatory variable(s).
+
+- We can also use this regression line to predict the unknown value of the response variable. 
+
+
+---
+
+### Prediction
+
+
+- Using the regression line, we can estimate the unknown value of the response variable for members of the population who did not participate in our study. 
+
+- In this case, we refer to our estimates as **predictions**. 
+
+- For example, we can use the linear regression model we built previously to predict the value of blood pressure for a person with high sodium chloride diet (i.e., `\(x=1\)`),
+
+`$$\begin{eqnarray*}
+\hat{y} &amp; = &amp;  133.17 + 6.25 x\\
+ &amp; = &amp; 133.17 + 6.25 \times 1\\
+ &amp; = &amp; 139.42.
+\end{eqnarray*}$$`
+
+
+---
+
+### Confidence interval
+
+
+- We can find the confidence interval for the population regression coefficient as follows:
+
+`$$\begin{equation*}
+[b - t_{\mathrm{crit}} \times \mathit{SE}_{b}, b + t_{\mathrm{crit}} \times \mathit{SE}_{b}].
+\end{equation*}$$`
+
+- For simple (i.e., one predictor) linear regression models, `\(\mathit{SE}_{b}\)` is obtained as follows:
+
+`$$\begin{equation*}
+\label{eq:seb3}
+\mathit{SE}_{b}  =
+\frac{\sqrt{\mathit{RSS}/(n-2)}}{\sqrt{\sum_{i} (x_{i} - \bar{x})^2}}.
+\end{equation*}$$`
+
+- The corresponding `\(t_{\mathrm{crit}}\)` is obtained from the `\(t\)`-distribution with `\({n-2}\)` degrees of freedom.
+
+
+---
+
+### Hypothesis testing
+
+- To assess the null hypothesis that the population regression coefficient is zero, which is interpreted
+as no linear relationship between the response variable and the explanatory variable, we first calculate the `\(t\)`-score.
+
+`$$\begin{equation*}
+t = b/\mathit{SE}_{b}
+\end{equation*}$$`
+
+- Then, we find the corresponding `\(p\)`-value as follows:
+
+`$$\begin{array}{l@{\quad}l}
+\mbox{if}\ H_{A}: \beta &lt; 0, &amp; p_{\mathrm{obs}} = P(T \leq t), \\
+\mbox{if}\ H_{A}: \beta &gt; 0, &amp; p_{\mathrm{obs}} = P(T \geq t ), \\
+\mbox{if}\ H_{A}: \beta \ne 0, &amp; p_{\mathrm{obs}} = 2 \times P\bigl(T \geq | t | \bigr),
+\end{array}$$`
+
+where `\(T\)` has the `\(t\)`-distribution with `\(n-2\)` degrees of freedom.
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "pygments",
+"highlightLines": true,
+"highlightLanguage": "r"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
