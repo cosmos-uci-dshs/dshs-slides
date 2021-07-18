@@ -153,7 +153,7 @@ probability is equal to the product of their individual probabilities.
 
 ---
 
-### Pearson's $\chi^{2}$ Test of Independence
+### Relationship between two categorical variables
 
 - As discussed before, we can use contingency tables to find the observed frequencies for different combinations of categories of the two variables. 
 
@@ -161,14 +161,14 @@ probability is equal to the product of their individual probabilities.
 
 - Using the independence rule, we can find the **expected** frequencies under the null hypothesis. 
 
-- We denote the expected frequency in row $i$ and column $j$ as $E_{ij}$.
 
 ---
 
 ### Pearson's $\chi^{2}$ Test of Independence
 
-- Pearson's
-$\chi^{2}$ test summarizes the differences between the expected
+- We denote the expected frequency in row $i$ and column $j$ as $E_{ij}$.
+
+- Pearson's $\chi^{2}$ test summarizes the differences between the expected
 frequencies (under the null hypothesis) and the observed frequencies
 over all cells of the contingency table,
 
@@ -176,31 +176,6 @@ $$\begin{equation*}
 Q =  \sum_{i} \sum_{j} \frac{(O_{ij} - E_{ij})^{2}}{E_{ij}}.
 \end{equation*}$$
 
-- For $I\times J$ contingency tables (i.e., $I$ rows and $J$
-columns), the $Q$ statistic has approximately the $\chi^2$ distribution
-with $(I-1)\times(J-1)$ degrees of freedom under the null.
-
----
-
-### Pearson's $\chi^{2}$ Test of Independence
-
-- The plot of the pdf for a $\chi^2$ distribution with various degrees of freedom.
-
-```{r, echo=FALSE,out.width='40%',fig.align='center'}
-knitr::include_graphics('img/chisqPDF.png')
-```
-
----
-
-### Pearson's $\chi^{2}$ Test of Independence
-
-Pearson's $\chi^{2}$ Test of Independence
-
-- To obtain the p-value, we find the upper tail probability of the observed value of $Q$ denoted as $q$. 
-
-```{r, echo=FALSE,out.width='30%',fig.align='center'}
-knitr::include_graphics('img/pValX2.png')
-```
 
 
 ---
@@ -222,13 +197,43 @@ q &=& \frac{(86 - 79.1 )^2}{79.1} + \frac{(29 - 35.9 )^2}{35.9} + \frac{(44 - 50
 
 ---
 
-### Smoking and low birthweight babies
+### Chi-squared Distribution
 
-- Because the table has $I=2$ rows and $J=2$ columns, the approximate null distribution is $\chi^{2}$ with $(2-1)\times (2-1) = 1$ degrees of freedom. 
+- For $I\times J$ contingency tables (i.e., $I$ rows and $J$
+columns), the $Q$ statistic has approximately the $\chi^2$ distribution
+with $(I-1)\times(J-1)$ degrees of freedom under the null.
+
+
+```{r, echo=FALSE,out.width='30%',fig.align='center'}
+knitr::include_graphics('img/chisqPDF.png')
+```
+
+
+---
+
+### Pearson's $\chi^{2}$ Test of Independence
+
+- To obtain the p-value, we find the upper tail probability of the observed value of $Q$ denoted as $q$. 
+
+- For the above example, because the table has $I=2$ rows and $J=2$ columns, the approximate null distribution is $\chi^{2}$ with $(2-1)\times (2-1) = 1$ degrees of freedom. 
 
 - Consequently, the observed $p$-value is the upper tail probability of 4.9 using $\chi^2(1)$ distribution.
 
-- For this example, $p$-value = 0.026.
+
+---
+
+### Pearson's $\chi^{2}$ Test of Independence
+
+```{r, echo=FALSE,out.width='70%',fig.align='center'}
+knitr::include_graphics('img/pValX2_birthwt.png')
+```
+
+
+---
+
+### Pearson's $\chi^{2}$ Test of Independence
+
+- For this example, $p$-value = 0.027.
 ```{r}
 pchisq(4.9, df=1, lower.tail = FALSE)
 ```
