@@ -70,7 +70,7 @@ data.
 obtained as follows:
 
 `$$\begin{equation*}
-\bigl[\bar{x} - 1.96 \times\sigma/ \sqrt{n},\ \bar{x} + 1.96 \times\sigma/\sqrt{n}\,\bigr]
+\bigl[\bar{x} - 2 \times\sigma/ \sqrt{n},\ \bar{x} + 2 \times\sigma/\sqrt{n}\,\bigr]
 \end{equation*}$$`
 
 - Or in general, we use the `\(z\)`-critical value for the confidence level of `\(c\)`:
@@ -80,6 +80,15 @@ obtained as follows:
 \end{eqnarray*}$$`
 
 - To find the `\(z\)`-critical value given confidence level `\(c\)`, we use the standard normal distribution to find the value whose upper tail probability is `\((1-c)/2\)`. 
+
+---
+
+---
+
+### Interpretation of confidence interval
+
+&lt;img src="img/CI_SBP.png" width="40%" style="display: block; margin: auto;" /&gt;
+
 
 ---
 
@@ -111,6 +120,25 @@ along with the population mean `\(\mu\)`.
 \sqrt{n}\,\bigr],
 \end{equation*}$$`
 
+---
+
+
+### Margin of error
+
+- We can write the confidence interval as 
+`$$\begin{equation*}
+\bar{x} \pm t_{\mathrm{crit}}\times SE
+\end{equation*}$$`
+
+
+- The term `\(t_{\mathrm{crit}}\times SE\)` is called the
+**margin of error** for the given confidence level. 
+
+
+- It is common to present interval estimates for a given confidence level as
+`$$\begin{equation*}
+\textrm{Point estimate} \pm\textrm{Margin of error.}
+\end{equation*}$$`
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
