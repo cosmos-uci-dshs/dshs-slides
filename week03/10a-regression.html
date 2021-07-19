@@ -33,7 +33,7 @@ class: title-slide
 
 
 - We now discuss **linear regression models** for either testing a hypothesis
-regarding the relationship between one or more \emph{explanatory variables} and a response variable, or **predicting** unknown values of the
+regarding the relationship between one or more **explanatory variables** and a response variable, or **predicting** unknown values of the
 response variable using one or more **predictors**.
 
 - We use `\(X\)` to denote explanatory variables and `\(Y\)` to
@@ -144,7 +144,7 @@ e_{i}  =  y_{i} - \hat{y}_{i}.
 
 - For instance, if someone belongs to the first group, her estimated blood pressure is `\(\hat{y}_{i} = a =133.17\)`. 
 
-- Now if the observed value of her blood pressure is `\(y_{i} = 135.08\)`, then the residual~is
+- Now if the observed value of her blood pressure is `\(y_{i} = 135.08\)`, then the residual is
 `$$\begin{equation*}
 e_{i}  = 135.08 - 133.17 = 1.91.
 \end{equation*}$$`
@@ -191,7 +191,7 @@ sample size.
 - Among all possible lines we can pass through the data, we choose the one with the smallest sum of squared residuals. The resulting line is called the **least-squares regression line**.
 
 
-&lt;img src="img/bpSaltLines.png" width="35%" height="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/bpSaltLines.png" width="33%" height="40%" style="display: block; margin: auto;" /&gt;
 
 
 
@@ -201,7 +201,7 @@ sample size.
 
 ### Statistical inference using regression models
 
-- We can use R or R-Commander to find the least-squares regression line. 
+- We can use the function `lm()` or `glm()` in R to find the least-squares regression line. 
 
 - The slope of the regression line plays an important role in evaluating the relationship between the response variable and explanatory variable(s).
 
@@ -259,7 +259,7 @@ as no linear relationship between the response variable and the explanatory vari
 t = b/\mathit{SE}_{b}
 \end{equation*}$$`
 
-- Then, we find the corresponding `\(p\)`-value as follows:
+- Then, we find the corresponding `\(p\)`-value as follows, where `\(T\)` has the `\(t\)`-distribution with `\(n-2\)` degrees of freedom:
 
 `$$\begin{array}{l@{\quad}l}
 \mbox{if}\ H_{A}: \beta &lt; 0, &amp; p_{\mathrm{obs}} = P(T \leq t), \\
@@ -267,7 +267,6 @@ t = b/\mathit{SE}_{b}
 \mbox{if}\ H_{A}: \beta \ne 0, &amp; p_{\mathrm{obs}} = 2 \times P\bigl(T \geq | t | \bigr),
 \end{array}$$`
 
-where `\(T\)` has the `\(t\)`-distribution with `\(n-2\)` degrees of freedom.
 
 
 
