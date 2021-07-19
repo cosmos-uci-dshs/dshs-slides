@@ -263,11 +263,10 @@ $$\begin{equation*}
 
 ### Hypothesis testing
 
-- To assess the null hypothesis that the population regression coefficient is zero, which is interpreted
-as no linear relationship between the response variable and the explanatory variable, we first calculate the $t$-score.
+- To assess the null hypothesis that the population regression coefficient is zero, $H_0: \beta = 0$, which is interpreted as no linear relationship between the response variable and the explanatory variable, we first calculate the $t$-score.
 
 $$\begin{equation*}
-t = b/\mathit{SE}_{b}
+t = (b - \beta)/\mathit{SE}_{b} = b/\mathit{SE}_{b}
 \end{equation*}$$
 
 - Then, we find the corresponding $p$-value as follows, where $T$ has the $t$-distribution with $n-2$ degrees of freedom:
