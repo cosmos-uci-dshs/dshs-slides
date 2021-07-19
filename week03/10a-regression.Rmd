@@ -71,12 +71,10 @@ knitr::include_graphics('img/saltBP0.png')
 ### One Binary Explanatory Variable
 
 
-- The following figure shows the dot plot along with sample means, shown as black circles, for each group. 
-
-- We connect the two sample means to show the overall pattern for how blood pressure changes from one
+- The following figure shows the dot plot along with sample means, shown as black circles, for each group. We connect the two sample means to show the overall pattern for how blood pressure changes from one
 group to another.
 
-```{r, echo=FALSE,out.width='27%',out.height='40%',fig.align='center'}
+```{r, echo=FALSE,out.width='32%',out.height='40%',fig.align='center'}
 knitr::include_graphics('img/saltBP1.png')
 ```
 
