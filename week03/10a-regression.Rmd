@@ -61,7 +61,7 @@ where the explanatory variable is numerical.
 chloride (salt) consumption (low vs. high consumption) and blood pressure among elderly people
 (e.g., above 65 years old). 
 
-```{r, echo=FALSE,out.width='35%',out.height='40%',fig.align='center'}
+```{r, echo=FALSE,out.width='32%',out.height='40%',fig.align='center'}
 knitr::include_graphics('img/saltBP0.png')
 ```
 
