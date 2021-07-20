@@ -381,7 +381,7 @@ relationship between the response variable and multiple explanatory variables.
 - Such models with multiple explanatory variables or predictors are called **multiple linear regression**
 models.
 
-- For example, we might want to examine the relationship between the birthweight of babies and the smoking status of their mothers during pregnancy. 
+- For example, we might want to examine the relationship between the birthweight of babies their mother age and the smoking status of their mothers during pregnancy. 
 
 
 ---
@@ -403,7 +403,7 @@ $$\begin{equation*}
 ### Multiple Linear Regression
 
 ```{r}
-lm(bwt ~ factor(smoke) + age, data=birthwt)
+lm(bwt ~ age + factor(smoke), data=birthwt)
 ```
 
 
