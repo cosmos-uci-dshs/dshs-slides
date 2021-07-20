@@ -205,7 +205,17 @@ knitr::include_graphics('img/bpSaltLines.png')
 ```
 
 
-
+```{r message=FALSE, echo=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(MASS)
+library(mfp)
+data("birthwt")
+data("Pima.tr")
+Platelet<- read.table("data/Platelet.txt", header=T, sep="")
+data(bodyfat, package="mfp")
+saltBP <- read.table(file="data/saltBP.txt", header=T, sep="")
+```
 
 
 ---
@@ -214,39 +224,71 @@ knitr::include_graphics('img/bpSaltLines.png')
 
 - We can use the function `lm()` or `glm()` in R to find the least-squares regression line. 
 
-- The slope of the regression line plays an important role in evaluating the relationship between the response variable and explanatory variable(s).
+```{r}
+lm(BP ~ salt, data=saltBP)
+```
 
-- We can also use this regression line to predict the unknown value of the response variable. 
+
+---
+
+### Residual
+
+- Given $x$, we can find the expected value of $y$ for each subject. 
+
+- For one individual in our sample, the amount of daily sodium chloride intake is $x_{i} = 3.68$. 
+
+- The estimated value of the blood pressure for this person is
+$$\begin{equation*}
+\hat{y}_{i}  =  128.60 + 1.20 \times 3.68 = 133.02.
+\end{equation*}$$
+
+- The actual blood pressure for this individual is $y_{i} = 128.3$. The residual therefore is
+$$\begin{equation*}
+e_{i} = y_{i} - \hat{y}_{i} = 128.3 - 133.02 = - 4.72.
+\end{equation*}$$
+
 
 
 ---
 
 ### Prediction
 
+- We can also use our model for **predicting** the unknown values of the
+response variable (i.e., blood pressure) for all individuals in the target population. 
 
-- Using the regression line, we can estimate the unknown value of the response variable for members of the population who did not participate in our study. 
+- For example, if we know the amount of daily sodium chloride intake is $x=7.81$ for an individual, we can predict her blood pressure as follows:
+$$\begin{equation*}
+\hat{y}  =  128.60 + 1.20 \times 7.81 = 137.97.
+\end{equation*}$$
 
-- In this case, we refer to our estimates as **predictions**. 
 
-- For example, we can use the linear regression model we built previously to predict the value of blood pressure for a person with high sodium chloride diet (i.e., $x=1$),
+---
 
-$$\begin{eqnarray*}
-\hat{y} & = &  133.17 + 6.25 x\\
- & = & 133.17 + 6.25 \times 1\\
- & = & 139.42.
-\end{eqnarray*}$$
+### Interpretation
+
+
+- The interpretation of the intercept $a$ and the slope $b$ is similar to what we had before.
+
+- $a=128.6$: the *expected* value of blood pressure is 128.6 for subjects with zero sodium chloride diet.
+
+- $b=1.2$: the *expected* value of blood pressure increases by 1.2 points corresponding to one unit increase in the daily amount of sodium chloride intake.
 
 
 ---
 
 ### Confidence interval
 
+- The slope of the regression line plays an important role in evaluating the relationship between the response variable and explanatory variable(s).
 
-- We can find the confidence interval for the population regression coefficient as follows:
+- We can find the confidence interval for the population regression coefficient, $\beta$, as follows:
 
 $$\begin{equation*}
 [b - t_{\mathrm{crit}} \times \mathit{SE}_{b}, b + t_{\mathrm{crit}} \times \mathit{SE}_{b}].
 \end{equation*}$$
+
+---
+
+### Confidence interval
 
 - For simple (i.e., one predictor) linear regression models, $\mathit{SE}_{b}$ is obtained as follows:
 
@@ -278,5 +320,190 @@ $$\begin{array}{l@{\quad}l}
 \end{array}$$
 
 
+---
+
+### Goodness of Fit
+
+- We now want to examine how well the regression line represents the observed data; in other words, how well the regression model **fits** the data.
+
+- In statistics, we use **goodness-of-fit** measures for this purpose. 
+
+- The residual sums of squares (RSS) can be interpreted as the **unexplained variation** or **lack of fit**.
+
+- The **total variation** in the response variable is measured by the **Total Sum of Squares** (TSS),
+$$\begin{eqnarray*}
+\mathit{TSS} & = & \sum_{i}^{n}(y_{i} - \bar{y})^{2}.
+\end{eqnarray*}$$
 
 
+---
+
+### Goodness of Fit
+
+- The fraction $\mathit{RSS}/\mathit{TSS}$ can be interpreted as the percent of total variation that was not explained by the regression model.
+
+- In contrast, $1 - \mathit{RSS}/\mathit{TSS}$ is fraction of total variation explained by the model. 
+
+- This fraction is $R^{2}$, which measures the goodness of fit for the regression model,
+$$\begin{eqnarray*}
+R^{2} & = & 1 - \frac{\mathit{RSS}}{\mathit{TSS}}.
+\end{eqnarray*}$$
+
+- For \emph{simple linear regression} models with one numerical explanatory variable, $R^{2}$ is equal to the square of the correlation coefficient $r$.
+
+
+
+---
+
+### Model Assumptions and Diagnostics
+
+
+- Two of the main assumptions of linear regression models are:
+
+  - Linearity of relationships
+
+  - Independent observations
+
+- These are usually justified by our domain knowledge, our study design, and simple visualization of data.
+
+
+
+---
+
+### Multiple Linear Regression
+
+- So far, we have focused on linear regression models with only one
+explanatory variable. 
+
+- In most cases, however, we are interested in the
+relationship between the response variable and multiple explanatory variables. 
+
+- Such models with multiple explanatory variables or predictors are called **multiple linear regression**
+models.
+
+- For example, we might want to examine the relationship between the birthweight of babies and the smoking status of their mothers during pregnancy. 
+
+
+---
+
+### Multiple Linear Regression
+
+- A multiple linear regression model with $p$ explanatory variables can
+be presented as follows:
+
+$$\begin{equation*}
+\hat{y}  =  a + b_{1}x_{1} + b_{2}x_{2} + \cdots + b_{p}x_{p}.
+\end{equation*}$$
+
+- To fit this model, we can use R as before.
+
+
+---
+
+### Multiple Linear Regression
+
+```{r}
+lm(bwt ~ factor(smoke) + age, data=birthwt)
+```
+
+
+---
+
+### Interpretation
+
+- The intercept in multiple linear regression model is the expected (average) value of the response variable when all the explanatory variables in the model are set to zero simultaneously. 
+
+- In the above example, the intercept is $a=2791$, which is obtained by setting age and smoking to zero. 
+
+- We might be tempted to interpret this as the average birthweight of babies for nonsmoking mothers ({smoke=0}) with age equal to zero. 
+
+- In this case, however, this is not a reasonable interpretation since mother's age cannot be zero.
+
+
+---
+
+### Interpretation
+
+- We interpret $b_{j}$ as our estimate of the expected (average) change in the response variable
+associated with a unit increase in the corresponding explanatory variable $x_{j}$ **while all other explanatory variables in the model remain fixed**.
+
+- For the above example, the point estimate of the regression coefficient for {age} is $b_{1}=11$, and the estimate of the regression coefficient for {smoke} is $b_{2} = -278$. 
+
+---
+
+### Interpretation
+
+- We expect that the birthweight of babies increase by 11 grams as the mother's age increases by one year among mothers with the same smoking status. 
+
+- The expected birthweight decreases by $-278$ grams associated with one unit increase in the value of the variable {smoke} among mothers with the same age.
+
+
+
+---
+
+### Additivity
+
+- In multiple linear regression models, we usually assume that the effects of explanatory variables on the response variable are **additive**.
+
+- This means that the expected change in the response variable corresponding to one unit increase in one of the explanatory variables remains the same regardless of the values of other explanatory variables in the model.
+
+
+---
+
+### Additivity
+
+- Here, nonsmoking mothers are shown as {circles}, while smoking mothers are shown as {squares}. The {dashed line} shows the regression line among nonsmoking mothers, and the {solid line} shows the regression line among the smoking mothers
+
+```{r, echo=FALSE,out.width='25%',out.height='40%',fig.align='center'}
+knitr::include_graphics('img/bwtByAgeSmokeLinReg.png')
+```
+
+
+---
+
+### Interaction
+
+- We might believe that the effects are not additive.
+
+- That is, the effect of one explanatory variable $x_{1}$ on the response variable depends on the
+value of another explanatory variable $x_{2}$ in the model.
+
+- We can still use linear regression models by including a new variable $x_{3} = x_{1}x_{2}$,
+
+$$\begin{eqnarray*}
+\hat{y} = a + b_{1}x_{1} + b_{2}x_{2} + b_{12}x_{1}x_{2}
+\end{eqnarray*}$$
+
+
+
+
+---
+
+### Interaction
+
+- The term $x_{1}x_{2}$ is called the **interaction term**. 
+
+- We refer to $b_{1}$ and $b_{2}$ as the **main effects**, and refer to $b_{12}$ as the **interaction effect**.
+
+
+- Note that when we include an interaction term in our model, we should be cautious about how we interpret model parameters. 
+
+
+- In R, to fit models with interaction terms, we use "*" instead of "+" to separate variables. 
+
+```{r, eval=FALSE}
+lm(bwt ~ factor(smoke) * age, data=birthwt)
+```
+
+
+
+
+---
+
+### Interaction
+
+- Here, nonsmoking mothers are shown as {circles}, while smoking mothers are shown as {squares}. The {dashed line} shows the regression line among nonsmoking mothers, and the {solid line} shows the regression line among the smoking mothers
+
+```{r, echo=FALSE,out.width='25%',out.height='20%',fig.align='center'}
+knitr::include_graphics('img/linRegInteractionPlot.png')
+```
