@@ -349,7 +349,7 @@ $$\begin{eqnarray*}
 R^{2} & = & 1 - \frac{\mathit{RSS}}{\mathit{TSS}}.
 \end{eqnarray*}$$
 
-- For \emph{simple linear regression} models with one numerical explanatory variable, $R^{2}$ is equal to the square of the correlation coefficient $r$.
+- For **simple linear regression** models with one numerical explanatory variable, $R^{2}$ is equal to the square of the correlation coefficient $r$.
 
 
 
