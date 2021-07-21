@@ -96,17 +96,14 @@ $$\begin{eqnarray*}
 
 - We can use the `glm()` function in R to fit a regression model
 
-
----
-
-### Generalized linear model (glm) in R
-
 ```{r, eval=FALSE}
 library(MASS)
 data("birthwt")
 birthwt$low <- factor(birthwt$low)
 birthwt$smoke <- factor(birthwt$smoke)
-glm(low ~ smoke, family = 'binomial', data = birthwt)
+fit <- glm(low ~ smoke, family = 'binomial', data = birthwt)
+confint(fit)
+summary(fit)
 ```
 
 ---
