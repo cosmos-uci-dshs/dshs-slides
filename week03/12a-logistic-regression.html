@@ -91,8 +91,6 @@ class: title-slide
 
 - We can use the `glm()` function in R to fit a regression model
 
-- Similar to linear regression models, we specify the model formula by entering the response variable on the left side of the "~" symbol and the explanatory (predictor) variables (separated by "+" sings) on the right side. 
-
 
 ---
 
@@ -231,7 +229,7 @@ summary(fit)
 
 ---
 
-### Logistic Regression with One Numerical Predictor}
+### Logistic Regression with One Numerical Predictor
 
 
 - For the most part, we follow similar steps to fit the model, estimate regression parameters, perform hypothesis testing, and predict unknown values of the response variable. 
@@ -241,7 +239,7 @@ summary(fit)
 
 ---
 
-### Logistic Regression with One Numerical Predictor}
+### Logistic Regression with One Numerical Predictor
 
 
 - Finding confidence intervals and performing hypothesis testing remain as before, so we focus on prediction and interpreting the point estimates.
@@ -253,7 +251,7 @@ summary(fit)
 
 ---
 
-### Logistic Regression with One Numerical Predictor}
+### Logistic Regression with One Numerical Predictor
 
 - To interpret `\(b\)`, consider mothers whose age is 20 years old at the time of pregnancy, 
 `$$\begin{eqnarray*}
@@ -264,7 +262,7 @@ summary(fit)
 
 ---
 
-### Logistic Regression with One Numerical Predictor}
+### Logistic Regression with One Numerical Predictor
 
 - For mothers who are one year older (i.e., one unit increase in age), we have
 `$$\begin{eqnarray*}
@@ -276,7 +274,7 @@ summary(fit)
 
 ---
 
-### Logistic Regression with One Numerical Predictor}
+### Logistic Regression with One Numerical Predictor
 
 - The odds ratio for comparing 21 year old mothers to 20 year old mothers is
 `$$\begin{eqnarray*}
@@ -289,7 +287,7 @@ summary(fit)
 
 ---
 
-### Logistic Regression with One Numerical Predictor}
+### Logistic Regression with One Numerical Predictor
 
 - In general, `\(\exp(b)\)` is the estimated odds ratio for comparing two subpopulations, whose predictor values are `\(x+1\)` and `\(x\)`,
 `$$\begin{eqnarray*}
@@ -299,7 +297,7 @@ summary(fit)
 
 ---
 
-### Logistic Regression with One Numerical Predictor}
+### Logistic Regression with One Numerical Predictor
 
 
 - As before, we can use the estimated regression parameters to find `\(\hat{p}\)` and predict the unknown value of the response variable. 
@@ -314,6 +312,31 @@ summary(fit)
 
 
 
+---
+
+### Logistic Regression with Multiple Variables
+
+- Including multiple explanatory variables (predictors) in a logistic regression model is easy. 
+
+- Similar to linear regression models, we specify the model formula by entering the response variable on the left side of the "~" symbol and the explanatory variables (separated by "+" sings) on the right side. 
+
+
+```r
+fit &lt;- glm(low ~ age + smoke, family = 'binomial', 
+           data = birthwt)
+confint(fit)
+summary(fit)
+```
+
+---
+
+### Logistic Regression with Multiple Variables
+
+- Obtaining the cofidence intervals and p-values for regression coefficients remain as before.
+
+- Similar to multiple linear regression, logistic regression models could be additive or include interaction terms.
+
+- As before, we should be careful when we interpret the resuls. 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
