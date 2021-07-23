@@ -171,7 +171,7 @@ $$\begin{eqnarray*}
 
 - In general, 
 
-  - if $b>0$, then $\exp(\b) > 1$ so the odds increases as $X$ increases;
+  - if $b>0$, then $\exp(b) > 1$ so the odds increases as $X$ increases;
   - if $b<0$, then $0 < \exp(b) < 1$ so the odds decreases as $X$ increases;
   - if $b=0$, the odds ratio is 1 so the odds does not change with $X$ according to the assumed model. 
 
