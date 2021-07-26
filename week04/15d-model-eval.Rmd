@@ -353,7 +353,7 @@ janitor::tabyl(babies, low_bwt, pred_y) %>%
   janitor::adorn_totals(c("row", "col"))
 ```
 
-**Sensitivity** (true-positive rate): 4/9 = 0.4444  
+**Sensitivity** (true-positive rate): 4/57 = 0.0702  
 **Specificity** (true-negative rate): 1161/1166 = 0.9957  
 **Accuracy**: (1161+4)/1223 = 0.9526
----
+
