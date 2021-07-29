@@ -1,0 +1,82 @@
+---
+title: "Cluster 1 Overview"
+author: "Dr. Mine Dogucu <br> Dr. Babak Shahbaba"
+output: 
+  xaringan::moon_reader:
+    css: ["slide-style.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"]
+    lib_dir: libs
+    seal: false
+    nature:
+      beforeInit: "cols_macro.js"
+      ratio: 16:9
+      highlightStyle: "pygments"
+      highlightLines: true
+      highlightLanguage: "r"
+
+---
+
+class: title-slide
+
+
+<br>
+<br>
+.right-panel[ 
+<br>
+
+# `r rmarkdown::metadata$title`
+
+## `r rmarkdown::metadata$author`
+
+]
+
+---
+class: middle 
+
+![:col_header 
+<span style="font-size:60px; color:#1B3D6D;">Math & <br> Statistics</span> <br> <br>
+  <i class="fas fa-square-root-alt" aria-hidden="true" style="font-size:60px;"></i>,
+<span style="font-size:60px; color:#1B3D6D;"> Computer <br> Science </span> <br> <br>
+  <i class="fas fa-laptop-code" aria-hidden="true" style="font-size:60px;"></i>,
+<span style="font-size:60px; color:#1B3D6D;">  Health Sciences </span> <br> <br>
+  <i class="fas fa-stethoscope" aria-hidden="true" style="font-size:90px;"></i>
+              ]
+---
+class: middle 
+
+![:col_header 
+<span style="font-size:60px; color:#1B3D6D;">Math & <br> Statistics</span> <br> <br>
+  <i class="fas fa-square-root-alt" aria-hidden="true" style="font-size:60px;"></i>,
+<span style="font-size:30px; color:#1B3D6D;"> Start: <br>  
+Algebra II <br> (Linear and logarithmic functions) <br> <br>
+<br>
+End: <br>Probability &#9679; statistical inference &#9679; statistical modeling</span> <br> <br>
+              ]
+              
+              
+---
+
+class: middle 
+
+![:col_header 
+<span style="font-size:60px; color:#1B3D6D;">Computer <br> Science</span> <br> <br>
+  <i class="fas fa-laptop" aria-hidden="true" style="font-size:60px;"></i>,
+<span style="font-size:30px; color:#1B3D6D;"> Start: <br>  
+None <br> <br>
+<br>
+End: <br>Literate programming &#9679; data cleaning &#9679; data visualization </span> <br> <br>
+              ]
+---
+
+class: middle
+
+![:col_header 
+<span style="font-size:60px; color:#1B3D6D;">Health <br> Sciences</span> <br> <br>
+  <i class="fas fa-stethoscope" aria-hidden="true" style="font-size:60px;"></i>,
+<span style="font-size:30px; color:#1B3D6D;"> Start: <br>  
+None <br> <br>
+<br>
+End: <br>Rheumatoid arthritis&#9679; diabetes &#9679; body fat &#9679; birth weight &#9679; stress </span> <br> <br>]
+
+---
+
+Projects by Babak
