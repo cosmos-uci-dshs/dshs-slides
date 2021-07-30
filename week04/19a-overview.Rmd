@@ -79,7 +79,7 @@ End: <br>Rheumatoid arthritis&#9679; diabetes &#9679; body fat &#9679; birth wei
 
 ---
 
-### Prenatal Stress, Development, Health and Disease Risk
+### Prenatal Stress and Early Childhood Development
 
 ```{r, echo=FALSE,out.width='70%',out.height='40%',fig.align='center'}
 knitr::include_graphics('img/pregnant.jpeg')
@@ -87,7 +87,7 @@ knitr::include_graphics('img/pregnant.jpeg')
 
 ---
 
-### Prenatal Stress, Development, Health and Disease Risk
+### Prenatal Stress and Early Childhood Development
 
 ```{r, echo=FALSE,out.width='90%',out.height='40%',fig.align='center'}
 knitr::include_graphics('img/EMA1.png')
@@ -95,7 +95,7 @@ knitr::include_graphics('img/EMA1.png')
 
 ---
 
-### Prenatal Stress, Development, Health and Disease Risk
+### Prenatal Stress and Early Childhood Development
 
 ```{r, echo=FALSE,out.width='85%',out.height='40%',fig.align='center'}
 knitr::include_graphics('img/EMA2.png')
