@@ -100,3 +100,19 @@ knitr::include_graphics('img/EMA1.png')
 ```{r, echo=FALSE,out.width='85%',out.height='40%',fig.align='center'}
 knitr::include_graphics('img/EMA2.png')
 ```
+
+---
+
+### Prenatal Stress and Early Childhood Development
+
+- Students were asked to: 
+
+  - review the existing literature 
+
+  - form a hypothesis
+
+  - explore the data
+
+  - formally evaluate their hypothesis
+
+  - communicate their findings in a meaningful way
