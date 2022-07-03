@@ -1,6 +1,6 @@
 ---
-title: "Introduction to R and R Markdown"
-author: "Dr. Mine Dogucu"
+title: "Introduction to R"
+author: "Dr. Babak Shahbaba"
 output: 
   xaringan::moon_reader:
     css: ["slide-style.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"]
@@ -35,8 +35,8 @@ class: middle
 
 ## Reminder
 
-- Close all apps on your computer other than zoom.  
-- Open slides for this session from the cluster website (https://uci-dshs.netlify.app/). 
+- Close all apps on your computer.  
+- Open slides for this session from the cluster website (https://cosmos-datascience.netlify.app). 
 
 
 ---
@@ -54,11 +54,12 @@ class: center
   <source src="screencast/01a-hello-world.mp4" type="video/mp4">
 </video>
 
+*Created by Dr. Mine Dogucu
 ---
 
 class: middle
 
-## In Breakout Rooms
+## Practice
 
 Each of you should  
 
@@ -84,14 +85,6 @@ class: middle
 birth_year <- 1950
 ```
 
-
---
-.center[
-|                            | Windows        | Mac              |
-|----------------------------|----------------|------------------|
-| Shortcut     | Alt + -        | Option + -       |
-
-]
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Welcome"
-author: "Dr. Mine Dogucu <br> Dr. Babak Shahbaba"
+author: "Dr. Babak Shahbaba <br> Dr. Sam Behseta"
 output: 
   xaringan::moon_reader:
     css: ["slide-style.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"]
@@ -29,18 +29,6 @@ class: title-slide
 
 ]
 
----
-
-class: center middle
-
-## Dr. Dogucu
-
-
-```{r echo=FALSE, fig.align='center', out.width="30%"}
-knitr::include_graphics("img/dogucu.jpg")
-```
-
-
 
 ---
 
@@ -50,38 +38,38 @@ class: center middle
 
 
 ```{r echo=FALSE, fig.align='center', out.width="30%"}
-knitr::include_graphics("img/shahbaba.jpeg")
-```
-
-
----
-
-class: center middle
-
-## Alicia
-
-```{r echo=FALSE, fig.align='center', out.width="30%"}
-knitr::include_graphics("img/becerra-romero.png")
+knitr::include_graphics("img/Babak.jpeg")
 ```
 
 ---
 
 class: center middle
 
-## Kyle
+## Dr. Behseta
+
 
 ```{r echo=FALSE, fig.align='center', out.width="30%"}
-knitr::include_graphics("img/conniff.JPG")
+knitr::include_graphics("img/Behseta.png")
 ```
 
 ---
 
 class: center middle
 
-## Thabat
+## Brian
 
 ```{r echo=FALSE, fig.align='center', out.width="30%"}
-knitr::include_graphics("img/dahdoul.jpeg")
+knitr::include_graphics("img/Brian.jpg")
+```
+
+---
+
+class: center middle
+
+## Zahra
+
+```{r echo=FALSE, fig.align='center', out.width="30%"}
+knitr::include_graphics("img/Zahra.JPG")
 ```
 
 ---
@@ -91,7 +79,6 @@ class: middle class
 ## Getting to Know Each Other
 
 - Name
-- Pronoun
 - Location 
 - Grade
 - Interests
@@ -120,12 +107,12 @@ class: middle
 
 class:middle center
 
-| Time        | Topics |Instructor |
-|-------------|--------|----|
-| Week 1      |Exploring Data | Dr. Dogucu
-| Week 2      |Probability and Inference        | Dr. Shahbaba
-| Week 3      |Statistical Modeling        | Dr. Shahbaba
-| Week 4      |Communicating Statistical Findings        | Dr. Dogucu
+| Time        | Topics 
+|-------------|--------
+| Week 1      |Exploring Data 
+| Week 2      |Probability, Inference, and Statistical Modeling
+| Week 3      |Capstone project
+| Week 4      |Capstone Project
 
 
 
@@ -179,15 +166,6 @@ class: middle
 You are expected to attend all activities of the COSMOS program and actively participate.
 Please arrive on time.
 
----
-
-class: middle center
-
-```{r echo=FALSE, fig.align='center', out.width="30%"}
-knitr::include_graphics("img/webcam.jpeg")
-```
-
-Keep your webcam on unless we are on a break. 
 
 ---
 
@@ -200,27 +178,26 @@ class: inverse middle center
 
 class: center middle
 
+Ask questions!   
 
 ```{r echo=FALSE, out.width="30%"}
 knitr::include_graphics("img/confused.jpeg")
 ```
 
 
-Ask questions!   
+
   
 
 ---
 
-class:center
+class:center middle
+
 Don't compare yourself to others.
-```{r echo=FALSE,fig.align='center'}
-tweetrmd::tweet_screenshot(
-  tweetrmd::tweet_url("thephysicsgirl", "1410846326976225285"),
-  hide_media = FALSE,
-  theme = "dark",
-  maxwidth = 270,
-)
+
+```{r echo=FALSE, out.width="30%"}
+knitr::include_graphics("img/thephysicsgirl.png")
 ```
+
 
 ---
 
