@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Data Science"
-author: "Babak Shahbaba"
+author: "Babak Shahbaba & Dr. Mine Dogucu"
 output: 
   xaringan::moon_reader:
     css: ["slide-style.css"]
