@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Importing Data</title>
+    <title>The Pipe Operator</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Mine Dogucu" />
-    <script src="Lab-01c-import-data_files/header-attrs-2.14/header-attrs.js"></script>
+    <script src="Lab-01d-pipe-op_files/header-attrs-2.14/header-attrs.js"></script>
     <link rel="stylesheet" href="slide-style.css" type="text/css" />
   </head>
   <body>
@@ -16,118 +16,224 @@ class: title-slide
 
 
 
-
 &lt;br&gt;
 &lt;br&gt;
 .right-panel[ 
 
-# Importing Data
+# The Pipe Operator
 ## Dr. Mine Dogucu
 ]
 
-
 ---
 
-## Importing .csv Data 
+class: inverse middle
 
-`.csv` stands for comma separated values
-
-
-```r
-readr::read_csv("dataset.csv")
-```
-
-
----
-
-## Importing Excel Data
-
-
-```r
-readxl::read_excel("dataset.xlsx")
-```
-
-
-
----
-## Importing Excel Data
-
-
-```r
-readxl::read_excel("dataset.xlsx", sheet = 2)
-```
-
----
-
-## Importing SAS, SPSS, Stata Data
-
-
-```r
-library(haven)
-# SAS
-read_sas("dataset.sas7bdat")
-# SPSS
-read_sav("dataset.sav")
-# Stata
-read_dta("dataset.dta")
-```
-
----
-
-## Practice
-
-- Open an `.Rmd` file.
-- Download and import [anticancer peptides data set](https://archive.ics.uci.edu/ml/datasets/Anticancer+peptides) for breast cancer. 
-- Download the [spotify data](https://cosmos-uci-dshs.github.io/dshs-slides/week01/data/spotify.xlsx) file. 
-- Import the artist, album, and song data.
-
+.font50[Three solutions to a single problem]
 
 ---
 
 class: middle
 
-## Practice
-
-Download the HIV Antibody Test from the [CDC website](https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Laboratory&amp;CycleBeginYear=2017). Import it into R. 
-Note that this file has an `.XPT` extension which we have not seen before. 
-Let's see if we can open it using one of the packages we have already seen. 
+What is the average of 4, 8, 16 approximately?
 
 ---
 
 class: middle
 
-## Writing data files
+1.What is the average of **4, 8, 16** approximately?
 
+---
 
-```r
-write_csv(data_frame, "dataset.csv")
-write_xls(data_frame, "dataset.xlsx")
-```
+class: middle
 
-Similar code pattern holds true for other data formats.
+2.What is the **average** of 4, 8, 16 approximately?
 
+---
+
+class: middle
+
+3.What is the average of 4, 8, 16 **approximately**?
+
+---
+
+class: middle inverse
+
+.font50[Solution 1: Functions within Functions]
 
 ---
 
 
-&lt;img src="img/hiv.png" width="100%" /&gt;
+```r
+c(4, 8, 16)
+```
 
-.footnote[[National Health and Nutrition Examination Survey by CDC](https://wwwn.cdc.gov/Nchs/Nhanes/2017-2018/HIV_J.htm)
+```
+## [1]  4  8 16
+```
+
+--
+
+&lt;hr&gt;
+
+
+```r
+mean(c(4, 8, 16))
+```
+
+```
+## [1] 9.333333
+```
+
+--
+
+&lt;hr&gt;
+
+
+```r
+round(mean(c(4, 8, 16)))
+```
+
+```
+## [1] 9
+```
+
+---
+
+class: middle
+
+**Problem with writing functions within functions**
+
+Things will get messy and more difficult to read and debug as we deal with more complex operations on data.
+
+---
+
+class: middle inverse
+
+.font50[Solution 2: Creating Objects]
+
+---
+
+class: middle
+
+
+```r
+numbers &lt;- c(4, 8, 16)
+numbers
+```
+
+```
+## [1]  4  8 16
+```
+
+--
+
+&lt;hr&gt;
+
+
+```r
+avg_number &lt;- mean(numbers)
+avg_number
+```
+
+```
+## [1] 9.333333
+```
+
+--
+
+&lt;hr&gt;
+
+
+```r
+round(avg_number)
+```
+
+```
+## [1] 9
+```
+
+---
+
+class: middle
+
+**Problem with creating many objects**
+
+We will end up with too many objects in `Environment`. 
+
+---
+
+class: middle inverse
+
+.font50[Solution 3: The (forward) Pipe Operator %&gt;% ]
+
+---
+
+class: middle
+
+.font75[Shortcut: &lt;br&gt;Ctrl (Command) + Shift + M]
+
+---
+class: middle
+
+.pull-left[
+
+```r
+c(4, 8, 16) %&gt;% 
+  mean() %&gt;% 
+  round()
+```
+
+```
+## [1] 9
+```
 ]
 
+.pull-right[
+
+Combine 4, 8, and 16 `and then`  
+Take the mean   `and then`  
+Round the output
+
+]
+
+
 ---
 
-## Practice 
+class: middle
 
-1. Change the name of the variable LBXHIVC to `hiv_1_2_combo`
+The output of the first function is the first argument of the second function.
 
-2. Recode level 1 as `"HIV-1/2 Reactive"` and level 2 as `"HIV-1/2 Non-reactive"`
+---
 
-3. Count these levels. 
+Do you recall composite functions such as `\(f \circ g(x)\)`?
 
-4. Write the summary table with counts into a `.csv` file.
+--
+
+Now we have `\(f \circ g \circ h (x)\)` or `round(mean(c(4, 8, 16)))`
+
+--
+
+.pull-left[
 
 
+```r
+h(x) %&gt;% 
+  g() %&gt;% 
+  f()
+```
+
+]
+
+.pull-right[
+
+
+```r
+c(4, 8, 16) %&gt;% 
+  mean() %&gt;% 
+  round()
+```
+
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
