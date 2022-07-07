@@ -3,17 +3,17 @@
 <img src="week01/img/cosmos-uci-dshs.png" alt="Logo that reads Data Science in Health Sciences, University of California Irvine, COSMOS It has a computer and a medical box icon" width="150" align = "right"/>
 
 
-## Data Science in Health Sciences
+## Data Science in Biomedical Sciences
 ### University of California 
 #### The California State Summer School for Mathematics and Science
 
 
 
 
-Summer 2021 
-
-[Dr. Mine Dogucu](https://minedogucu.com)  
+Summer 2022
+ 
 [Dr. Babak Shahbaba](https://www.ics.uci.edu/~babaks/)
+[Dr. Sam Behseta](http://www.fullerton.edu/math/faculty/behseta/index.php)
 
 <hr>
 
